@@ -260,6 +260,66 @@ body{
 /* ── FOCUS VISIBLE (WCAG 2.2) ──────────────── */
 :focus-visible{outline:2.5px solid var(--v500);outline-offset:3px;border-radius:4px}
 button:focus-visible,.ni:focus-visible,.habit-chip:focus-visible,.plant-card:focus-visible{outline:2.5px solid var(--v500);outline-offset:2px}
+
+/* ── Botón compromiso: estado usado ── */
+.btn-compromiso-done{
+  background:var(--cream2)!important;
+  color:var(--txth)!important;
+  box-shadow:none!important;
+  pointer-events:none;
+  border:none;
+}
+/* ── Highlight planta desde jardín ── */
+@keyframes plantHighlight{
+  0%{box-shadow:0 0 0 0 rgba(112,48,184,.55)}
+  60%{box-shadow:0 0 0 10px rgba(112,48,184,.0)}
+  100%{box-shadow:none}
+}
+.plant-card.rc-highlight{
+  animation:plantHighlight 1.4s ease-out both;
+  border:2px solid var(--v300)!important;
+}
+/* ── FORO QUORA-STYLE ─────────────────────────── */
+.foro-composer{display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--white);border-bottom:1px solid var(--cream);cursor:pointer}
+.foro-composer:active{background:var(--sage-50)}
+.foro-composer-input{flex:1;font-size:13px;color:var(--txth);background:transparent;border:none;outline:none;pointer-events:none}
+.foro-composer-btn{background:var(--v500);color:#fff;border:none;border-radius:var(--rpill);padding:8px 18px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--fb);white-space:nowrap;flex-shrink:0;transition:opacity .15s}
+.foro-composer-btn:active{opacity:.8}
+.foro-cat{padding:8px 0;font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;background:transparent;color:var(--txth);border:none;border-bottom:2.5px solid transparent;white-space:nowrap;font-family:var(--fb)}
+.foro-cat.act{color:var(--v500);border-bottom-color:var(--v500);font-weight:700}
+.q-card{background:var(--white);border-bottom:1px solid var(--cream);padding:14px 16px;cursor:pointer;transition:background .12s;display:block;width:100%}
+.q-card:active{background:#FAFAF8}
+.q-card-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:6px}
+.q-topic{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;letter-spacing:.02em;padding:3px 9px;border-radius:var(--rpill);flex-shrink:0}
+.q-more-btn{background:none;border:none;cursor:pointer;color:var(--txth);padding:2px 6px;border-radius:6px;transition:background .12s;font-size:16px;line-height:1;flex-shrink:0}
+.q-more-btn:active{background:var(--cream)}
+.q-body{display:flex;align-items:flex-start;gap:10px}
+.q-text{flex:1;min-width:0}
+.q-title{font-family:var(--ff);font-size:15px;font-weight:700;color:var(--txt);line-height:1.4;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.q-preview{font-size:12.5px;color:var(--txth);line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:8px}
+.q-thumb{width:58px;height:58px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;margin-top:2px}
+.q-author-row{display:flex;align-items:center;gap:6px;margin-bottom:10px}
+.q-av{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:700;flex-shrink:0}
+.q-author-name{font-size:12px;font-weight:600;color:var(--txt2)}
+.q-badge{font-size:11px;color:var(--txth)}
+.q-dot{font-size:10px;color:var(--txth)}
+.q-time{font-size:11px;color:var(--txth)}
+.q-actions{display:flex;align-items:center;gap:0;border-top:1px solid var(--cream);margin:0 -16px;padding:8px 16px 0}
+.q-vote-group{display:flex;align-items:center;gap:0;border:1px solid var(--cream);border-radius:var(--rpill);overflow:hidden;margin-right:10px}
+.q-vote-btn{display:flex;align-items:center;gap:4px;padding:6px 10px;background:none;border:none;cursor:pointer;font-size:12px;font-weight:600;color:var(--txth);transition:background .12s;font-family:var(--fb)}
+.q-vote-btn:active{background:var(--cream)}
+.q-vote-btn.up.voted{color:var(--ok);background:var(--ok-bg)}
+.q-vote-btn.down.voted{color:var(--err);background:var(--err-bg)}
+.q-vote-divider{width:1px;background:var(--cream);align-self:stretch}
+.q-action-btn{display:flex;align-items:center;gap:5px;padding:6px 10px;background:none;border:none;cursor:pointer;font-size:12px;color:var(--txth);font-family:var(--fb);border-radius:var(--rpill);transition:background .12s;white-space:nowrap}
+.q-action-btn:active{background:var(--cream)}
+.q-action-btn.answered{color:var(--v500);font-weight:600}
+.foro-vote-btn{width:26px;height:26px;border-radius:6px;border:none;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;color:var(--txth)}
+.foro-vote-btn:active{transform:scale(.85)}
+.foro-vote-btn.up.voted{color:var(--ok);background:var(--ok-bg)}
+.foro-vote-btn.down.voted{color:var(--err);background:var(--err-bg)}
+.foro-vote-count{font-size:12px;font-weight:800;color:var(--txt)}
+.foro-post-tag{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:var(--rpill);font-size:10px;font-weight:700;margin-bottom:5px}
 /* ── SKELETON ── */
 @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
 .sk{background:linear-gradient(90deg,var(--cream) 25%,var(--cream2) 50%,var(--cream) 75%);background-size:200% 100%;animation:shimmer 1.6s infinite;border-radius:6px}
@@ -904,10 +964,14 @@ button:focus-visible,.ni:focus-visible,.habit-chip:focus-visible,.plant-card:foc
 .com-prod-bar{height:4px;background:var(--cream2);border-radius:2px;margin-top:6px;overflow:hidden}
 .com-prod-bar-fill{height:100%;background:linear-gradient(90deg,var(--v400),var(--sage-500));border-radius:2px;transition:width .9s var(--ease)}
 /* Foro composer */
-.foro-composer{display:flex;align-items:center;gap:12px;padding:14px 20px;background:var(--white);cursor:pointer;transition:background .12s;border-bottom:1px solid var(--cream)}
-.foro-composer:active{background:var(--sage-50)}
-.foro-composer-input{flex:1;font-size:14px;color:var(--txth);background:var(--sage-50);border-radius:var(--rpill);padding:9px 16px;border:1px solid var(--cream);pointer-events:none}
-.foro-composer-btn{background:var(--v500);color:#fff;border:none;border-radius:var(--rpill);padding:9px 16px;font-size:13px;font-weight:700;cursor:pointer;font-family:var(--fb);white-space:nowrap;flex-shrink:0;transition:all .15s}
+/* ── FORO QUORA STYLE ── */
+.foro-composer{background:var(--white);border-bottom:1px solid var(--cream);padding:14px 16px}
+.foro-composer-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.foro-composer-input{flex:1;font-size:14px;color:var(--txth);background:var(--warm);border-radius:var(--rpill);padding:10px 16px;border:1.5px solid var(--cream);pointer-events:none;cursor:pointer;transition:border-color .15s}
+.foro-composer-actions{display:flex;gap:6px}
+.foro-composer-action{display:flex;align-items:center;gap:5px;font-size:12px;font-weight:600;color:var(--txth);background:none;border:1.5px solid var(--cream);border-radius:var(--rpill);padding:7px 12px;cursor:pointer;font-family:var(--fb);transition:all .15s;white-space:nowrap}
+.foro-composer-action:active{background:var(--warm)}
+.foro-composer-btn{background:var(--v500);color:#fff;border:none;border-radius:var(--rpill);padding:9px 18px;font-size:13px;font-weight:700;cursor:pointer;font-family:var(--fb);white-space:nowrap;flex-shrink:0;transition:all .15s}
 .foro-composer-btn:active{background:var(--v600);transform:scale(.96)}
 /* Foro filtros */
 .foro-cat{padding:6px 14px;border-radius:var(--rpill);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;background:var(--white);color:var(--txth);border:1.5px solid var(--cream);white-space:nowrap;font-family:var(--fb)}
@@ -1357,7 +1421,7 @@ button:focus-visible,.ni:focus-visible,.habit-chip:focus-visible,.plant-card:foc
   overflow:hidden;
 }
 .checkout-overlay.show{transform:translateY(0)}
-.co-screen{display:none;flex-direction:column;height:100%}
+.co-screen{display:none;flex-direction:column;height:100%;position:relative;overflow:hidden}
 .co-screen.active{display:flex}
 .co-header{
   display:flex;align-items:center;gap:12px;
@@ -2079,7 +2143,7 @@ self.addEventListener('fetch',e=>{
         <div id="taskSection" class="tasks-section">
           <div class="sec-hdr" style="margin-top:4px">
             <span class="sec-title">Cuidados de hoy</span>
-            <span class="sec-link" onclick="toast('📋 Historial próximamente')">Ver historial</span>
+            <span class="sec-link" onclick="goTo('sMisCompras')">Ver historial</span>
           </div>
           <div class="task-strip" id="taskStrip"></div>
         </div>
@@ -2143,8 +2207,8 @@ self.addEventListener('fetch',e=>{
             <div class="health-bar-wrap">
               <div style="display:flex;justify-content:space-between;align-items:center">
                 <div>
-                  <div style="font-size:12px;font-weight:700;color:var(--txth);text-transform:uppercase;letter-spacing:.05em">Monstera deliciosa</div>
-                  <div style="font-size:24px;font-weight:800;font-family:var(--ff);color:var(--warn);margin-top:2px">Salud: 62%</div>
+                  <div id="diagPlantName" style="font-size:12px;font-weight:700;color:var(--txth);text-transform:uppercase;letter-spacing:.05em">Monstera deliciosa</div>
+                  <div id="diagPlantDesc" style="font-size:24px;font-weight:800;font-family:var(--ff);color:var(--warn);margin-top:2px">Salud: 62%</div>
                 </div>
                 <div style="font-size:36px">🌿</div>
               </div>
@@ -2301,48 +2365,68 @@ self.addEventListener('fetch',e=>{
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--v500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
               Lo más comprado esta semana
             </div>
-            <div id="comunidadProductos" style="display:flex;flex-direction:column;gap:8px"></div>
+            <div id="comunidadProductos" style="display:flex;flex-direction:column;gap:10px"></div>
+          </div>
+
+          <!-- Jardineras top de la comunidad -->
+          <div style="padding:18px 20px 24px">
+            <div class="com-section-hdr">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--sage-600)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>
+              Top jardineras de la comunidad
+            </div>
+            <div style="background:var(--white);border-radius:var(--r);border:1px solid var(--cream);padding:4px 14px" id="comunidadMiembros"></div>
           </div>
         </div>
 
         <!-- PANEL FORO estilo Twitter -->
-        <div id="comPanelForo" style="display:none;padding-bottom:20px">
+        <div id="comPanelForo" style="display:none;padding-bottom:60px;background:var(--warm)">
 
-          <!-- COMPOSER: nueva publicación fijo arriba -->
-          <div class="foro-composer" onclick="openNuevoPost()">
-            <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--v300),var(--sage-400));display:flex;align-items:center;justify-content:center;font-size:15px;color:#fff;font-weight:700;flex-shrink:0">L</div>
-            <div class="foro-composer-input">¿Qué tienes en mente sobre tus plantas?</div>
-            <button class="foro-composer-btn" onclick="event.stopPropagation();openNuevoPost()">Publicar</button>
-          </div>
-          <!-- [V16] Quick-photo shortcuts (Fogg: mínima fricción para primer post) -->
-          <div style="display:flex;gap:8px;padding:10px 20px;background:var(--sage-50);border-bottom:1px solid var(--cream);overflow-x:auto;scrollbar-width:none">
-            <button onclick="openQuickPost('progreso')" style="display:flex;align-items:center;gap:5px;background:var(--white);border:1.5px solid var(--cream);border-radius:var(--rpill);padding:7px 12px;font-size:12px;font-weight:700;color:var(--sage-700);cursor:pointer;white-space:nowrap;flex-shrink:0;font-family:var(--fb)">📷 Foto de progreso</button>
-            <button onclick="openQuickPost('plagas')" style="display:flex;align-items:center;gap:5px;background:var(--white);border:1.5px solid var(--cream);border-radius:var(--rpill);padding:7px 12px;font-size:12px;font-weight:700;color:var(--err);cursor:pointer;white-space:nowrap;flex-shrink:0;font-family:var(--fb)">🐛 ¿Qué le pasa?</button>
-            <button onclick="openQuickPost('logros')" style="display:flex;align-items:center;gap:5px;background:var(--white);border:1.5px solid var(--cream);border-radius:var(--rpill);padding:7px 12px;font-size:12px;font-weight:700;color:var(--warn);cursor:pointer;white-space:nowrap;flex-shrink:0;font-family:var(--fb)">🏆 Compartir logro</button>
+          <!-- COMPOSER QUORA PLANTS -->
+          <div class="foro-composer">
+            <div class="foro-composer-row" onclick="openNuevoPost()">
+              <div id="foroComposerAv" style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--v300),var(--sage-400));display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff;font-weight:700;flex-shrink:0">L</div>
+              <div class="foro-composer-input">¿Qué quieres compartir sobre tus plantas?</div>
+              <button class="foro-composer-btn" onclick="event.stopPropagation();openNuevoPost()">Publicar</button>
+            </div>
+            <div class="foro-composer-actions">
+              <button class="foro-composer-action" onclick="openQuickPost('preguntas')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                Pregunta
+              </button>
+              <button class="foro-composer-action" onclick="openQuickPost('progreso')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                Foto
+              </button>
+              <button class="foro-composer-action" onclick="openQuickPost('logros')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                Logro
+              </button>
+            </div>
           </div>
 
-          <!-- Filtros de categoría -->
-          <div style="display:flex;gap:7px;padding:12px 20px 8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch">
-            <button class="foro-cat act" id="fcat-todas" onclick="filterForo('todas',this)">Todas</button>
-            <button class="foro-cat" id="fcat-progreso" onclick="filterForo('progreso',this)">🌱 Progreso</button>
-            <button class="foro-cat" id="fcat-cuidados" onclick="filterForo('cuidados',this)">🌿 Cuidados</button>
-            <button class="foro-cat" id="fcat-recomendacion" onclick="filterForo('recomendacion',this)">⭐ Recom. app</button>
-            <button class="foro-cat" id="fcat-plagas" onclick="filterForo('plagas',this)">🐛 Plagas</button>
-            <button class="foro-cat" id="fcat-identificar" onclick="filterForo('identificar',this)">🔍 Identificar</button>
-            <button class="foro-cat" id="fcat-logros" onclick="filterForo('logros',this)">🏆 Logros</button>
-            <button class="foro-cat" id="fcat-preguntas" onclick="filterForo('preguntas',this)">❓ Preguntas</button>
+          <!-- TABS QUORA underline style -->
+          <div style="background:var(--white);border-bottom:1.5px solid var(--cream);position:sticky;top:0;z-index:10">
+            <div style="display:flex;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:0 4px">
+              <button class="foro-cat act" id="fcat-todas" onclick="filterForo('todas',this)">Para ti</button>
+              <button class="foro-cat" id="fcat-preguntas" onclick="filterForo('preguntas',this)">Preguntas</button>
+              <button class="foro-cat" id="fcat-cuidados" onclick="filterForo('cuidados',this)">Cuidados</button>
+              <button class="foro-cat" id="fcat-progreso" onclick="filterForo('progreso',this)">Progreso</button>
+              <button class="foro-cat" id="fcat-plagas" onclick="filterForo('plagas',this)">Plagas</button>
+              <button class="foro-cat" id="fcat-identificar" onclick="filterForo('identificar',this)">Identificar</button>
+              <button class="foro-cat" id="fcat-logros" onclick="filterForo('logros',this)">Logros</button>
+              <button class="foro-cat" id="fcat-recomendacion" onclick="filterForo('recomendacion',this)">Recom.</button>
+            </div>
           </div>
-          <div style="height:1px;background:var(--cream)"></div>
 
-          <!-- Lista de posts -->
-          <div id="foroPostList"></div>
+          <!-- FEED -->
+          <div id="foroPostList" style="background:var(--white)"></div>
         </div>
       </div>
 
       <!-- SCREEN: DETALLE DE POST -->
       <div class="screen" id="sForoPost" style="background:var(--warm)">
         <div style="position:sticky;top:0;z-index:50;background:var(--warm);padding:calc(env(safe-area-inset-top,0px)+14px) 20px 10px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--cream)">
-          <button onclick="goBack()" style="background:none;border:none;cursor:pointer;padding:4px;color:var(--txt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <button onclick="smartBack('sForoPost')" style="background:none;border:none;cursor:pointer;padding:4px;color:var(--txt)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
           <span style="flex:1;font-size:15px;font-weight:700;color:var(--txt)" id="postDetailCat"></span>
         </div>
         <div id="postDetailContent" style="padding-bottom:80px"></div>
@@ -2481,7 +2565,7 @@ self.addEventListener('fetch',e=>{
       <!-- PLANTA DETALLE (biblioteca) -->
       <div class="screen" id="sPlantDetail">
         <div class="plant-detail-hero">
-          <button onclick="goBack()" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:6px;color:var(--txth);margin-bottom:16px;margin-top:8px">
+          <button onclick="smartBack('sPlantDetail')" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:6px;color:var(--txth);margin-bottom:16px;margin-top:8px">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
             <span style="font-size:14px;font-weight:600">Biblioteca</span>
           </button>
@@ -2590,11 +2674,12 @@ self.addEventListener('fetch',e=>{
 
       <!-- PROFILE (individual plant) -->
       <div class="screen" id="sProfile">
-        <div class="profile-hero">
-          <button onclick="goBack()" style="background:none;border:none;cursor:pointer;padding:0;margin-bottom:16px;display:flex;align-items:center;gap:6px;color:var(--txth)">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-            <span style="font-size:14px;font-weight:600">Mis plantas</span>
-          </button>
+        <!-- Header sticky con botón regresar -->
+        <div style="position:sticky;top:0;z-index:50;background:var(--warm);padding:calc(env(safe-area-inset-top,0px)+18px) 20px 12px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--cream)">
+          <button onclick="smartBack('sProfile')" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;padding:4px;margin-left:-4px;color:var(--txt);flex-shrink:0" onmousedown="this.style.opacity='.5'" onmouseup="this.style.opacity='1'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <span id="profileHeaderName" style="flex:1;font-family:var(--ff);font-size:18px;font-weight:700;color:var(--txt)">Mi planta</span>
+        </div>
+        <div class="profile-hero" style="padding-top:20px">
           <div class="profile-plant-img" id="profilePlantImg"></div>
           <h2 class="h2" id="profileName" style="text-align:center"></h2>
           <div style="text-align:center;font-size:12px;font-style:italic;color:var(--txth);margin-top:4px" id="profileSci"></div>
@@ -2859,12 +2944,13 @@ self.addEventListener('fetch',e=>{
 
       <!-- MIS RECORDATORIOS -->
       <div class="screen" id="sNotifs">
-        <!-- Header con back button + botón crear recordatorio -->
+        <!-- Header con back button + botón Registrar cuidado -->
         <div style="position:sticky;top:0;z-index:50;background:var(--warm);padding:calc(env(safe-area-inset-top,0px) + 18px) 20px 12px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--cream)">
-          <button onclick="goBack()" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;padding:4px;margin-left:-4px;color:var(--txt);flex-shrink:0" onmousedown="this.style.opacity='.5'" onmouseup="this.style.opacity='1'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <button onclick="closeNotifs()" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;padding:4px;margin-left:-4px;color:var(--txt);flex-shrink:0" onmousedown="this.style.opacity='.5'" onmouseup="this.style.opacity='1'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
           <span style="flex:1;font-family:var(--ff);font-size:18px;font-weight:700;color:var(--txt)">Notificaciones</span>
-          <button onclick="openRegistrarCuidado()" style="background:var(--v500);border:none;cursor:pointer;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(112,48,184,.35);transition:opacity .15s" onmousedown="this.style.opacity='.7'" onmouseup="this.style.opacity='1'" title="Crear recordatorio de cuidado" aria-label="Crear recordatorio de cuidado">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <button onclick="openRegistrarCuidado()" aria-label="Registrar cuidado" style="background:var(--v500);border:none;cursor:pointer;height:34px;padding:0 14px;border-radius:100px;display:flex;align-items:center;gap:6px;flex-shrink:0;box-shadow:0 2px 8px rgba(112,48,184,.35);transition:opacity .15s" onmousedown="this.style.opacity='.7'" onmouseup="this.style.opacity='1'">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            <span style="font-size:13px;font-weight:600;color:white;white-space:nowrap">Registrar cuidado</span>
           </button>
         </div>
         <!-- Alertas activas -->
@@ -2886,9 +2972,10 @@ self.addEventListener('fetch',e=>{
 
       <!-- MIS COMPRAS -->
       <div class="screen" id="sMisCompras">
-        <!-- Header con back button -->
+        <!-- Header -->
         <div style="position:sticky;top:0;z-index:50;background:var(--warm);padding:calc(env(safe-area-inset-top,0px) + 18px) 20px 12px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--cream)">
-          <button onclick="goBack()" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;padding:4px;margin-left:-4px;color:var(--txt);flex-shrink:0" onmousedown="this.style.opacity='.5'" onmouseup="this.style.opacity='1'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <button onclick="smartBack('sMisCompras')" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;padding:4px;margin-left:-4px;color:var(--txt);flex-shrink:0" onmousedown="this.style.opacity='.5'" onmouseup="this.style.opacity='1'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <span style="flex:1;font-family:var(--ff);font-size:18px;font-weight:700;color:var(--txt)">Mis compras</span>
         </div>
         <!-- Resumen rápido dinámico -->
         <div style="display:flex;gap:0;margin:16px 20px 0;border-radius:var(--r);overflow:hidden;border:1px solid var(--cream)" id="ordersStatsRow">
@@ -2925,10 +3012,8 @@ self.addEventListener('fetch',e=>{
       <!-- CITA CON EXPERTO -->
       <div class="screen" id="sCita">
         <!-- Header fijo -->
-        <div style="position:sticky;top:0;z-index:50;background:var(--warm);padding:28px 20px 12px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--cream)">
-          <button onclick="citaBack()" style="background:var(--cream);border:none;border-radius:50%;width:36px;height:36px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-          </button>
+        <div style="position:sticky;top:0;z-index:50;background:var(--warm);padding:calc(env(safe-area-inset-top,0px)+18px) 20px 12px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--cream)">
+          <button onclick="citaBack()" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;padding:4px;margin-left:-4px;color:var(--txt);flex-shrink:0" onmousedown="this.style.opacity='.5'" onmouseup="this.style.opacity='1'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
           <div style="flex:1">
             <div style="font-family:var(--ff);font-size:18px;font-weight:700;color:var(--txt)" id="citaTitle">Consultar con experto</div>
             <div style="font-size:11px;color:var(--txth)" id="citaStepLabel">Paso 1 de 5</div>
@@ -3179,7 +3264,8 @@ self.addEventListener('fetch',e=>{
       <!-- CONFIGURACIÓN -->
       <div class="screen" id="sConfig">
         <div style="position:sticky;top:0;z-index:50;background:var(--warm);padding:calc(env(safe-area-inset-top,0px) + 18px) 20px 12px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--cream)">
-          <button onclick="goBack()" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;padding:4px;margin-left:-4px;color:var(--txt);flex-shrink:0" onmousedown="this.style.opacity='.5'" onmouseup="this.style.opacity='1'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <button onclick="smartBack('sConfig')" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;padding:4px;margin-left:-4px;color:var(--txt);flex-shrink:0" onmousedown="this.style.opacity='.5'" onmouseup="this.style.opacity='1'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <span style="flex:1;font-family:var(--ff);font-size:18px;font-weight:700;color:var(--txt)">Configuración</span>
         </div>
         <!-- Ciudad -->
         <div style="padding:18px 20px 8px;font-size:11px;font-weight:800;color:var(--txth);text-transform:uppercase;letter-spacing:.07em">Tu ubicación</div>
@@ -3226,7 +3312,8 @@ self.addEventListener('fetch',e=>{
       <!-- ACERCA DE VIOLETA -->
       <div class="screen" id="sAcerca">
         <div style="position:sticky;top:0;z-index:50;background:var(--warm);padding:calc(env(safe-area-inset-top,0px) + 18px) 20px 12px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--cream)">
-          <button onclick="goBack()" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;padding:4px;margin-left:-4px;color:var(--txt);flex-shrink:0" onmousedown="this.style.opacity='.5'" onmouseup="this.style.opacity='1'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <button onclick="smartBack('sAcerca')" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;padding:4px;margin-left:-4px;color:var(--txt);flex-shrink:0" onmousedown="this.style.opacity='.5'" onmouseup="this.style.opacity='1'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <span style="flex:1;font-family:var(--ff);font-size:18px;font-weight:700;color:var(--txt)">Acerca de Violeta</span>
         </div>
         <div style="text-align:center;padding:40px 24px 24px">
           <div style="width:80px;height:80px;border-radius:24px;background:linear-gradient(135deg,var(--v400),var(--sage-500));margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:38px;box-shadow:var(--sh-md)">🌿</div>
@@ -3268,7 +3355,8 @@ self.addEventListener('fetch',e=>{
       <div class="screen" id="sOrder">
         <!-- Header -->
         <div style="position:sticky;top:0;z-index:50;background:var(--warm);padding:calc(env(safe-area-inset-top,0px)+16px) 20px 12px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--cream)">
-          <button onclick="goBack()" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;padding:4px;margin-left:-4px;color:var(--txt);flex-shrink:0" onmousedown="this.style.opacity='.5'" onmouseup="this.style.opacity='1'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <button onclick="smartBack('sOrder')" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;padding:4px;margin-left:-4px;color:var(--txt);flex-shrink:0" onmousedown="this.style.opacity='.5'" onmouseup="this.style.opacity='1'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <span style="flex:1;font-family:var(--ff);font-size:18px;font-weight:700;color:var(--txt)">Mi pedido</span>
         </div>
 
         <!-- Hero — Celebration -->
@@ -3382,7 +3470,7 @@ self.addEventListener('fetch',e=>{
 
       <!-- sNiveles — Garrett 5 Planes -->
       <div class="screen" id="sNiveles">
-        <div style="position:sticky;top:0;z-index:50;background:var(--warm);padding:calc(env(safe-area-inset-top,0px)+16px) 20px 12px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--cream)"><button onclick="goBack()" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;padding:4px;margin-left:-4px;color:var(--txt);flex-shrink:0" onmousedown="this.style.opacity='.5'" onmouseup="this.style.opacity='1'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button><h2 class="h2" style="flex:1">Niveles y recompensas</h2></div>
+        <div style="position:sticky;top:0;z-index:50;background:var(--warm);padding:calc(env(safe-area-inset-top,0px)+16px) 20px 12px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--cream)"><button onclick="smartBack('sNiveles')" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;padding:4px;margin-left:-4px;color:var(--txt);flex-shrink:0" onmousedown="this.style.opacity='.5'" onmouseup="this.style.opacity='1'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button><h2 class="h2" style="flex:1">Niveles y recompensas</h2></div>
 
         <!-- Hero: nivel actual -->
         <div style="background:linear-gradient(145deg,var(--v500),var(--v700));padding:24px 20px 28px">
@@ -3516,7 +3604,7 @@ self.addEventListener('fetch',e=>{
 
       <!-- sEditProfile -->
       <div class="screen" id="sEditProfile">
-        <div style="position:sticky;top:0;z-index:50;background:var(--warm);padding:calc(env(safe-area-inset-top,0px)+16px) 20px 12px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--cream)"><button onclick="goBack()" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;padding:4px;margin-left:-4px;color:var(--txt);flex-shrink:0" onmousedown="this.style.opacity='.5'" onmouseup="this.style.opacity='1'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button><h2 class="h2" style="flex:1">Editar perfil</h2><button onclick="saveProfile()" style="background:var(--v500);border:none;border-radius:var(--rpill);padding:7px 12px;color:#fff;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap">Guardar</button></div>
+        <div style="position:sticky;top:0;z-index:50;background:var(--warm);padding:calc(env(safe-area-inset-top,0px)+16px) 20px 12px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--cream)"><button onclick="smartBack('sEditProfile')" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;padding:4px;margin-left:-4px;color:var(--txt);flex-shrink:0" onmousedown="this.style.opacity='.5'" onmouseup="this.style.opacity='1'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button><h2 class="h2" style="flex:1">Editar perfil</h2><button onclick="saveProfile()" style="background:var(--v500);border:none;border-radius:var(--rpill);padding:7px 12px;color:#fff;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap">Guardar</button></div>
 
         <!-- Avatar -->
         <div style="padding:28px 20px 10px;display:flex;flex-direction:column;align-items:center;gap:12px">
@@ -3578,7 +3666,7 @@ self.addEventListener('fetch',e=>{
 
       <!-- sCityPicker -->
       <div class="screen" id="sCityPicker">
-        <div style="position:sticky;top:0;z-index:50;background:var(--warm);padding:calc(env(safe-area-inset-top,0px)+16px) 20px 12px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--cream)"><button onclick="goBack()" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;padding:4px;margin-left:-4px;color:var(--txt);flex-shrink:0" onmousedown="this.style.opacity='.5'" onmouseup="this.style.opacity='1'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button><h2 class="h2" style="flex:1">Elegir ciudad</h2></div>
+        <div style="position:sticky;top:0;z-index:50;background:var(--warm);padding:calc(env(safe-area-inset-top,0px)+16px) 20px 12px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--cream)"><button onclick="smartBack('sCityPicker')" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;padding:4px;margin-left:-4px;color:var(--txt);flex-shrink:0" onmousedown="this.style.opacity='.5'" onmouseup="this.style.opacity='1'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button><h2 class="h2" style="flex:1">Elegir ciudad</h2></div>
         <div style="padding:14px 20px 8px">
           <p style="font-size:13px;color:var(--txth)">Las guías y recordatorios se ajustan al clima de tu ciudad.</p>
         </div>
@@ -3589,7 +3677,7 @@ self.addEventListener('fetch',e=>{
 
       <!-- sAddressEdit -->
       <div class="screen" id="sAddressEdit">
-        <div style="position:sticky;top:0;z-index:50;background:var(--warm);padding:calc(env(safe-area-inset-top,0px)+16px) 20px 12px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--cream)"><button onclick="goBack()" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;padding:4px;margin-left:-4px;color:var(--txt);flex-shrink:0" onmousedown="this.style.opacity='.5'" onmouseup="this.style.opacity='1'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button><h2 class="h2" style="flex:1">Dirección de entrega</h2><button onclick="saveAddress()" style="background:var(--v500);border:none;border-radius:var(--rpill);padding:7px 12px;color:#fff;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap">Guardar</button></div>
+        <div style="position:sticky;top:0;z-index:50;background:var(--warm);padding:calc(env(safe-area-inset-top,0px)+16px) 20px 12px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--cream)"><button onclick="smartBack('sAddressEdit')" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;padding:4px;margin-left:-4px;color:var(--txt);flex-shrink:0" onmousedown="this.style.opacity='.5'" onmouseup="this.style.opacity='1'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button><h2 class="h2" style="flex:1">Dirección de entrega</h2><button onclick="saveAddress()" style="background:var(--v500);border:none;border-radius:var(--rpill);padding:7px 12px;color:#fff;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap">Guardar</button></div>
 
         <div style="padding:16px 20px 8px">
           <p style="font-size:13px;color:var(--txth)">Esta dirección se usa como predeterminada al comprar en la Tienda.</p>
@@ -3626,7 +3714,7 @@ self.addEventListener('fetch',e=>{
       <div class="screen" id="sArticle">
         <!-- Sticky header -->
         <div style="position:sticky;top:0;z-index:50;background:var(--warm);padding:calc(env(safe-area-inset-top,0px)+14px) 20px 10px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--cream)">
-          <button onclick="goBack()" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;padding:4px;margin-left:-4px;color:var(--txt);flex-shrink:0" onmousedown="this.style.opacity='.5'" onmouseup="this.style.opacity='1'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <button onclick="smartBack('sArticle')" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;padding:4px;margin-left:-4px;color:var(--txt);flex-shrink:0" onmousedown="this.style.opacity='.5'" onmouseup="this.style.opacity='1'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
           <div id="articleHeaderTitle" style="flex:1;font-size:13px;font-weight:700;color:var(--txt);white-space:nowrap;overflow:hidden;text-overflow:ellipsis"></div>
         </div>
 
@@ -4262,15 +4350,15 @@ self.addEventListener('fetch',e=>{
       </div>
       <!-- Summary detail -->
       <div style="margin:0 20px 20px;background:var(--white);border-radius:var(--r);border:1px solid var(--cream);padding:4px 16px" id="rcSummaryDetail"></div>
-      <!-- Two CTAs -->
+      <!-- Two CTAs — Compromiso arriba, Jardín abajo -->
       <div style="padding:0 20px 32px;display:flex;flex-direction:column;gap:10px">
-        <button class="btn btn-primary btn-full" onclick="rcGoToJardin()">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          Ver mi jardín
-        </button>
-        <button class="btn btn-secondary btn-full" onclick="rcCrearCompromiso()">
+        <button id="btnCrearCompromiso" class="btn btn-primary btn-full" onclick="rcCrearCompromiso()">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           Crear mi compromiso
+        </button>
+        <button id="btnVerJardin" class="btn btn-secondary btn-full" onclick="rcGoToJardin()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Ver mi jardín
         </button>
       </div>
     </div>
@@ -4278,6 +4366,11 @@ self.addEventListener('fetch',e=>{
 
   <!-- SCREEN: VIOLETA TE RECOMIENDA (after adding plant) -->
   <div class="screen" id="sVioletaRec" style="background:var(--warm)">
+    <!-- Header -->
+    <div style="position:sticky;top:0;z-index:50;background:var(--warm);padding:calc(env(safe-area-inset-top,0px)+18px) 20px 12px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--cream)">
+      <button onclick="smartBack('sVioletaRec')" style="background:none;border:none;cursor:pointer;display:flex;align-items:center;padding:4px;margin-left:-4px;color:var(--txt);flex-shrink:0" onmousedown="this.style.opacity='.5'" onmouseup="this.style.opacity='1'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <span style="flex:1;font-family:var(--ff);font-size:18px;font-weight:700;color:var(--txt)">Recomendaciones</span>
+    </div>
     <!-- Hero celebration -->
     <div class="vrec-hero">
       <div class="vrec-hero-ico">🌿</div>
@@ -4589,7 +4682,7 @@ function getIllu(id){return PLANTS_SVG[id]||PLANTS_SVG.default}
 /* ════════════════════════════════════════
    NAVIGATION
 ════════════════════════════════════════ */
-const TAB_MAP={home:'sHome',comunidad:'sComunidad',store:'sStore',lib:'sLib',user:'sUser'};
+const TAB_MAP={home:'sHome',comunidad:'sComunidad',diag:'sDiag',store:'sStore',lib:'sLib',user:'sUser'};
 const ROOT_SCREENS=new Set(['sHome','sComunidad','sStore','sLib','sUser']);
 
 function goTo(id){
@@ -4604,26 +4697,41 @@ function goTo(id){
   updateNav();
 }
 function goBack(){
-  if(S.histStack.length<=1) return; // already at root, nowhere to go
+  if(S.histStack.length<=1){
+    // Sin historial: ir a home de forma segura
+    goToTab('home');
+    return;
+  }
   S.histStack.pop();
   const prevId=S.histStack[S.histStack.length-1]||'sHome';
 
-  // Remove active from current screen (slides back to translateX(100%))
+  // Si el destino es una root screen, usar goToTab (más robusto)
+  const tabByScreen={sHome:'home',sComunidad:'comunidad',sDiag:'diag',
+                     sStore:'store',sLib:'lib',sUser:'user'};
+  if(tabByScreen[prevId]){
+    // Ocultar la pantalla actual primero
+    const cur=document.querySelector('#screens .screen.active');
+    if(cur) cur.classList.remove('active','behind');
+    goToTab(tabByScreen[prevId]);
+    return;
+  }
+
+  // Pantalla secundaria: animación iOS-style
   const cur=document.querySelector('#screens .screen.active');
   if(cur) cur.classList.remove('active','behind');
 
-  // Clear all stale behind classes
   document.querySelectorAll('#screens .screen.behind').forEach(s=>s.classList.remove('behind'));
 
   const prev=document.getElementById(prevId);
   if(prev){
-    // Snap prev to -22% without animation, then animate to 0%
-    // This gives the correct iOS-style pop regardless of stack depth
+    // Desactivar transición, poner en -22%, forzar reflow,
+    // luego activar transición y animar a 0% con active
     prev.style.transition='none';
-    prev.classList.add('behind');       // instant: translateX(-22%)
-    prev.offsetHeight;                  // force reflow
-    prev.style.transition='';          // re-enable transition
-    prev.classList.remove('behind');    // animated: translateX(-22%) → 0%
+    prev.classList.add('behind');
+    prev.offsetHeight;                     // fuerza reflow
+    prev.style.transition='';
+    // Aplicar ambas clases juntas para que la transición vaya -22% → 0%
+    prev.classList.remove('behind');
     prev.classList.add('active');
   }
   updateNav();
@@ -4639,6 +4747,7 @@ function goToTab(tab){
   if(tab==='store') renderProds(S.profCat);
   if(tab==='home') renderHome();
   if(tab==='lib'){renderLib();}
+  if(tab==='diag'){/* sDiag es root screen, sin renderizado extra necesario */}
   if(tab==='user'){setTimeout(renderWeeklySummary,50);}
   if(tab==='comunidad'){setTimeout(renderComunidad,50);}
 }
@@ -4651,7 +4760,7 @@ function updateNav(){
   document.querySelectorAll('.ni[id^="ni-"]').forEach(n=>{
     n.classList.remove('act');
   });
-  const map={sHome:'ni-home',sComunidad:'ni-comunidad',sStore:'ni-store',sLib:'ni-lib',sUser:'ni-user'};
+  const map={sHome:'ni-home',sComunidad:'ni-comunidad',sDiag:'ni-diag',sStore:'ni-store',sLib:'ni-lib',sUser:'ni-user'};
   if(map[id]){const el=document.getElementById(map[id]);if(el)el.classList.add('act');}
 }
 
@@ -5106,7 +5215,7 @@ function renderPlantGrid(){
   const badgeBg={ok:'var(--ok-bg)',warn:'var(--warn-bg)',err:'var(--err-bg)'};
   const badgeColor={ok:'var(--ok)',warn:'var(--warn)',err:'var(--err)'};
   grid.innerHTML=S.plants.map((p,i)=>`
-    <div class="plant-card" onclick="openProfile(${p.id})" style="animation-delay:${i*.07}s">
+    <div class="plant-card" id="plant-card-${p.id}" onclick="openProfile(${p.id})" style="animation-delay:${i*.07}s">
       <div class="pc-img" style="background:${p.bg}">
         ${getIllu(p.id)}
         <div class="pc-dot ${statusDot[p.status]||'ok'}"></div>
@@ -5141,6 +5250,8 @@ function openProfile(id){
     }
   }
   document.getElementById('profileName').textContent=p.name;
+  const phdr=document.getElementById('profileHeaderName');
+  if(phdr) phdr.textContent=p.name;
   document.getElementById('profileSci').textContent=p.sci;
   const img=document.getElementById('profilePlantImg');
   img.innerHTML=getIllu(p.id);
@@ -5557,25 +5668,34 @@ function coConfirmPay(){
     btn.disabled=true;
   }
 
-  // Phase 1 (0-0.6s): populate the receipt silently, switch to coStep3 with processing overlay
+  // Paso 1 (500ms): construir el recibo silenciosamente y cambiar a coStep3
   setTimeout(()=>{
-    // Build receipt data + switch to step3 (coShowConfirm is called by coGoStep)
     coGoStep(3);
-    // Show processing overlay on top of the receipt
-    const proc=document.getElementById('coStep3Processing');
-    if(proc){proc.style.display='flex';proc.style.opacity='1';}
-  },600);
 
-  // Phase 2 (2.2s): fade out overlay → reveal receipt
-  setTimeout(()=>{
+    // Mostrar overlay de procesamiento encima del recibo
     const proc=document.getElementById('coStep3Processing');
     if(proc){
-      proc.style.opacity='0';
-      setTimeout(()=>{proc.style.display='none';},420);
+      proc.style.opacity='1';
+      proc.style.display='flex';
     }
-    earnXP(30);
-    setTimeout(()=>toast('🎉 ¡Pago exitoso! Tu pedido ya está en camino 🌿'),200);
-  },2200);
+
+    // Paso 2 (1800ms después): ocultar overlay con clase CSS para transición limpia
+    setTimeout(()=>{
+      const p=document.getElementById('coStep3Processing');
+      if(!p) return;
+      // Transición de opacidad
+      p.style.opacity='0';
+      // Ocultar completamente después de la transición (420ms)
+      setTimeout(()=>{
+        if(p) p.style.display='none';
+        // Limpiar carrito y dar XP
+        earnXP(30);
+        saveState();
+        setTimeout(()=>toast('🎉 ¡Pago exitoso! Tu pedido está en camino 🌿'),100);
+      }, 450);
+    }, 1800);
+
+  }, 500);
 }
 
 function coShowConfirm(){
@@ -6116,7 +6236,7 @@ function saveAddress(){
   const full=street+(unit?' '+unit:'')+(neigh?', '+neigh:'');
   S.userAddress=full+', '+S.userCity;
   // Update config label
-  const al=document.getElementById('configAddrLabel');if(al)al.textContent=street+(unit?' '+unit:'');
+  const al=document.getElementById('configCityLabel');if(al)al.textContent=street+(unit?' '+unit:'');
   goBack();
   toast('📍 Dirección guardada');
 }
@@ -7408,6 +7528,14 @@ const RC={
 
 function openRegistrarCuidado(){
   RC.step=0; RC.plants=[]; RC.cares=[]; RC.freqIdx=0;
+  // Resetear botón compromiso por si se volvió gris
+  setTimeout(()=>{
+    const b=document.getElementById('btnCrearCompromiso');
+    if(b){
+      b.classList.remove('btn-compromiso-done');
+      b.innerHTML=`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Crear mi compromiso`;
+    }
+  },50);
   // Reset all selections
   document.querySelectorAll('.rc-plant-opt').forEach(el=>el.classList.remove('sel'));
   document.querySelectorAll('.care-type-opt').forEach(el=>el.classList.remove('sel'));
@@ -7571,11 +7699,44 @@ function rcConfirm(){
 }
 
 function rcGoToJardin(){
-  goToTab('home');
+  const pid=RC.plants[0];
+
+  // 1. Cerrar sRegistrarCuidado (está fuera de #screens, hay que quitarlo manualmente)
+  const rc=document.getElementById('sRegistrarCuidado');
+  if(rc) rc.classList.remove('active','behind');
+
+  // 2. Limpiar histStack y mostrar sHome dentro de #screens
+  document.querySelectorAll('#screens .screen').forEach(s=>s.classList.remove('active','behind'));
+  const home=document.getElementById('sHome');
+  if(home){home.classList.add('active');home.scrollTop=0;}
+  S.histStack=['sHome'];
+
+  // 3. Forzar que la barra de navegación sea visible
+  const bNav=document.getElementById('bNav');
+  if(bNav) bNav.classList.remove('hidden');
+
+  // 4. Marcar tab Inicio como activo en la nav
+  document.querySelectorAll('.ni[id^="ni-"]').forEach(n=>n.classList.remove('act'));
+  const niHome=document.getElementById('ni-home');
+  if(niHome) niHome.classList.add('act');
+
+  // 5. Re-renderizar home con los datos actualizados
+  renderHome();
+
+  // 6. Highlight de la planta elegida en el compromiso
+  setTimeout(()=>{
+    if(pid){
+      const card=document.getElementById('plant-card-'+pid);
+      if(card){
+        card.scrollIntoView({behavior:'smooth',block:'center'});
+        card.classList.add('rc-highlight');
+        setTimeout(()=>card.classList.remove('rc-highlight'),1600);
+      }
+    }
+  }, 380);
 }
 
 function rcCrearCompromiso(){
-  // Add commit nudge based on first selected plant + first care type
   const pid=RC.plants[0];
   const care=RC.cares[0];
   const plant=S.plants.find(p=>p.id===pid);
@@ -7591,12 +7752,16 @@ function rcCrearCompromiso(){
     _commitIdx=0;
     _commitDone=[false,false,false];
   }
+  // ── Volver el botón gris (estado completado, no repetible) ──
+  const btn=document.getElementById('btnCrearCompromiso');
+  if(btn){
+    btn.classList.add('btn-compromiso-done');
+    btn.disabled=true;
+    btn.innerHTML=`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Compromiso creado`;
+  }
   toast('✅ ¡Compromiso creado! Lo verás en tu jardín');
   earnXP(10);
-  setTimeout(()=>{
-    goToTab('home');
-    setTimeout(renderCommitNudge,200);
-  },500);
+  saveState();
 }
 
 /* ════════════════════════════════════════
@@ -7761,24 +7926,112 @@ function completeNotifAction(id,action){
 ════════════════════════════════════════ */
 const COMUNIDAD_DATA={
   topHabits:[
-    {ico:'💧',bg:'#E0F0FF',pct:'91%',label:'Riegan por la mañana, no por la noche',detail:'Reduce hongos y permite mejor absorción'},
-    {ico:'🌱',bg:'#E6F5EE',pct:'78%',label:'Fertilizan una vez por mes',detail:'Abono orgánico líquido es el más usado'},
-    {ico:'🔍',bg:'var(--v50)',pct:'65%',label:'Revisan sus plantas al menos 1×/día',detail:'Detección temprana de plagas y enfermedades'},
+    {ico:'💧',bg:'#E0F0FF',pct:'93%',
+     label:'Riegan temprano en la mañana, antes de las 9am',
+     detail:'Evita hongos nocturnos y mejora absorción hasta un 40% · Bogotá, Medellín, Cali'},
+    {ico:'🌡',bg:'#FFF0E0',pct:'81%',
+     label:'Revisan la humedad del sustrato antes de regar',
+     detail:'Meten el dedo 2 cm · si está húmedo, esperan 2 días más'},
+    {ico:'🌱',bg:'#E6F5EE',pct:'76%',
+     label:'Fertilizan cada 21 días en temporada de crecimiento',
+     detail:'Abono líquido NPK 10-10-10 · dosis media reduce quemaduras'},
+    {ico:'✂️',bg:'#FFF0F4',pct:'69%',
+     label:'Podan hojas secas o amarillas sin esperar',
+     detail:'Libera energía para hojas nuevas · usa tijeras desinfectadas con alcohol'},
+    {ico:'🔍',bg:'var(--v50)',pct:'62%',
+     label:'Inspeccionan el envés de las hojas 1×/semana',
+     detail:'El 80% de las plagas inicia allí · detección temprana lo cambia todo'},
+    {ico:'🪟',bg:'#EAF3DE',pct:'55%',
+     label:'Rotan sus plantas 90° cada semana',
+     detail:'Crecimiento simétrico · especialmente importante en interiores con luz lateral'},
   ],
   tendencias:[
-    {emoji:'🌵',nombre:'Cactus y suculentas',detalle:'Las más cuidadas esta semana · +34%',badge:'Tendencia',badgeCss:'tag-ok'},
-    {emoji:'🌿',nombre:'Monstera deliciosa',detalle:'78% riega 2–3 veces/semana en Bogotá',badge:'Popular',badgeCss:'tag-v'},
-    {emoji:'🌹',nombre:'Rosa miniatura',detalle:'Alta demanda de diagnóstico · oídio activo',badge:'Alerta',badgeCss:'tag-err'},
+    {emoji:'🌿',nombre:'Monstera deliciosa',
+     detalle:'1.2K jardineras la cuidan · riego promedio cada 8 días en Bogotá',
+     badge:'#1 Colombia',badgeCss:'tag-ok'},
+    {emoji:'🪴',nombre:'Pothos & Epipremnum',
+     detalle:'Ideal para apartamentos · tolera poca luz · +67% adopciones este mes',
+     badge:'En alza',badgeCss:'tag-v'},
+    {emoji:'🌵',nombre:'Suculentas y cactus',
+     detalle:'Las más buscadas en Violeta · sustrato especial requerido en clima frío',
+     badge:'Popular',badgeCss:'tag-ok'},
+    {emoji:'🌸',nombre:'Anturio rojo',
+     detalle:'Floración activa en Cali y Barranquilla · humedad >60% indispensable',
+     badge:'Floreciendo',badgeCss:'tag-v'},
+    {emoji:'🍃',nombre:'Ficus lyrata (Lira)',
+     detalle:'Alta demanda de diagnóstico · 34% reporta caída de hojas por cambios de luz',
+     badge:'⚠ Alerta',badgeCss:'tag-err'},
+    {emoji:'🌻',nombre:'Girasol enano',
+     detalle:'Temporada de siembra activa · germinación en 7–10 días con sustrato húmedo',
+     badge:'Temporada',badgeCss:'tag-ok'},
   ],
   alertas:{
-    Bogotá:{ico:'🌧',title:'Alta humedad esta semana en Bogotá',msg:'Reduce el riego de tropicales un 20%. 38 jardineras ya lo ajustaron.',nivel:'warn'},
-    Medellín:{ico:'☀',title:'Semana seca en Medellín',msg:'Aumenta el riego de plantas de interior. Humedad por debajo del 40%.',nivel:'warn'},
-    Cali:{ico:'🌡',title:'Ola de calor en Cali',msg:'Aleja tus plantas del sol directo entre 11am y 3pm.',nivel:'err'},
+    Bogotá:{ico:'🌧',
+      title:'Semana húmeda en Bogotá — riesgo de hongos',
+      msg:'Humedad relativa al 85%. Reduce riego de tropicales 20% y revisa el envés de las hojas de tus Monsteras. 74 jardineras ya ajustaron su rutina.',
+      nivel:'warn'},
+    Medellín:{ico:'☀️',
+      title:'Semana seca en Medellín — aumenta el riego',
+      msg:'Humedad por debajo del 38%. Las plantas de interior necesitan riego adicional. Agrega bandeja con agua bajo las macetas para compensar.',
+      nivel:'warn'},
+    Cali:{ico:'🌡️',
+      title:'Ola de calor en Cali — protege tus plantas',
+      msg:'Máximas sobre 35°C entre 11am y 3pm. Aleja las plantas del vidrio y riega al atardecer. Las suculentas pueden tolerar, el resto no.',
+      nivel:'err'},
+    Barranquilla:{ico:'💨',
+      title:'Viento fuerte en Barranquilla esta semana',
+      msg:'Ráfagas hasta 40 km/h. Lleva adentro las plantas en balcón o ata los tallos. Riego con mayor frecuencia para compensar evapotranspiración.',
+      nivel:'warn'},
+    Cartagena:{ico:'🌊',
+      title:'Alta salinidad ambiental en Cartagena',
+      msg:'El viento marino afecta las hojas. Limpia con paño húmedo cada 3 días y aleja del borde del balcón orientado al mar.',
+      nivel:'warn'},
+    Manizales:{ico:'🌫️',
+      title:'Neblina matutina frecuente en Manizales',
+      msg:'Condiciones ideales para helechos y bromelias. Evita regar hasta que la neblina disipe (≈10am). Las orquídeas prosperan esta semana.',
+      nivel:'ok'},
+    Pereira:{ico:'🌦️',
+      title:'Lluvias intermitentes en Pereira',
+      msg:'Revisa que tus macetas de exterior drenen bien. El exceso de agua por lluvia + riego manual puede causar podredumbre de raíz.',
+      nivel:'warn'},
+    Bucaramanga:{ico:'☀️',
+      title:'Buenas condiciones esta semana en Bucaramanga',
+      msg:'Temperatura ideal 22–28°C. Semana perfecta para trasplantar o hacer esquejes. El 67% de jardineras reporta crecimiento activo.',
+      nivel:'ok'},
   },
   productos:[
-    {id:'fung01',emoji:'🧴',nombre:'Fungicida Cúprico Pro',compradores:127,pct:88,precio:28900},
-    {id:'fert01',emoji:'🌿',nombre:'Fertilizante Líquido Orgánico',compradores:94,pct:73,precio:19900},
-    {id:'rieg01',emoji:'🚿',nombre:'Regadera de Precisión 1L',compradores:61,pct:52,precio:34900},
+    {id:'fung01',emoji:'🧴',
+     nombre:'Fungicida Cúprico Preventivo',
+     detalle:'Control de oídio, botrytis y mancha negra · concentrado 250ml',
+     compradores:247,pct:91,precio:28900,eco:false},
+    {id:'fert01',emoji:'🌿',
+     nombre:'Abono Líquido Orgánico 10-10-10',
+     detalle:'Estimula crecimiento y floración · apto para interior y exterior',
+     compradores:189,pct:82,precio:22900,eco:true},
+    {id:'sust01',emoji:'🪣',
+     nombre:'Sustrato Premium para Tropicales',
+     detalle:'Mezcla perlita + tierra negra + coco peat · drenaje óptimo',
+     compradores:156,pct:74,precio:18900,eco:true},
+    {id:'rieg01',emoji:'🚿',
+     nombre:'Regadera de Precisión 1.5L',
+     detalle:'Pitón largo para el sustrato · sin mojar las hojas',
+     compradores:134,pct:68,precio:34900,eco:false},
+    {id:'insec01',emoji:'🐛',
+     nombre:'Insecticida Sistémico Jabón Potásico',
+     detalle:'Elimina pulgones, araña roja y cochinilla · acción en 48h',
+     compradores:98,pct:56,precio:24900,eco:true},
+  ],
+  miembros:[
+    {nombre:'Laura García',ciudad:'Bogotá',plantas:7,racha:34,badge:'🌳 Experta',
+     avatar:'LG',color:'#7030B8',aporte:'Especialista en Monsteras y tropicales · +420 XP esta semana'},
+    {nombre:'Dra. Ana Vargas',ciudad:'Medellín',plantas:23,racha:89,badge:'🌳 Experta',
+     avatar:'AV',color:'#3F6B22',aporte:'Bióloga · responde preguntas técnicas sobre plagas · +890 XP'},
+    {nombre:'Sofía P.',ciudad:'Bogotá',plantas:4,racha:12,badge:'🌿 Avanzada',
+     avatar:'SP',color:'#C02850',aporte:'Top en logros esta semana · Rosa miniatura en flor'},
+    {nombre:'Carlos R.',ciudad:'Cali',plantas:11,racha:21,badge:'🌿 Avanzada',
+     avatar:'CR',color:'#1A6FA0',aporte:'Experto en suculentas · ayuda sobre sustrato y riego'},
+    {nombre:'Valentina C.',ciudad:'Medellín',plantas:14,racha:45,badge:'🌳 Experta',
+     avatar:'VC',color:'#8A5000',aporte:'14 suculentas · racha más larga de la comunidad este mes'},
   ],
 };
 
@@ -7849,6 +8102,52 @@ const FORO_POSTS=[
    autor:'Ana V.',avatarIdx:3,tiempo:'hace 3 días',votos:17,misVotos:0,
    comentarios:[
      {id:801,autor:'Carlos R.',avatarIdx:1,texto:'Si el drenaje es lento, sí es hora. Mezcla tierra de cactus con perlita al 50%.',tiempo:'hace 2 días',likes:11,liked:false},
+     {id:802,autor:'Dra. Ana Vargas',avatarIdx:2,texto:'Después de 2 años definitivamente hay sales acumuladas. Reemplaza el 70% del sustrato y usa maceta con drenaje amplio.',tiempo:'hace 1 día',likes:19,liked:false},
+   ]},
+  {id:9,tipo:'foto',cat:'progreso',catLabel:'🌱 Progreso',catColor:'#3B6D11',catBg:'#EAF3DE',
+   titulo:'Mi Pothos de 0 a 1.2 metros en 8 meses 🍃',
+   cuerpo:'Lo empecé desde un esqueje de 3 hojas. Con luz indirecta y riego semanal creció 1.2m. La app me recordó cada riego y nunca lo olvidé.',
+   photoBg:'linear-gradient(145deg,#0D4F2A,#2B8A4E)',photoEmoji:'🍃',photoAlt:'tall',
+   autor:'Valentina C.',avatarIdx:4,tiempo:'hace 4 h',votos:143,misVotos:0,
+   comentarios:[
+     {id:901,autor:'Laura G.',avatarIdx:0,texto:'¡Impresionante! El Pothos es increíble para los que tenemos pocas ventanas. ¿En qué habitación está?',tiempo:'hace 3 h',likes:24,liked:false},
+     {id:902,autor:'María O.',avatarIdx:2,texto:'El secreto está en no sobre regar. Si hay raíces sanas el crecimiento explota. ¡Felicitaciones!',tiempo:'hace 2 h',likes:31,liked:false},
+     {id:903,autor:'Dra. Ana Vargas',avatarIdx:2,texto:'Para los que quieran replicarlo: esqueje en agua 2 semanas, raíces de 3cm, trasplantar. Valentina lo hizo perfecto.',tiempo:'hace 1 h',likes:47,liked:false},
+   ]},
+  {id:10,tipo:'texto',cat:'identificar',catLabel:'🔍 Identificar',catColor:'#185FA5',catBg:'#E6F1FB',
+   titulo:'¿Alguien sabe qué planta es esta? La encontré en el mercado de las pulgas',
+   cuerpo:'Tiene hojas carnosas con bordes ligeramente rojos. No sé si es suculenta o no. La vendían en bolsita sin nombre. Bogotá, 2600m de altitud.',
+   autor:'Diana F.',avatarIdx:3,tiempo:'hace 2 h',votos:28,misVotos:0,
+   comentarios:[
+     {id:1001,autor:'Dra. Ana Vargas',avatarIdx:2,texto:'Por la descripción parece Echeveria "Perle von Nürnberg". Los bordes rojizos son característicos en luz directa. Suculenta 100%.',tiempo:'hace 1 h',likes:38,liked:false},
+     {id:1002,autor:'Carlos R.',avatarIdx:1,texto:'Coincido con Ana. Si en 2–3 días los bordes se intensifican con más sol, es la Echeveria. Riego cada 12–15 días en Bogotá.',tiempo:'hace 45 min',likes:21,liked:false},
+   ]},
+  {id:11,tipo:'texto',cat:'cuidados',catLabel:'🌿 Cuidados',catColor:'var(--sage-600)',catBg:'var(--sage-50)',
+   titulo:'Guía definitiva: riego de Monstera en Bogotá según la temporada',
+   cuerpo:'Llevo 3 años cuidando Monsteras en Bogotá. En temporada seca (diciembre–febrero): riego cada 5–6 días. En temporada húmeda (abril–mayo, oct–nov): cada 9–11 días. El suelo debe estar seco 2cm hacia abajo antes de regar. Con esto ninguna se me ha muerto.',
+   autor:'Laura G.',avatarIdx:0,tiempo:'hace 1 día',votos:187,misVotos:0,
+   comentarios:[
+     {id:1101,autor:'Sofía P.',avatarIdx:4,texto:'Guardado. Esto es exactamente lo que necesitaba. La humedad de Bogotá confunde mucho.',tiempo:'hace 22 h',likes:44,liked:false},
+     {id:1102,autor:'Julián M.',avatarIdx:5,texto:'Yo hago igual pero agrego que en pisos altos (piso 10+) la evaporación es mayor. Reducir intervalo en 1 día.',tiempo:'hace 18 h',likes:29,liked:false},
+     {id:1103,autor:'Dra. Ana Vargas',avatarIdx:2,texto:'Excelente guía. Agregaría: en temporada de lluvias, si la maceta está en balcón cubierto, contar la humedad del ambiente también. Pueden necesitar 12+ días.',tiempo:'hace 12 h',likes:55,liked:false},
+   ]},
+  {id:12,tipo:'foto',cat:'logros',catLabel:'🏆 Logros',catColor:'var(--ok)',catBg:'var(--ok-bg)',
+   titulo:'150 días de racha en Violeta 🔥 y mi Ficus por fin estabilizado',
+   cuerpo:'Cuando llegué a Violeta mi Ficus lyrata tiraba 3–4 hojas a la semana. Después de 5 meses sin moverlo, con riego constante y sin corrientes de aire: 0 hojas caídas en el último mes.',
+   photoBg:'linear-gradient(145deg,#1C3A0A,#4A7A1E)',photoEmoji:'🌳',photoAlt:'wide',
+   autor:'María O.',avatarIdx:2,tiempo:'hace 6 h',votos:204,misVotos:0,
+   comentarios:[
+     {id:1201,autor:'Laura G.',avatarIdx:0,texto:'¡150 días! Eres la reina de la racha 👑 El Ficus es el más terco de todos. ¡Felicitaciones!',tiempo:'hace 5 h',likes:62,liked:false},
+     {id:1202,autor:'Valentina C.',avatarIdx:1,texto:'El Ficus es pura prueba de paciencia. La clave que dices es NO MOVERLO. Yo tardé 4 meses en aprenderlo.',tiempo:'hace 4 h',likes:48,liked:false},
+     {id:1203,autor:'Dra. Ana Vargas',avatarIdx:2,texto:'Caso perfectamente documentado. El Ficus lyrata entra en estrés con cambios de ubicación y corrientes. La estabilidad es todo.',tiempo:'hace 3 h',likes:71,liked:false},
+   ]},
+  {id:13,tipo:'texto',cat:'plagas',catLabel:'🐛 Plagas',catColor:'var(--err)',catBg:'var(--err-bg)',
+   titulo:'Cochinilla en mi Cactus — protocolo que funcionó en 3 semanas',
+   cuerpo:'Detecté puntos blancos algodonosos en las aréolas. Apliqué: 1) Alcohol isopropílico 70% con algodón en cada punto. 2) Jabón potásico diluido 2% cada 5 días. 3) Aislé la planta 3 semanas. Al día 21 sin rastros.',
+   autor:'Carlos R.',avatarIdx:1,tiempo:'hace 2 días',votos:156,misVotos:0,
+   comentarios:[
+     {id:1301,autor:'Dra. Ana Vargas',avatarIdx:2,texto:'Protocolo correcto al 100%. El paso clave que muchos omiten: aislar la planta. La cochinilla salta a vecinas.',tiempo:'hace 1 día',likes:58,liked:false},
+     {id:1302,autor:'Ana V.',avatarIdx:3,texto:'¡Salvaste mi Gymnocalycium! Tenía el mismo problema. Al día 14 ya veo mejoría siguiendo tu protocolo. Gracias.',tiempo:'hace 20 h',likes:34,liked:false},
    ]},
 ];
 
@@ -7881,74 +8180,66 @@ function renderForoPosts(){
     list.innerHTML='<div style="padding:40px 20px;text-align:center;color:var(--txth);background:var(--white)"><div style="font-size:36px;margin-bottom:12px">🌿</div><div style="font-size:15px;font-weight:600">Aún no hay publicaciones aquí</div><div style="font-size:13px;margin-top:6px">Sé la primera en publicar</div></div>';
     return;
   }
-  // Separar fotos (pinterest grid) y textos (lista)
-  const fotos=posts.filter(p=>p.tipo==='foto');
-  const textos=posts.filter(p=>p.tipo==='texto');
-  let html='';
-  if(fotos.length){
-    html+=`<div class="pint-grid">${fotos.map(p=>buildPintCard(p)).join('')}</div>`;
-    if(textos.length) html+='<div style="height:1px;background:var(--cream);margin:0 0 4px"></div>';
-  }
-  if(textos.length){
-    html+=textos.map(p=>buildPostCard(p)).join('');
-  }
-  list.innerHTML=html;
+  // Feed unificado Quora-style — fotos y textos en la misma lista
+  list.innerHTML=posts.map(p=>buildQCard(p)).join('');
 }
 
 function buildPintCard(p){
-  const tallClass=p.photoAlt==='tall'?'pint-photo-tall':p.photoAlt==='wide'?'pint-photo-wide':'';
-  const votes=p.votos+p.misVotos;
-  return `<div class="pint-card" onclick="openPost(${p.id})">
-    <div class="pint-photo ${tallClass}" style="background:${p.photoBg}">
-      <div style="font-size:${p.photoAlt==='wide'?'36':'44'}px;position:relative;z-index:1;filter:drop-shadow(0 4px 10px rgba(0,0,0,.3))">${p.photoEmoji}</div>
-      <div class="pint-cat-pill" style="background:${p.catBg};color:${p.catColor}">${p.catLabel}</div>
-      <div style="position:absolute;top:8px;right:8px;display:flex;align-items:center;gap:3px;background:rgba(0,0,0,.4);border-radius:var(--rpill);padding:3px 7px" onclick="event.stopPropagation();votePost(${p.id},1);renderForoPosts()">
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="${p.misVotos>0?'#fff':'none'}" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        <span style="font-size:10px;font-weight:800;color:#fff">${votes}</span>
-      </div>
-    </div>
-    <div class="pint-body">
-      <div class="pint-title">${p.titulo}</div>
-      <div class="pint-meta">
-        <div class="pint-av" style="background:${avatarColors[p.avatarIdx]}">${p.autor.charAt(0)}</div>
-        <span class="pint-user">${p.autor}</span>
-        <div class="pint-likes">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          ${p.comentarios.length}
-        </div>
-      </div>
-    </div>
-  </div>`;
+  // Foto posts → tarjeta Quora con thumbnail derecho
+  return buildQCard(p);
 }
 
-function buildPostCard(p){
-  const voteColor=p.misVotos>0?'var(--ok)':p.misVotos<0?'var(--err)':'var(--txt)';
-  return `<div class="foro-post" onclick="openPost(${p.id})">
-    <div class="foro-post-vote" onclick="event.stopPropagation()">
-      <button class="foro-vote-btn up ${p.misVotos>0?'voted':''}" onclick="votePost(${p.id},1)">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-      </button>
-      <span class="foro-vote-count" style="color:${voteColor}">${p.votos+p.misVotos}</span>
-      <button class="foro-vote-btn down ${p.misVotos<0?'voted':''}" onclick="votePost(${p.id},-1)">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-    </div>
-    <div class="foro-post-body">
-      <div class="foro-post-tag" style="background:${p.catBg};color:${p.catColor}">${p.catLabel}</div>
-      <div class="foro-post-title">${p.titulo}</div>
-      <div class="foro-post-preview">${p.cuerpo}</div>
-      <div class="foro-post-meta">
-        <div class="foro-post-avatar" style="background:${avatarColors[p.avatarIdx]}">${p.autor.charAt(0)}</div>
-        <span class="foro-post-user">${p.autor}</span>
-        <span class="foro-post-time">· ${p.tiempo}</span>
-        <div class="foro-post-comments">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          ${p.comentarios.length}
+function buildQCard(p){
+  // ── Expertise badge por número de votos del autor ──
+  const totalVotos=FORO_POSTS.filter(x=>x.autor===p.autor).reduce((s,x)=>s+(x.votos||0),0);
+  const badge=totalVotos>80?'🌳 Experta':totalVotos>30?'🌿 Avanzada':'🌱 Jardinera';
+  const votes=p.votos+p.misVotos;
+  const hasPhoto=p.tipo==='foto';
+  const thumb=hasPhoto?`<div class="q-thumb" style="background:${p.photoBg||'var(--sage-50)'}">${p.photoEmoji||'🌿'}</div>`:'';
+  return `<div class="q-card" onclick="openPost(${p.id})">
+    <div class="q-author-row">
+      <div class="q-av" style="background:${avatarColors[p.avatarIdx]}">${p.autor.charAt(0)}</div>
+      <div class="q-author-info">
+        <div class="q-author-name">${p.autor}</div>
+        <div class="q-author-meta">
+          <span class="q-badge">${badge}</span>
+          <span class="q-dot">·</span>
+          <span class="q-time">${p.tiempo}</span>
         </div>
       </div>
+      <button class="q-follow-btn" onclick="event.stopPropagation();toast('✅ Siguiendo a ${p.autor}')">Seguir</button>
+    </div>
+    <span class="q-topic" style="background:${p.catBg};color:${p.catColor}">${p.catLabel}</span>
+    <div class="q-body">
+      <div class="q-text">
+        <div class="q-title">${p.titulo}</div>
+        ${p.cuerpo?`<div class="q-preview">${p.cuerpo}</div>`:''}
+      </div>
+      ${thumb}
+    </div>
+    <div class="q-actions" onclick="event.stopPropagation()">
+      <div class="q-vote-group">
+        <button class="q-vote-btn up ${p.misVotos>0?'voted':''}" onclick="votePost(${p.id},1);renderForoPosts()">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+          ${votes}
+        </button>
+        <div class="q-vote-divider"></div>
+        <button class="q-vote-btn down ${p.misVotos<0?'voted':''}" onclick="votePost(${p.id},-1);renderForoPosts()">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+      </div>
+      <button class="q-action-btn ${p.comentarios.length?'answered':''}" onclick="openPost(${p.id})">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        ${p.comentarios.length} ${p.comentarios.length===1?'respuesta':'respuestas'}
+      </button>
+      <button class="q-action-btn" style="margin-left:auto" onclick="toast('🔗 Enlace copiado')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        Compartir
+      </button>
     </div>
   </div>`;
 }
+function buildPostCard(p){ return buildQCard(p); }
 
 function votePost(id,dir){
   const p=FORO_POSTS.find(x=>x.id===id);
@@ -8072,6 +8363,9 @@ function submitReply(){
 
 // ── NUEVO POST ──
 function openNuevoPost(){
+  // Solo mostrar si la pantalla activa es Comunidad
+  const activeScreen=document.querySelector('#screens .screen.active');
+  if(!activeScreen||activeScreen.id!=='sComunidad') return;
   document.getElementById('nuevoPostBackdrop').classList.add('show');
   requestAnimationFrame(()=>requestAnimationFrame(()=>document.getElementById('nuevoPostSheet').classList.add('show')));
   document.getElementById('npTitulo').value='';
@@ -8080,6 +8374,8 @@ function openNuevoPost(){
 }
 /* [V16] Quick-photo post: opens composer pre-filled with category (Fogg: 2-tap posting) */
 function openQuickPost(cat){
+  const activeScreen=document.querySelector('#screens .screen.active');
+  if(!activeScreen||activeScreen.id!=='sComunidad') return;
   openNuevoPost();
   setTimeout(()=>{
     selectNpCat(cat,document.getElementById('npc-'+cat));
@@ -8218,15 +8514,34 @@ function renderComunidad(){
   const prodEl=document.getElementById('comunidadProductos');
   if(prodEl) prodEl.innerHTML=COMUNIDAD_DATA.productos.map(p=>`
     <div class="com-prod-card" onclick="addToCart('${p.id}');toast('🛒 ${p.nombre} agregado al carrito')">
-      <div style="width:42px;height:42px;background:var(--sage-50);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">${p.emoji}</div>
+      <div style="width:46px;height:46px;background:var(--sage-50);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;position:relative">
+        ${p.emoji}
+        ${p.eco?'<span style="position:absolute;top:-4px;right:-4px;font-size:10px;background:#3F6B22;color:#fff;border-radius:6px;padding:1px 4px;font-weight:700">Eco</span>':''}
+      </div>
       <div style="flex:1;min-width:0">
         <div style="font-size:13px;font-weight:700;color:var(--txt);margin-bottom:1px">${p.nombre}</div>
-        <div style="font-size:11px;color:var(--txth);margin-bottom:4px">${p.compradores} jardineras lo compraron esta semana</div>
-        <div class="com-prod-bar"><div class="com-prod-bar-fill" style="width:${p.pct}%"></div></div>
+        <div style="font-size:11px;color:var(--txth);margin-bottom:3px;line-height:1.4">${p.detalle}</div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+          <div class="com-prod-bar" style="flex:1"><div class="com-prod-bar-fill" style="width:${p.pct}%"></div></div>
+          <span style="font-size:10px;color:var(--txth);white-space:nowrap">${p.compradores} esta semana</span>
+        </div>
       </div>
-      <div style="text-align:right;flex-shrink:0">
-        <div style="font-size:14px;font-weight:800;color:var(--v500)">$${p.precio.toLocaleString('es-CO')}</div>
-        <button style="margin-top:4px;background:var(--v500);border:none;border-radius:var(--rpill);padding:5px 10px;color:#fff;font-size:11px;font-weight:700;cursor:pointer">+ Carrito</button>
+      <div style="text-align:right;flex-shrink:0;padding-left:8px">
+        <div style="font-size:15px;font-weight:800;color:var(--v500)">$${p.precio.toLocaleString('es-CO')}</div>
+        <button style="margin-top:5px;background:var(--v500);border:none;border-radius:var(--rpill);padding:6px 12px;color:#fff;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap">+ Carrito</button>
+      </div>
+    </div>`).join('');
+
+  // ── Miembros top de la comunidad (nuevo) ──
+  const membrosEl=document.getElementById('comunidadMiembros');
+  if(membrosEl) membrosEl.innerHTML=COMUNIDAD_DATA.miembros.map((m,i)=>`
+    <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:0.5px solid var(--cream)">
+      <div style="font-size:11px;font-weight:800;color:var(--txth);width:14px;text-align:center">${i+1}</div>
+      <div style="width:36px;height:36px;border-radius:50%;background:${m.color};display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex-shrink:0">${m.avatar}</div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:13px;font-weight:700;color:var(--txt)">${m.nombre} <span style="font-size:11px;font-weight:400;color:var(--txth)">· ${m.ciudad}</span></div>
+        <div style="font-size:11px;color:var(--txth);margin-top:1px">${m.badge} · ${m.plantas} plantas · 🔥 ${m.racha} días</div>
+        <div style="font-size:11px;color:var(--sage-600);margin-top:2px">${m.aporte}</div>
       </div>
     </div>`).join('');
 
@@ -8359,6 +8674,76 @@ function checkPendingReminders(){
         'Tienes '+active.length+' recordatorio'+(active.length>1?'s':'')+' activo'+(active.length>1?'s':'')+' · '+active[0].plant+' te espera'
       );
     }, 3000);
+  }
+}
+
+function closeNotifs(){
+  // Ocultar sNotifs (está dentro de #screens pero con z-index propio)
+  const notif = document.getElementById('sNotifs');
+  if(notif) notif.classList.remove('active','behind');
+
+  // Restaurar la pantalla anterior correcta
+  const prevId = S.histStack.length > 1
+    ? S.histStack[S.histStack.length - 2]
+    : 'sHome';
+  // Si el previo es una root screen, usar goToTab para restaurar nav
+  const tabMap = {sHome:'home',sComunidad:'comunidad',sDiag:'diag',
+                  sStore:'store',sLib:'lib',sUser:'user'};
+  if(tabMap[prevId]){
+    goToTab(tabMap[prevId]);
+  } else {
+    // pantalla secundaria: pop normal
+    if(S.histStack.length > 1) S.histStack.pop();
+    const prev = document.getElementById(prevId);
+    if(prev){
+      prev.style.transition='none';
+      prev.classList.add('behind');
+      prev.offsetHeight;
+      prev.style.transition='';
+      prev.classList.remove('behind');
+      prev.classList.add('active');
+    }
+    updateNav();
+  }
+}
+
+/* ══ SMART BACK — navegación robusta sin depender de histStack ══════
+   Cada pantalla sabe exactamente a dónde vuelve, sin importar cómo
+   llegó el usuario ahí (histStack puede estar vacío/corrupto).
+══════════════════════════════════════════════════════════════════════ */
+const BACK_MAP = {
+  sForoPost:     'comunidad',
+  sPlantDetail:  'lib',
+  sProfile:      'home',
+  sNotifs:       'home',
+  sMisCompras:   'user',
+  sCita:         'user',
+  sConfig:       'user',
+  sAcerca:       'user',
+  sOrder:        'user',
+  sNiveles:      'user',
+  sEditProfile:  'user',
+  sCityPicker:   'user',
+  sAddressEdit:  'user',
+  sArticle:      'lib',
+  sVioletaRec:   'home',
+};
+
+function smartBack(screenId){
+  // 1. Ocultar la pantalla actual
+  const cur = document.getElementById(screenId);
+  if(cur) cur.classList.remove('active','behind');
+  // Limpiar también cualquier screen activa en #screens
+  const curActive = document.querySelector('#screens .screen.active');
+  if(curActive && curActive !== cur) curActive.classList.remove('active','behind');
+  // 2. Navegar al destino correcto
+  const dest = BACK_MAP[screenId];
+  if(dest){
+    S.histStack = [dest==='home'?'sHome':dest==='lib'?'sLib':dest==='comunidad'?'sComunidad':
+                   dest==='user'?'sUser':dest==='store'?'sStore':'sHome'];
+    goToTab(dest);
+  } else {
+    goToTab('home');
   }
 }
 function initApp(){
