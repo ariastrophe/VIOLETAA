@@ -585,35 +585,58 @@ button:focus-visible,.ni:focus-visible,.habit-chip:focus-visible,.plant-card:foc
 
 /* ── BLOG — LAYOUT REFERENCE STYLE ── */
 /* Category underline tabs */
-.blog-tabs-wrap{border-bottom:1.5px solid var(--cream);margin-bottom:0}
-.blog-tabs{display:flex;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:0 20px}
+/* ── BLOG SLOTHUI STYLE ──────────────────────────── */
+/* Header */
+.blog-eyebrow{font-size:12px;font-weight:700;color:var(--v500);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.blog-heading{font-family:var(--ff);font-size:24px;font-weight:800;color:var(--txt);line-height:1.2;margin-bottom:6px}
+.blog-subheading{font-size:13px;color:var(--txth);line-height:1.5}
+/* Tabs */
+.blog-tabs-wrap{background:var(--white);border-bottom:1.5px solid var(--cream);position:sticky;top:0;z-index:10}
+.blog-tabs{display:flex;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:0 16px;gap:2px}
 .blog-tabs::-webkit-scrollbar{display:none}
-.blog-tab{padding:10px 14px;font-size:14px;font-weight:600;color:var(--txth);white-space:nowrap;cursor:pointer;border-bottom:2.5px solid transparent;transition:color .18s,border-color .18s;flex-shrink:0;background:none;border-top:none;border-left:none;border-right:none}
-.blog-tab.act{color:var(--v500);border-bottom-color:var(--v500);font-weight:800}
-
-/* Featured horizontal scroll */
-.blog-feat-scroll{display:flex;gap:12px;padding:16px 20px 4px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-.blog-feat-scroll::-webkit-scrollbar{display:none}
-.blog-feat-card{min-width:72vw;max-width:290px;border-radius:20px;overflow:hidden;position:relative;flex-shrink:0;cursor:pointer;box-shadow:0 6px 24px rgba(0,0,0,.13);-webkit-mask-image:-webkit-radial-gradient(white,black)}
-.blog-feat-card:active{transform:scale(.97)}
-.blog-feat-img{height:215px;position:relative;display:flex;align-items:flex-end}
-.blog-feat-badge{position:absolute;top:10px;left:10px;border-radius:var(--rpill);padding:4px 10px;font-size:11px;font-weight:800;display:flex;align-items:center;gap:4px;backdrop-filter:blur(4px)}
-.blog-feat-badge.hot{background:rgba(220,60,0,.88);color:#fff}
-.blog-feat-badge.cat{background:rgba(255,255,255,.2);color:#fff;border:1px solid rgba(255,255,255,.3);max-width:calc(100% - 20px);overflow:hidden;text-overflow:ellipsis}
-.blog-feat-overlay{width:100%;padding:48px 14px 14px;background:linear-gradient(transparent,rgba(0,0,0,.8));box-sizing:border-box;overflow:hidden}
-.blog-feat-title{font-size:15px;font-weight:800;color:#fff;line-height:1.25;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;word-break:break-word}
-.blog-feat-sub{font-size:11px;color:rgba(255,255,255,.78);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.blog-feat-meta{font-size:10px;color:rgba(255,255,255,.55);margin-top:6px}
-
-/* Recent list rows */
-.blog-recent-row{display:flex;gap:14px;padding:12px 20px;cursor:pointer;transition:background .15s;-webkit-tap-highlight-color:transparent;overflow:hidden}
-.blog-recent-row:active{background:var(--cream)}
-.blog-recent-thumb{width:90px;height:90px;border-radius:14px;overflow:hidden;position:relative;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:32px;background:var(--cream)}
-.blog-recent-cat-lbl{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.5);color:#fff;border-radius:0 0 14px 14px;padding:4px 8px;font-size:9px;font-weight:700;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.blog-recent-info{flex:1;min-width:0;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:4px}
-.blog-recent-title{font-size:14px;font-weight:700;color:var(--txt);line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;word-break:break-word}
-.blog-recent-byline{font-size:11px;color:var(--txth)}
-.blog-recent-date{font-size:11px;color:var(--txth)}
+.blog-tab{padding:10px 12px;font-size:13px;font-weight:600;color:var(--txth);white-space:nowrap;cursor:pointer;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;flex-shrink:0;background:none;border-top:none;border-left:none;border-right:none;display:flex;align-items:center;gap:5px}
+.blog-tab.act{color:var(--v500);border-bottom-color:var(--v500)}
+.blog-tab-badge{font-size:10px;font-weight:700;background:var(--v500);color:#fff;border-radius:10px;padding:1px 6px;line-height:1.4}
+/* Search */
+.blog-search-wrap{position:relative;margin:14px 20px 0}
+.blog-search-input{width:100%;padding:10px 42px 10px 16px;border:1.5px solid var(--cream);border-radius:var(--rpill);font-size:13px;font-family:var(--fb);color:var(--txt);background:var(--white);outline:none;transition:border-color .15s;box-sizing:border-box}
+.blog-search-input:focus{border-color:var(--v300)}
+.blog-search-ico{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--txth);pointer-events:none}
+/* Hero card */
+.blog-hero-card{margin:16px 20px 0;border-radius:20px;overflow:hidden;position:relative;cursor:pointer;box-shadow:0 8px 32px rgba(0,0,0,.18);-webkit-mask-image:-webkit-radial-gradient(white,black)}
+.blog-hero-card:active{transform:scale(.98);transition:transform .12s}
+.blog-hero-img{height:220px;position:relative;display:flex;align-items:flex-end;overflow:hidden}
+.blog-hero-photo{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.blog-hero-photo-inner{font-size:96px;opacity:.22;filter:blur(2px);transform:scale(1.2)}
+.blog-hero-gradient{position:absolute;inset:0}
+.blog-hero-overlay{position:absolute;bottom:0;left:0;right:0;padding:60px 16px 16px;background:linear-gradient(transparent 0%,rgba(0,0,0,.72) 60%,rgba(0,0,0,.88) 100%)}
+.blog-hero-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.blog-hero-tag{background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:var(--rpill);padding:3px 10px;font-size:10px;font-weight:700;backdrop-filter:blur(4px)}
+.blog-hero-title{font-family:var(--ff);font-size:17px;font-weight:800;color:#fff;line-height:1.25;margin-bottom:6px}
+.blog-hero-meta{display:flex;align-items:center;gap:8px}
+.blog-hero-av{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;flex-shrink:0;border:1.5px solid rgba(255,255,255,.4)}
+.blog-hero-author{font-size:11px;color:rgba(255,255,255,.85);font-weight:600}
+.blog-hero-date{font-size:11px;color:rgba(255,255,255,.55);display:flex;align-items:center;gap:4px;margin-left:auto}
+.blog-hero-arrow{position:absolute;top:14px;right:14px;width:32px;height:32px;background:rgba(255,255,255,.18);border-radius:50%;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
+/* Grid */
+.blog-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:16px 20px;padding-bottom:40px}
+.blog-card{background:var(--white);border-radius:16px;overflow:hidden;cursor:pointer;border:1.5px solid var(--cream);transition:box-shadow .18s,transform .15s;-webkit-tap-highlight-color:transparent}
+.blog-card:active{transform:scale(.97);box-shadow:none}
+.blog-card-img{height:110px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.blog-card-img-inner{font-size:48px;opacity:.28;filter:blur(1.5px);transform:scale(1.1)}
+.blog-card-img-grad{position:absolute;inset:0}
+.blog-card-body{padding:10px 12px 12px}
+.blog-card-cat{font-size:10.5px;font-weight:700;letter-spacing:.02em;margin-bottom:4px;display:flex;align-items:center;gap:4px}
+.blog-card-title{font-size:13px;font-weight:700;color:var(--txt);line-height:1.35;margin-bottom:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.blog-card-footer{display:flex;align-items:center;gap:6px}
+.blog-card-av{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#fff;flex-shrink:0}
+.blog-card-author{font-size:11px;color:var(--txth);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.blog-card-time{font-size:10px;color:var(--txth);flex-shrink:0}
+/* Count label */
+.blog-count-lbl{font-size:12px;color:var(--txth);padding:0 20px 0;margin-top:4px}
+/* Single wide card */
+.blog-card-wide{grid-column:1/-1}
+.blog-card-wide .blog-card-img{height:150px}
 
 /* Section label */
 .blog-section-lbl{font-size:18px;font-weight:800;color:var(--txt);padding:16px 20px 4px}
@@ -934,6 +957,87 @@ button:focus-visible,.ni:focus-visible,.habit-chip:focus-visible,.plant-card:foc
 .snb-txt{font-size:12px;color:var(--ok);line-height:1.4}
 
 /* ── COMUNIDAD screen ── */
+
+/* ══ COMUNIDAD — TWITTER / X STYLE ══════════════════════════ */
+
+/* Header */
+.tw-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.88);backdrop-filter:blur(12px);
+  padding:calc(env(safe-area-inset-top,0px)+12px) 16px 0;
+  border-bottom:0.5px solid var(--cream);
+}
+.tw-header-row{display:flex;align-items:center;gap:10px;padding-bottom:12px}
+.tw-header-av{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--v300),var(--sage-400));display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex-shrink:0;cursor:pointer}
+.tw-header-title{flex:1;font-size:18px;font-weight:800;color:var(--txt);font-family:var(--ff)}
+.tw-header-ico{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .12s;flex-shrink:0}
+.tw-header-ico:active{background:var(--cream)}
+/* Tabs estilo Twitter */
+.tw-tabs{display:flex;border-bottom:0.5px solid var(--cream);overflow-x:auto;scrollbar-width:none}
+.tw-tabs::-webkit-scrollbar{display:none}
+.tw-tab{flex:0 0 auto;padding:0 4px;font-size:13.5px;font-weight:600;color:var(--txth);cursor:pointer;border:none;background:none;font-family:var(--fb);transition:color .15s;white-space:nowrap;display:flex;flex-direction:column;align-items:center;gap:0;padding-bottom:0}
+.tw-tab span{padding:14px 16px 10px;display:block}
+.tw-tab-line{height:3px;width:100%;border-radius:2px 2px 0 0;background:transparent;transition:background .15s;margin-top:0}
+.tw-tab.act{color:var(--txt);font-weight:800}
+.tw-tab.act .tw-tab-line{background:var(--v500)}
+
+/* Composer */
+.tw-compose{background:var(--white);border-bottom:1px solid var(--cream);padding:12px 16px}
+.tw-compose-row{display:flex;gap:10px;align-items:flex-start}
+.tw-compose-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--v300),var(--sage-400));display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#fff;flex-shrink:0}
+.tw-compose-right{flex:1;min-width:0}
+.tw-compose-placeholder{font-size:16px;color:var(--txth);padding:8px 0 12px;cursor:pointer;display:block;border-bottom:0.5px solid var(--cream)}
+.tw-compose-actions{display:flex;align-items:center;padding-top:10px;gap:4px}
+.tw-compose-act-btn{width:36px;height:36px;border-radius:50%;border:none;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .12s;color:var(--v500)}
+.tw-compose-act-btn:active{background:var(--v50)}
+.tw-compose-publish{margin-left:auto;background:var(--v500);color:#fff;border:none;border-radius:var(--rpill);padding:8px 18px;font-size:14px;font-weight:700;cursor:pointer;font-family:var(--fb);transition:opacity .15s}
+.tw-compose-publish:active{opacity:.8}
+
+/* Tweet cards */
+.tw-tweet{background:var(--white);border-bottom:1px solid var(--cream);padding:12px 16px;cursor:pointer;transition:background .1s;display:flex;gap:10px;-webkit-tap-highlight-color:transparent}
+.tw-tweet:active{background:#F5F5F5}
+.tw-tweet-av-col{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:0}
+.tw-tweet-av{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#fff}
+.tw-tweet-line{flex:1;width:2px;background:var(--cream);margin-top:6px;margin-bottom:0;border-radius:1px}
+.tw-tweet-body{flex:1;min-width:0}
+.tw-tweet-head{display:flex;align-items:baseline;gap:4px;margin-bottom:3px;flex-wrap:wrap}
+.tw-tweet-name{font-size:14px;font-weight:700;color:var(--txt);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:120px}
+.tw-tweet-verified{display:inline-flex;align-items:center;flex-shrink:0}
+.tw-tweet-handle{font-size:13px;color:var(--txth);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
+.tw-tweet-time{font-size:12px;color:var(--txth);white-space:nowrap;flex-shrink:0}
+.tw-tweet-more{width:32px;height:32px;border-radius:50%;border:none;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--txth);flex-shrink:0;margin-left:auto;margin-top:-4px;transition:background .12s}
+.tw-tweet-more:active{background:var(--cream)}
+.tw-tweet-text{font-size:14px;color:var(--txt);line-height:1.55;margin-bottom:10px;word-break:break-word}
+.tw-tweet-text .tw-hashtag{color:var(--v500);font-weight:500}
+.tw-tweet-text .tw-mention{color:var(--v500)}
+/* Foto en tweet */
+.tw-tweet-photo{border-radius:14px;overflow:hidden;margin-bottom:10px;border:1px solid var(--cream);position:relative;height:160px;display:flex;align-items:center;justify-content:center}
+.tw-tweet-photo-inner{font-size:56px;opacity:.3;filter:blur(2px)}
+.tw-tweet-photo-grad{position:absolute;inset:0}
+/* Actions */
+.tw-tweet-actions{display:flex;align-items:center;gap:0;margin:0 -6px}
+.tw-act-btn{display:flex;align-items:center;gap:4px;padding:6px;border-radius:var(--rpill);border:none;background:none;cursor:pointer;font-size:12px;color:var(--txth);font-family:var(--fb);transition:color .12s,background .12s;flex:1;justify-content:center}
+.tw-act-btn:active{background:var(--v50)}
+.tw-act-btn.tw-liked{color:var(--err)}
+.tw-act-btn.tw-replied{color:#1D9BF0}
+.tw-act-btn.tw-reposted{color:var(--ok)}
+.tw-act-count{font-size:12px;font-weight:500}
+/* Topics tendencias (horizontal chips) */
+.tw-topics-scroll{display:flex;gap:8px;padding:12px 16px;overflow-x:auto;scrollbar-width:none;background:var(--white);border-bottom:1px solid var(--cream)}
+.tw-topics-scroll::-webkit-scrollbar{display:none}
+.tw-topic-chip{display:flex;align-items:center;gap:5px;background:var(--sage-50);border:1px solid var(--sage-100);border-radius:var(--rpill);padding:6px 12px;font-size:12px;font-weight:600;color:var(--sage-600);cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background .12s}
+.tw-topic-chip:active{background:var(--sage-100)}
+/* Who to follow */
+.tw-follow-strip{background:var(--white);border-bottom:1px solid var(--cream);padding:12px 16px}
+.tw-follow-title{font-size:13px;font-weight:700;color:var(--txt);margin-bottom:8px}
+.tw-follow-row{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.tw-follow-row::-webkit-scrollbar{display:none}
+.tw-follow-card{flex-shrink:0;background:var(--warm);border-radius:14px;padding:12px;text-align:center;width:120px;border:1px solid var(--cream)}
+.tw-follow-card-av{width:42px;height:42px;border-radius:50%;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#fff}
+.tw-follow-card-name{font-size:12px;font-weight:700;color:var(--txt);margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tw-follow-card-handle{font-size:11px;color:var(--txth);margin-bottom:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tw-follow-btn{background:var(--txt);color:#fff;border:none;border-radius:var(--rpill);padding:5px 14px;font-size:12px;font-weight:700;cursor:pointer;font-family:var(--fb);width:100%}
+
 .com-hero{position:relative;overflow:hidden;padding-bottom:0}
 .com-hero-bg{position:absolute;inset:0;background:var(--v500)}
 .com-hero-content{position:relative;z-index:1;padding:28px 20px 0}
@@ -1815,11 +1919,10 @@ self.addEventListener('fetch',e=>{
         <h2 class="h2" style="margin-bottom:4px">Empecemos con tu primera planta</h2>
         <p class="sub">Toma una foto y Violeta identifica la especie al instante.</p>
       </div>
-      <div class="ob-scan" id="obScanZone" onclick="startObScan()">
-        <!-- Simulated camera bg -->
-        <div style="position:absolute;inset:0;background:linear-gradient(145deg,#1a3a0e 0%,#0a1a08 50%,#1a2a0a 100%)"></div>
-        <!-- Grid lines -->
-        <div style="position:absolute;inset:0;opacity:.2">
+      <div class="ob-scan" id="obScanZone" style="cursor:default;overflow:hidden;position:relative">
+        <canvas id="obDiagCanvas" width="400" height="400" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none"></canvas>
+        <div id="obBgDefault" style="position:absolute;inset:0;background:linear-gradient(145deg,#1a3a0e 0%,#0a1a08 50%,#1a2a0a 100%)"></div>
+        <div id="obGrid" style="position:absolute;inset:0;opacity:.2">
           <div style="position:absolute;left:33%;top:0;bottom:0;border-left:1px solid #fff"></div>
           <div style="position:absolute;left:66%;top:0;bottom:0;border-left:1px solid #fff"></div>
           <div style="position:absolute;top:33%;left:0;right:0;border-top:1px solid #fff"></div>
@@ -1829,11 +1932,25 @@ self.addEventListener('fetch',e=>{
           <div class="scan-ring" id="obScanRing">
             <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
           </div>
-          <span class="scan-label">Toca para identificar</span>
+          <span class="scan-label" id="obScanLabel">Elige cómo analizar</span>
         </div>
         <div class="scan-bar" id="obScanBar"></div>
+        <button id="obRetakeBtn" onclick="obRetakePhoto()" style="display:none;position:absolute;top:10px;right:10px;background:rgba(0,0,0,.55);border:1.5px solid rgba(255,255,255,.4);color:#fff;border-radius:20px;padding:6px 14px;font-size:12px;font-weight:600;cursor:pointer;z-index:10;backdrop-filter:blur(4px)">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 .49-4.95"/></svg>
+          Nueva foto
+        </button>
       </div>
-      <div style="padding:0 24px 24px">
+      <div style="display:flex;gap:10px;padding:12px 24px 4px">
+        <button class="btn btn-primary" style="flex:1;gap:8px" onclick="obTakePhoto()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          Tomar foto
+        </button>
+        <button class="btn btn-sage" style="flex:1;gap:8px" onclick="obUploadPhoto()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          Galería
+        </button>
+      </div>
+      <div style="padding:0 24px 20px">
         <p class="caption" style="text-align:center;color:var(--txth)">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
           Tu foto se analiza de forma privada. No se guarda ni comparte.
@@ -2184,9 +2301,10 @@ self.addEventListener('fetch',e=>{
         </div>
 
         <!-- Scan zone -->
-        <div class="scan-zone" id="mainScanZone" onclick="startDiag()">
-          <div style="position:absolute;inset:0;background:linear-gradient(145deg,#1a3a0e,#0a1a08)"></div>
-          <div style="position:absolute;inset:0;opacity:.15">
+        <div class="scan-zone" id="mainScanZone" style="cursor:default;overflow:hidden;position:relative">
+          <canvas id="diagCanvas" width="400" height="340" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none"></canvas>
+          <div id="diagBgDefault" style="position:absolute;inset:0;background:linear-gradient(145deg,#1a3a0e,#0a1a08)"></div>
+          <div id="diagGrid" style="position:absolute;inset:0;opacity:.15">
             <div style="position:absolute;left:33%;top:0;bottom:0;border-left:1px solid #fff"></div>
             <div style="position:absolute;left:66%;top:0;bottom:0;border-left:1px solid #fff"></div>
             <div style="position:absolute;top:33%;left:0;right:0;border-top:1px solid #fff"></div>
@@ -2196,10 +2314,28 @@ self.addEventListener('fetch',e=>{
             <div class="scan-ring" id="diagScanRing">
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
             </div>
-            <span class="scan-label" id="diagScanLabel">Escanear planta</span>
+            <span class="scan-label" id="diagScanLabel">Elige cómo diagnosticar</span>
           </div>
           <div class="scan-bar" id="diagScanBar"></div>
+          <button id="diagRetakeBtn" onclick="diagRetakePhoto()" style="display:none;position:absolute;top:10px;right:10px;background:rgba(0,0,0,.55);border:1.5px solid rgba(255,255,255,.4);color:#fff;border-radius:20px;padding:6px 14px;font-size:12px;font-weight:600;cursor:pointer;z-index:10;backdrop-filter:blur(4px)">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 .49-4.95"/></svg>
+            Nueva foto
+          </button>
         </div>
+        <div id="diagPhotoActions" style="display:flex;gap:10px;padding:12px 20px 4px">
+          <button class="btn btn-primary" style="flex:1;gap:8px" onclick="diagTakePhoto()">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            Tomar foto
+          </button>
+          <button class="btn btn-sage" style="flex:1;gap:8px" onclick="diagUploadPhoto()">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Galería
+          </button>
+        </div>
+        <p style="text-align:center;font-size:11px;color:var(--txth);padding:4px 20px 8px;display:flex;align-items:center;justify-content:center;gap:5px">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Tu foto se analiza en privado · no se guarda
+        </p>
 
         <!-- Result (hidden until scan) -->
         <div id="diagResult" style="display:none">
@@ -2273,156 +2409,102 @@ self.addEventListener('fetch',e=>{
       </div>
 
       <!-- COMUNIDAD -->
-      <div class="screen root" id="sComunidad" style="background:var(--warm)">
+      <div class="screen root" id="sComunidad" style="background:#F7F7F7;display:flex;flex-direction:column">
 
-        <!-- HERO HEADER llamativo -->
-        <div class="com-hero">
-          <div class="com-hero-bg"></div>
-          <div class="com-hero-content">
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-              <div style="display:flex;align-items:center;gap:8px">
-                <div class="com-hero-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>
-                </div>
-                <div>
-                  <div style="font-family:var(--ff);font-size:20px;font-weight:700;color:#fff;line-height:1">Comunidad</div>
-                  <div style="font-size:11px;color:rgba(255,255,255,.72);margin-top:1px" id="comunidadCityLabel">Jardineras en Bogotá</div>
-                </div>
-              </div>
-              <div class="com-city-pill" onclick="toast('📍 Cambia tu ciudad en Configuración')">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span id="comunidadCity">Bogotá</span>
-              </div>
-            </div>
-            <!-- Stats rápidas -->
-            <div class="com-hero-stats">
-              <div class="com-stat"><span class="com-stat-n">2.4K</span><span class="com-stat-l">jardineras</span></div>
-              <div class="com-stat-div"></div>
-              <div class="com-stat"><span class="com-stat-n" id="comStatPosts">127</span><span class="com-stat-l">publicaciones</span></div>
-              <div class="com-stat-div"></div>
-              <div class="com-stat"><span class="com-stat-n">Top 24%</span><span class="com-stat-l">tu posición</span></div>
-            </div>
-          </div>
-          <!-- Tabs -->
-          <div class="com-tabs-row">
-            <button class="com-tab act" id="comTabNormas" onclick="switchComTab('normas')">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-              Tendencias
+        <!-- ── HEADER TWITTER ── -->
+        <div class="tw-header">
+          <div class="tw-header-row">
+            <div class="tw-header-av" id="twHeaderAv" onclick="goToTab('user')">L</div>
+            <span class="tw-header-title">Comunidad</span>
+            <button class="tw-header-ico" onclick="toast('🔔 Notificaciones de comunidad próximamente')">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--txt)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
             </button>
-            <button class="com-tab" id="comTabForo" onclick="switchComTab('foro')">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-              Foro
+            <button class="tw-header-ico" onclick="openNuevoPost()">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--v500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
             </button>
           </div>
+          <!-- Tabs Twitter -->
+          <div class="tw-tabs" id="twTabs">
+            <button class="tw-tab act" id="twt-todas" onclick="filterForo('todas',this)"><span>Para ti</span><div class="tw-tab-line"></div></button>
+            <button class="tw-tab" id="twt-cuidados" onclick="filterForo('cuidados',this)"><span>Cuidados</span><div class="tw-tab-line"></div></button>
+            <button class="tw-tab" id="twt-progreso" onclick="filterForo('progreso',this)"><span>Progreso</span><div class="tw-tab-line"></div></button>
+            <button class="tw-tab" id="twt-preguntas" onclick="filterForo('preguntas',this)"><span>Preguntas</span><div class="tw-tab-line"></div></button>
+            <button class="tw-tab" id="twt-plagas" onclick="filterForo('plagas',this)"><span>Plagas</span><div class="tw-tab-line"></div></button>
+            <button class="tw-tab" id="twt-logros" onclick="filterForo('logros',this)"><span>Logros</span><div class="tw-tab-line"></div></button>
+            <button class="tw-tab" id="twt-identificar" onclick="filterForo('identificar',this)"><span>Identificar</span><div class="tw-tab-line"></div></button>
+          </div>
         </div>
 
-        <!-- PANEL TENDENCIAS -->
-        <div id="comPanelNormas" style="padding-bottom:24px">
-          <!-- Ranking card visual -->
-          <div class="com-rank-card">
-            <div class="com-rank-left">
-              <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Tu posición esta semana</div>
-              <div style="font-family:var(--ff);font-size:34px;font-weight:700;color:#fff;line-height:1" id="comunidadRankPct">Top 24%</div>
-              <div style="font-size:12px;color:rgba(255,255,255,.8);margin-top:4px;line-height:1.4" id="comunidadRankMsg">Mejor que la semana anterior ↑</div>
-              <div style="margin-top:12px;height:5px;background:rgba(255,255,255,.2);border-radius:3px;overflow:hidden;width:160px">
-                <div id="comunidadRankBar" style="height:100%;width:0%;background:#fff;border-radius:3px;transition:width .9s var(--ease)"></div>
+        <!-- ── FEED SCROLLEABLE ── -->
+        <div style="flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch" id="twFeedScroll">
+
+          <!-- Composer tweet -->
+          <div class="tw-compose" onclick="openNuevoPost()">
+            <div class="tw-compose-row">
+              <div class="tw-compose-av" id="twComposeAv">L</div>
+              <div class="tw-compose-right">
+                <span class="tw-compose-placeholder">¿Qué está pasando con tus plantas? 🌿</span>
+                <div class="tw-compose-actions" onclick="event.stopPropagation()">
+                  <button class="tw-compose-act-btn" onclick="openQuickPost('progreso')" title="Foto">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                  </button>
+                  <button class="tw-compose-act-btn" onclick="openQuickPost('preguntas')" title="Pregunta">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                  </button>
+                  <button class="tw-compose-act-btn" style="color:#F59E0B" onclick="openQuickPost('logros')" title="Logro">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  </button>
+                  <button class="tw-compose-act-btn" style="color:var(--sage-600)" title="Planta">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12c0-2.76 1.12-5.26 2.93-7.07"/><path d="M12 12C8 8 4 6 2 2"/><path d="M12 12c4-4 8-4 10-2"/></svg>
+                  </button>
+                  <button class="tw-compose-publish" onclick="openNuevoPost()">Publicar</button>
+                </div>
               </div>
-              <div style="font-size:10px;color:rgba(255,255,255,.55);margin-top:4px">76% de jardineras por debajo tuyo</div>
-            </div>
-            <div class="com-rank-badge">🏆</div>
-          </div>
-
-          <!-- Sección: Hábitos top con diseño visual -->
-          <div style="padding:18px 20px 0">
-            <div class="com-section-hdr">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--v500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
-              Lo que hacen las top jardineras
-            </div>
-            <div style="display:flex;flex-direction:column;gap:8px" id="comunidadTopHabits"></div>
-          </div>
-
-          <!-- Sección: Tendencias locales -->
-          <div style="padding:18px 20px 0">
-            <div class="com-section-hdr">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--sage-600)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-              Tendencias en tu ciudad
-            </div>
-            <div id="comunidadTendencias" style="display:flex;flex-direction:column;gap:8px"></div>
-          </div>
-
-          <!-- Alerta climática -->
-          <div style="padding:18px 20px 0">
-            <div class="com-section-hdr">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--warn)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-              Alerta climática
-            </div>
-            <div id="comunidadAlerta"></div>
-          </div>
-
-          <!-- Prueba social productos -->
-          <div style="padding:18px 20px 0">
-            <div class="com-section-hdr">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--v500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-              Lo más comprado esta semana
-            </div>
-            <div id="comunidadProductos" style="display:flex;flex-direction:column;gap:10px"></div>
-          </div>
-
-          <!-- Jardineras top de la comunidad -->
-          <div style="padding:18px 20px 24px">
-            <div class="com-section-hdr">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--sage-600)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>
-              Top jardineras de la comunidad
-            </div>
-            <div style="background:var(--white);border-radius:var(--r);border:1px solid var(--cream);padding:4px 14px" id="comunidadMiembros"></div>
-          </div>
-        </div>
-
-        <!-- PANEL FORO estilo Twitter -->
-        <div id="comPanelForo" style="display:none;padding-bottom:60px;background:var(--warm)">
-
-          <!-- COMPOSER QUORA PLANTS -->
-          <div class="foro-composer">
-            <div class="foro-composer-row" onclick="openNuevoPost()">
-              <div id="foroComposerAv" style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--v300),var(--sage-400));display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff;font-weight:700;flex-shrink:0">L</div>
-              <div class="foro-composer-input">¿Qué quieres compartir sobre tus plantas?</div>
-              <button class="foro-composer-btn" onclick="event.stopPropagation();openNuevoPost()">Publicar</button>
-            </div>
-            <div class="foro-composer-actions">
-              <button class="foro-composer-action" onclick="openQuickPost('preguntas')">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                Pregunta
-              </button>
-              <button class="foro-composer-action" onclick="openQuickPost('progreso')">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-                Foto
-              </button>
-              <button class="foro-composer-action" onclick="openQuickPost('logros')">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                Logro
-              </button>
             </div>
           </div>
 
-          <!-- TABS QUORA underline style -->
-          <div style="background:var(--white);border-bottom:1.5px solid var(--cream);position:sticky;top:0;z-index:10">
-            <div style="display:flex;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:0 4px">
-              <button class="foro-cat act" id="fcat-todas" onclick="filterForo('todas',this)">Para ti</button>
-              <button class="foro-cat" id="fcat-preguntas" onclick="filterForo('preguntas',this)">Preguntas</button>
-              <button class="foro-cat" id="fcat-cuidados" onclick="filterForo('cuidados',this)">Cuidados</button>
-              <button class="foro-cat" id="fcat-progreso" onclick="filterForo('progreso',this)">Progreso</button>
-              <button class="foro-cat" id="fcat-plagas" onclick="filterForo('plagas',this)">Plagas</button>
-              <button class="foro-cat" id="fcat-identificar" onclick="filterForo('identificar',this)">Identificar</button>
-              <button class="foro-cat" id="fcat-logros" onclick="filterForo('logros',this)">Logros</button>
-              <button class="foro-cat" id="fcat-recomendacion" onclick="filterForo('recomendacion',this)">Recom.</button>
+          <!-- Topics tendencias (horizontal chips) -->
+          <div class="tw-topics-scroll" id="twTopics">
+            <div class="tw-topic-chip" onclick="filterForo('cuidados',document.getElementById('twt-cuidados'))">🌿 #RiegoCorrecto</div>
+            <div class="tw-topic-chip" onclick="filterForo('plagas',document.getElementById('twt-plagas'))">🐛 #Plagas</div>
+            <div class="tw-topic-chip" onclick="filterForo('progreso',document.getElementById('twt-progreso'))">🌱 #MiJardin</div>
+            <div class="tw-topic-chip" onclick="filterForo('logros',document.getElementById('twt-logros'))">🏆 #Racha</div>
+            <div class="tw-topic-chip" onclick="filterForo('preguntas',document.getElementById('twt-preguntas'))">❓ #Consulta</div>
+            <div class="tw-topic-chip" onclick="filterForo('identificar',document.getElementById('twt-identificar'))">🔍 #PlantID</div>
+          </div>
+
+          <!-- Quién seguir -->
+          <div class="tw-follow-strip" id="twWhoToFollow"></div>
+
+          <!-- FEED de tweets -->
+          <div id="foroPostList" style="background:#F7F7F7"></div>
+
+          <!-- Panel tendencias (modo tendencias) -->
+          <div id="comPanelNormas" style="display:none;padding-bottom:24px;background:var(--white)">
+            <div style="padding:18px 20px 0">
+              <div class="com-section-hdr">🏆 Top jardineras esta semana</div>
+              <div id="comunidadTopHabits" style="display:flex;flex-direction:column;gap:8px"></div>
+            </div>
+            <div style="padding:18px 20px 0">
+              <div class="com-section-hdr">📈 Tendencias en tu ciudad</div>
+              <div id="comunidadTendencias" style="display:flex;flex-direction:column;gap:8px"></div>
+            </div>
+            <div style="padding:18px 20px 0">
+              <div class="com-section-hdr">⚠️ Alerta climática</div>
+              <div id="comunidadAlerta"></div>
+            </div>
+            <div style="padding:18px 20px 0">
+              <div class="com-section-hdr">🛒 Más comprado</div>
+              <div id="comunidadProductos" style="display:flex;flex-direction:column;gap:10px"></div>
+            </div>
+            <div style="padding:18px 20px 24px">
+              <div class="com-section-hdr">👥 Top jardineras</div>
+              <div style="background:var(--white);border-radius:var(--r);border:1px solid var(--cream);padding:4px 14px" id="comunidadMiembros"></div>
             </div>
           </div>
 
-          <!-- FEED -->
-          <div id="foroPostList" style="background:var(--white)"></div>
-        </div>
-      </div>
-
+        </div><!-- /feed scroll -->
+      </div><!-- /sComunidad -->
       <!-- SCREEN: DETALLE DE POST -->
       <div class="screen" id="sForoPost" style="background:var(--warm)">
         <div style="position:sticky;top:0;z-index:50;background:var(--warm);padding:calc(env(safe-area-inset-top,0px)+14px) 20px 10px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--cream)">
@@ -2494,6 +2576,20 @@ self.addEventListener('fetch',e=>{
           <div class="scat" onclick="filterProds('riego',this)">Riego</div>
           <div class="scat" onclick="filterProds('sustratos',this)">Sustratos</div>
         </div>
+        <!-- Lo más comprado esta semana -->
+        <div style="padding:18px 20px 4px">
+          <div class="com-section-hdr">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--v500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            Lo más comprado esta semana
+          </div>
+          <div id="storeTrendingProds" style="display:flex;flex-direction:column;gap:10px;margin-top:2px"></div>
+        </div>
+        <div style="padding:12px 20px 4px">
+          <div class="com-section-hdr" style="margin-bottom:10px">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--sage-600)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            Todos los productos
+          </div>
+        </div>
         <div class="prod-grid" id="prodGrid"></div>
         <!-- Sticky footer for multi-select -->
         <div class="store-footer" id="storeFooter">
@@ -2539,26 +2635,62 @@ self.addEventListener('fetch',e=>{
           </div>
           <div class="lib-grid" id="libGrid" style="margin-bottom:20px"></div>
         </div>
-        <!-- MODO BLOG -->
-        <div id="libModeGuias" style="display:none;overflow-y:auto;padding-bottom:32px">
-<!-- Category underline tabs -->
-          <div class="blog-tabs-wrap">
-            <div class="blog-tabs" id="blogCats">
-              <button class="blog-tab act" onclick="filterBlog('todas',this)">Todas</button>
-              <button class="blog-tab" onclick="filterBlog('cuidados',this)">Cuidados</button>
-              <button class="blog-tab" onclick="filterBlog('tutoriales',this)">Tutoriales</button>
-              <button class="blog-tab" onclick="filterBlog('caliente',this)">🔥 Caliente</button>
-              <button class="blog-tab" onclick="filterBlog('principiantes',this)">Principiantes</button>
-              <button class="blog-tab" onclick="filterBlog('decoracion',this)">Decoración</button>
-              <button class="blog-tab" onclick="filterBlog('problemas',this)">Problemas</button>
+        <!-- MODO BLOG — Slothui style -->
+        <div id="libModeGuias" style="display:none;overflow-y:auto;padding-bottom:40px;background:var(--warm)">
+
+          <!-- Header section -->
+          <div style="padding:20px 20px 0">
+            <div class="blog-eyebrow">📖 Lee nuestras guías</div>
+            <div class="blog-heading">Aprende a cuidar<br>tus plantas</div>
+            <div class="blog-subheading">Guías reales de expertas para el clima colombiano.</div>
+          </div>
+
+          <!-- Hero card destacado -->
+          <div id="blogHero"></div>
+
+          <!-- Barra de búsqueda -->
+          <div class="blog-search-wrap">
+            <input class="blog-search-input" id="blogSearchInput" placeholder="Buscar guía…" oninput="filterBlogSearch(this.value)">
+            <div class="blog-search-ico">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
           </div>
-          <!-- Featured horizontal scroll -->
-          <div id="blogFeatured"></div>
-          <!-- Reciente section label -->
-          <div class="blog-section-lbl">Reciente</div>
-          <!-- Recent vertical list -->
-          <div id="blogGrid"></div>
+
+          <!-- Category tabs con contadores -->
+          <div class="blog-tabs-wrap" style="margin-top:12px">
+            <div class="blog-tabs" id="blogCats">
+              <button class="blog-tab act" id="btab-todas" onclick="filterBlog('todas',this)">Todas <span class="blog-tab-badge" id="bcnt-todas">0</span></button>
+              <button class="blog-tab" id="btab-cuidados" onclick="filterBlog('cuidados',this)">Cuidados <span class="blog-tab-badge" id="bcnt-cuidados" style="background:var(--sage-600)">0</span></button>
+              <button class="blog-tab" id="btab-tutoriales" onclick="filterBlog('tutoriales',this)">Tutoriales <span class="blog-tab-badge" id="bcnt-tutoriales" style="background:#7B3F00">0</span></button>
+              <button class="blog-tab" id="btab-principiantes" onclick="filterBlog('principiantes',this)">Para empezar <span class="blog-tab-badge" id="bcnt-principiantes" style="background:#185FA5">0</span></button>
+              <button class="blog-tab" id="btab-tendencias" onclick="filterBlog('tendencias',this)">📈 Tendencias</button>
+              <button class="blog-tab" id="btab-decoracion" onclick="filterBlog('decoracion',this)">Decoración</button>
+              <button class="blog-tab" id="btab-problemas" onclick="filterBlog('problemas',this)">Problemas</button>
+              <button class="blog-tab" id="btab-caliente" onclick="filterBlog('caliente',this)">🔥 Top</button>
+            </div>
+          </div>
+
+          <!-- Contador de resultados -->
+          <div class="blog-count-lbl" id="blogCountLbl" style="margin-top:12px"></div>
+
+          <!-- Grid de artículos -->
+          <div class="blog-grid" id="blogGrid"></div>
+
+          <!-- PANEL TENDENCIAS (toggle) -->
+          <div id="blogTendenciasPanel" style="display:none;padding-bottom:16px">
+            <div id="blogTendHero"></div>
+            <div class="blog-section-lbl" style="display:flex;align-items:center;gap:8px">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--v500)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+              Lo que hacen las top jardineras
+            </div>
+            <div id="blogTendHabits"></div>
+            <div class="blog-section-lbl" style="display:flex;align-items:center;gap:8px;margin-top:8px">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--sage-600)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              Tendencias en tu ciudad
+            </div>
+            <div id="blogTendLocal"></div>
+            <div id="blogTendAlerta" style="padding:0 20px 8px"></div>
+          </div>
         </div>
       </div>
 
@@ -4747,6 +4879,7 @@ function goToTab(tab){
   if(tab==='store') renderProds(S.profCat);
   if(tab==='home') renderHome();
   if(tab==='lib'){renderLib();}
+  if(tab==='comunidad'){renderForoPosts();}
   if(tab==='diag'){/* sDiag es root screen, sin renderizado extra necesario */}
   if(tab==='user'){setTimeout(renderWeeklySummary,50);}
   if(tab==='comunidad'){setTimeout(renderComunidad,50);}
@@ -5357,6 +5490,340 @@ function markWateredProfile(){
 /* ════════════════════════════════════════
    DIAGNÓSTICO
 ════════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════════════
+   SIMULACIÓN REALISTA — FOTO DE PLANTA CON PROBLEMA VISIBLE
+   Cada llamada genera planta + ambiente + enfermedad distintos
+══════════════════════════════════════════════════════════════ */
+function _drawDiseasedPlantPhoto(canvas){
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+  ctx.clearRect(0,0,W,H);
+
+  // ── Escenas de habitación ─────────────────────────────────
+  const scenes=[
+    { // Ventana luz natural
+      bg(c,w,h){
+        const wg=c.createLinearGradient(0,0,w,h);wg.addColorStop(0,'#cfc8be');wg.addColorStop(1,'#b8b0a5');
+        c.fillStyle=wg;c.fillRect(0,0,w,h);
+        c.fillStyle='rgba(255,252,220,.5)';c.fillRect(w*.52,0,w*.48,h*.58);
+        c.strokeStyle='rgba(210,200,185,.9)';c.lineWidth=3;c.strokeRect(w*.52,0,w*.48,h*.58);
+        const fg=c.createLinearGradient(0,h*.7,0,h);fg.addColorStop(0,'#7A6245');fg.addColorStop(1,'#5C4830');
+        c.fillStyle=fg;c.fillRect(0,h*.7,w,h*.3);
+        c.fillStyle='rgba(255,245,200,.18)';c.fillRect(0,0,w,h*.35);
+      }, plantX:.4, plantY:.7, light:'warm'
+    },
+    { // Mesa blanca
+      bg(c,w,h){
+        c.fillStyle='#f0ece6';c.fillRect(0,0,w,h);
+        c.fillStyle='#ffffff';c.fillRect(0,h*.63,w,h*.37);
+        c.fillStyle='#e0dbd4';c.fillRect(0,h*.63,w,3);
+        const lg=c.createRadialGradient(w*.5,0,0,w*.5,0,w);
+        lg.addColorStop(0,'rgba(255,255,255,.35)');lg.addColorStop(1,'rgba(255,255,255,0)');
+        c.fillStyle=lg;c.fillRect(0,0,w,h);
+      }, plantX:.45, plantY:.63, light:'cold'
+    },
+    { // Estante madera
+      bg(c,w,h){
+        c.fillStyle='#ddd6c8';c.fillRect(0,0,w,h);
+        c.fillStyle='#9B7D5A';c.fillRect(0,h*.6,w,12);
+        c.fillStyle='rgba(0,0,0,.1)';c.fillRect(0,h*.62,w,h*.38);
+        c.fillStyle='rgba(255,240,200,.12)';c.fillRect(0,0,w*.35,h*.6);
+      }, plantX:.44, plantY:.6, light:'soft'
+    },
+    { // Suelo alfombra
+      bg(c,w,h){
+        c.fillStyle='#c9c2b5';c.fillRect(0,0,w,h);
+        c.fillStyle='#7A6050';c.fillRect(0,h*.66,w,h*.34);
+        c.fillStyle='rgba(255,255,255,.05)';
+        for(let i=0;i<w;i+=16)c.fillRect(i,h*.66,8,h*.34);
+      }, plantX:.43, plantY:.66, light:'warm'
+    }
+  ];
+
+  // ── Tipos de planta enferma ───────────────────────────────
+  const problems=[
+    {
+      name:'Oídio (hongo blanco)',
+      draw(c,cx,by,sc){
+        _dPot(c,cx,by,sc);
+        // tallos
+        _dStem(c,cx,by-sc*28,cx-sc*20,by-sc*95,sc);
+        _dStem(c,cx,by-sc*28,cx+sc*18,by-sc*80,sc);
+        // hojas con manchas blancas (oídio)
+        _dLeaf(c,cx-sc*20,by-sc*95,sc*60,sc*42,-0.35,sc,'#3a6e22','#2a5015');
+        _dLeafSpots(c,cx-sc*20,by-sc*95,sc*60,sc*42,-0.35,'rgba(240,240,235,.75)',8,sc*9);
+        _dLeaf(c,cx+sc*18,by-sc*80,sc*55,sc*40, 0.3, sc,'#3a6e22','#2a5015');
+        _dLeafSpots(c,cx+sc*18,by-sc*80,sc*55,sc*40, 0.3,'rgba(240,240,235,.7)',6,sc*8);
+        _dLeaf(c,cx-sc*5, by-sc*55,sc*48,sc*38,-0.1,sc,'#4a7e2e','#345520');
+        _dLeafSpots(c,cx-sc*5, by-sc*55,sc*48,sc*38,-0.1,'rgba(240,240,235,.6)',5,sc*7);
+      }
+    },
+    {
+      name:'Hojas amarillas (exceso agua)',
+      draw(c,cx,by,sc){
+        _dPot(c,cx,by,sc,'#9e6030','#7a4520');
+        _dStem(c,cx,by-sc*25,cx-sc*18,by-sc*90,sc,'#5a7a20');
+        _dStem(c,cx,by-sc*25,cx+sc*16,by-sc*75,sc,'#5a7a20');
+        _dStem(c,cx,by-sc*25,cx+sc*2, by-sc*100,sc,'#5a7a20');
+        // hojas amarillas/verdes degradadas
+        _dLeaf(c,cx-sc*18,by-sc*90,sc*58,sc*40,-0.4,sc,'#d4c030','#b8a025');
+        _dLeaf(c,cx+sc*16,by-sc*75,sc*52,sc*38, 0.35,sc,'#c8b828','#a89520');
+        _dLeaf(c,cx+sc*2, by-sc*100,sc*50,sc*36,-0.08,sc,'#9ab025','#7a8a18');
+        // manchas marrones en bordes
+        _dBrownEdges(c,cx-sc*18,by-sc*90,sc*58,sc*40,-0.4,sc);
+        _dBrownEdges(c,cx+sc*16,by-sc*75,sc*52,sc*38, 0.35,sc);
+      }
+    },
+    {
+      name:'Araña roja (decoloración)',
+      draw(c,cx,by,sc){
+        _dPot(c,cx,by,sc);
+        _dStem(c,cx,by-sc*28,cx-sc*22,by-sc*92,sc);
+        _dStem(c,cx,by-sc*28,cx+sc*20,by-sc*85,sc);
+        _dLeaf(c,cx-sc*22,by-sc*92,sc*62,sc*44,-0.38,sc,'#4a6a25','#354e18');
+        _dLeaf(c,cx+sc*20,by-sc*85,sc*56,sc*42, 0.32,sc,'#4a6a25','#354e18');
+        _dLeaf(c,cx,      by-sc*58,sc*50,sc*38,-0.05,sc,'#3e5e20','#2e4815');
+        // punteado de araña (puntos amarillos/blancos diminutos)
+        _dMiteSpots(c,cx-sc*22,by-sc*92,sc*62,sc*44,-0.38,sc);
+        _dMiteSpots(c,cx+sc*20,by-sc*85,sc*56,sc*42, 0.32,sc);
+        // telitas sutiles
+        _dSpiderWeb(c,cx-sc*10,by-sc*75,sc);
+      }
+    },
+    {
+      name:'Punta seca (baja humedad)',
+      draw(c,cx,by,sc){
+        _dPot(c,cx,by,sc,'#7a6040','#5c4830');
+        _dStem(c,cx,by-sc*22,cx-sc*15,by-sc*85,sc,'#5a7030');
+        _dStem(c,cx,by-sc*22,cx+sc*18,by-sc*78,sc,'#5a7030');
+        _dStem(c,cx,by-sc*22,cx+sc*4, by-sc*95,sc,'#5a7030');
+        _dLeaf(c,cx-sc*15,by-sc*85,sc*55,sc*35,-0.3,sc,'#4e7828','#38581e');
+        _dLeaf(c,cx+sc*18,by-sc*78,sc*50,sc*33, 0.28,sc,'#4e7828','#38581e');
+        _dLeaf(c,cx+sc*4, by-sc*95,sc*52,sc*34,-0.06,sc,'#527a2c','#3c5c20');
+        // puntas marrones/secas
+        _dDryTips(c,cx-sc*15,by-sc*85,sc*55,sc*35,-0.3,sc);
+        _dDryTips(c,cx+sc*18,by-sc*78,sc*50,sc*33, 0.28,sc);
+        _dDryTips(c,cx+sc*4, by-sc*95,sc*52,sc*34,-0.06,sc);
+      }
+    },
+    {
+      name:'Botritis (mancha gris)',
+      draw(c,cx,by,sc){
+        _dPot(c,cx,by,sc,'#886050','#6a4838');
+        _dStem(c,cx,by-sc*26,cx-sc*19,by-sc*88,sc,'#507028');
+        _dStem(c,cx,by-sc*26,cx+sc*17,by-sc*82,sc,'#507028');
+        _dLeaf(c,cx-sc*19,by-sc*88,sc*60,sc*43,-0.36,sc,'#486820','#345015');
+        _dLeaf(c,cx+sc*17,by-sc*82,sc*54,sc*41, 0.34,sc,'#486820','#345015');
+        _dLeaf(c,cx,      by-sc*56,sc*48,sc*37,-0.07,sc,'#405e1c','#2e4810');
+        // manchas grises/marrones (botritis)
+        _dGrayBlotch(c,cx-sc*19,by-sc*88,sc*60,sc*43,-0.36,sc);
+        _dGrayBlotch(c,cx+sc*17,by-sc*82,sc*54,sc*41, 0.34,sc);
+      }
+    }
+  ];
+
+  // ── Helpers de formas ─────────────────────────────────────
+  function _rr(c,x,y,w,h,r){c.beginPath();c.moveTo(x+r,y);c.lineTo(x+w-r,y);c.quadraticCurveTo(x+w,y,x+w,y+r);c.lineTo(x+w,y+h-r);c.quadraticCurveTo(x+w,y+h,x+w-r,y+h);c.lineTo(x+r,y+h);c.quadraticCurveTo(x,y+h,x,y+h-r);c.lineTo(x,y+r);c.quadraticCurveTo(x,y,x+r,y);c.closePath();}
+  function _dPot(c,x,y,sc,pc1='#b55e2a',pc2='#8a3f18'){
+    const pw=sc*44,ph=sc*36;
+    const pg=c.createLinearGradient(x-pw/2,y-ph,x+pw/2,y);
+    pg.addColorStop(0,pc1);pg.addColorStop(.45,'#d07035');pg.addColorStop(1,pc2);
+    _rr(c,x-pw/2,y-ph,pw,ph,5);c.fillStyle=pg;c.fill();
+    c.beginPath();c.ellipse(x,y,pw/2*1.15,sc*5,0,0,Math.PI*2);c.fillStyle=pc2;c.fill();
+    c.beginPath();c.ellipse(x,y-ph,pw/2*.88,sc*5,0,0,Math.PI*2);c.fillStyle='#3a2010';c.fill();
+    c.beginPath();c.ellipse(x,y-ph,pw/2*.65,sc*3.2,0,0,Math.PI*2);c.fillStyle='#4a2e18';c.fill();
+  }
+  function _dStem(c,x1,y1,x2,y2,sc,col='#3a5818'){
+    c.beginPath();c.moveTo(x1,y1);c.lineTo(x2,y2);
+    c.strokeStyle=col;c.lineWidth=sc*3.5;c.lineCap='round';c.stroke();
+  }
+  function _dLeaf(c,x,y,rx,ry,angle,sc,col1,col2){
+    c.save();c.translate(x,y);c.rotate(angle);
+    const g=c.createRadialGradient(0,0,0,0,0,rx);
+    g.addColorStop(0,col1);g.addColorStop(1,col2);
+    c.beginPath();c.ellipse(0,0,rx,ry,0,0,Math.PI*2);c.fillStyle=g;c.fill();
+    c.beginPath();c.moveTo(0,-ry*.9);c.lineTo(0,ry*.6);
+    c.strokeStyle='rgba(255,255,255,.18)';c.lineWidth=1.5;c.stroke();
+    c.restore();
+  }
+  function _dLeafSpots(c,x,y,rx,ry,angle,col,count,spotR){
+    c.save();c.translate(x,y);c.rotate(angle);
+    for(let i=0;i<count;i++){
+      const sx=(Math.random()-.5)*rx*1.3,sy=(Math.random()-.5)*ry*1.3;
+      if(sx*sx/(rx*rx)+sy*sy/(ry*ry)>0.85) continue;
+      c.beginPath();c.arc(sx,sy,spotR*(0.5+Math.random()*.8),0,Math.PI*2);
+      c.fillStyle=col;c.globalAlpha=0.7+Math.random()*.25;c.fill();c.globalAlpha=1;
+    }
+    c.restore();
+  }
+  function _dBrownEdges(c,x,y,rx,ry,angle,sc){
+    c.save();c.translate(x,y);c.rotate(angle);
+    c.beginPath();c.ellipse(0,0,rx*.9,ry*.85,0,0,Math.PI*2);
+    c.strokeStyle='#8B4010';c.lineWidth=sc*4;c.globalAlpha=0.5;c.stroke();c.globalAlpha=1;
+    c.restore();
+  }
+  function _dMiteSpots(c,x,y,rx,ry,angle,sc){
+    c.save();c.translate(x,y);c.rotate(angle);
+    for(let i=0;i<35;i++){
+      const sx=(Math.random()-.5)*rx*1.5,sy=(Math.random()-.5)*ry*1.5;
+      if(sx*sx/(rx*rx)+sy*sy/(ry*ry)>0.9) continue;
+      c.beginPath();c.arc(sx,sy,sc*(0.8+Math.random()*1.2),0,Math.PI*2);
+      c.fillStyle=Math.random()>.5?'rgba(220,200,80,.75)':'rgba(200,170,60,.65)';c.fill();
+    }
+    c.restore();
+  }
+  function _dSpiderWeb(c,x,y,sc){
+    c.save();c.translate(x,y);
+    c.strokeStyle='rgba(255,255,255,.35)';c.lineWidth=0.8;
+    for(let a=0;a<Math.PI*2;a+=Math.PI/4){
+      c.beginPath();c.moveTo(0,0);c.lineTo(Math.cos(a)*sc*18,Math.sin(a)*sc*18);c.stroke();
+    }
+    [sc*6,sc*12,sc*18].forEach(r=>{
+      c.beginPath();c.arc(0,0,r,0,Math.PI*2);c.stroke();
+    });
+    c.restore();
+  }
+  function _dDryTips(c,x,y,rx,ry,angle,sc){
+    c.save();c.translate(x,y);c.rotate(angle);
+    // punta marrón seca
+    c.beginPath();c.ellipse(0,-ry*.78,rx*.28,ry*.26,0,0,Math.PI*2);
+    c.fillStyle='#8B5020';c.globalAlpha=0.72;c.fill();
+    c.beginPath();c.ellipse(rx*.55,-ry*.1,rx*.22,ry*.18,angle+0.5,0,Math.PI*2);
+    c.fillStyle='#9B5820';c.fill();c.globalAlpha=1;
+    c.restore();
+  }
+  function _dGrayBlotch(c,x,y,rx,ry,angle,sc){
+    c.save();c.translate(x,y);c.rotate(angle);
+    const positions=[[-rx*.2,-ry*.1],[rx*.25,ry*.2],[-rx*.35,ry*.3],[rx*.1,-ry*.35]];
+    positions.forEach(([bx,by])=>{
+      c.beginPath();c.ellipse(bx,by,rx*.22+Math.random()*rx*.1,ry*.18+Math.random()*ry*.08,Math.random()*Math.PI,0,Math.PI*2);
+      c.fillStyle='rgba(140,130,125,.65)';c.globalAlpha=0.6+Math.random()*.3;c.fill();c.globalAlpha=1;
+    });
+    c.restore();
+  }
+
+  // ── Elegir escena y problema al azar ─────────────────────
+  const scene  = scenes[Math.floor(Math.random()*scenes.length)];
+  const problem= problems[Math.floor(Math.random()*problems.length)];
+  const scale  = 0.68 + Math.random()*.22;
+
+  // Renderizar fondo
+  scene.bg(ctx,W,H);
+
+  // Sombra
+  ctx.save();ctx.globalAlpha=.16;
+  const sg=ctx.createRadialGradient(W*scene.plantX,H*scene.plantY+5,0,W*scene.plantX,H*scene.plantY+5,scale*52);
+  sg.addColorStop(0,'rgba(0,0,0,.55)');sg.addColorStop(1,'rgba(0,0,0,0)');
+  ctx.fillStyle=sg;ctx.beginPath();ctx.ellipse(W*scene.plantX,H*scene.plantY+8,scale*54,scale*13,0,0,Math.PI*2);ctx.fill();
+  ctx.globalAlpha=1;ctx.restore();
+
+  // Dibujar planta enferma
+  problem.draw(ctx,W*scene.plantX,H*scene.plantY,scale);
+
+  // Etiqueta de problema (overlay diagnóstico)
+  ctx.save();
+  ctx.fillStyle='rgba(180,30,30,.78)';
+  const lw=Math.min(W*.68,200);
+  const lx=W*scene.plantX - lw/2, ly=H*scene.plantY - scale*120 - 32;
+  _rr(ctx,lx,Math.max(8,ly),lw,26,13);ctx.fill();
+  ctx.font=`bold ${Math.round(scale*11+9)}px "DM Sans",sans-serif`;
+  ctx.fillStyle='#fff';ctx.textAlign='center';ctx.textBaseline='middle';
+  ctx.fillText(problem.name, W*scene.plantX, Math.max(21,ly+13));
+  ctx.restore();
+
+  // Post-proc fotográfico
+  const vg=ctx.createRadialGradient(W/2,H/2,W*.18,W/2,H/2,W*.82);
+  vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(0,0,0,.36)');
+  ctx.fillStyle=vg;ctx.fillRect(0,0,W,H);
+  if(scene.light==='warm'||scene.light==='soft'){ctx.fillStyle='rgba(255,200,100,.05)';ctx.fillRect(0,0,W,H);}
+  // Grain
+  const id=ctx.getImageData(0,0,W,H),px=id.data;
+  for(let i=0;i<px.length;i+=4){const n=(Math.random()-.5)*12;px[i]=Math.min(255,Math.max(0,px[i]+n));px[i+1]=Math.min(255,Math.max(0,px[i+1]+n));px[i+2]=Math.min(255,Math.max(0,px[i+2]+n));}
+  ctx.putImageData(id,0,0);
+  ctx.fillStyle='rgba(255,255,255,.1)';ctx.fillRect(0,0,W,H);
+
+  return problem.name;
+}
+
+/* ── DIAGNÓSTICO PRINCIPAL — foto/galería ───────────────────── */
+function diagTakePhoto(){
+  const canvas=document.getElementById('diagCanvas');
+  const label=_drawDiseasedPlantPhoto(canvas);
+  canvas.style.display='block';
+  document.getElementById('diagBgDefault').style.display='none';
+  document.getElementById('diagGrid').style.display='none';
+  document.getElementById('diagRetakeBtn').style.display='block';
+  document.getElementById('diagScanLabel').textContent='Foto tomada — listo para analizar';
+  document.getElementById('diagPhotoActions').innerHTML=
+    `<button class="btn btn-primary btn-full" onclick="startDiag()" style="gap:8px">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      Analizar esta planta
+    </button>`;
+}
+function diagUploadPhoto(){
+  // Simula selección de galería con breve delay
+  document.getElementById('diagScanLabel').textContent='Seleccionando de galería…';
+  setTimeout(()=>diagTakePhoto(), 650);
+}
+function diagRetakePhoto(){
+  const canvas=document.getElementById('diagCanvas');
+  canvas.style.display='none';
+  document.getElementById('diagBgDefault').style.display='block';
+  document.getElementById('diagGrid').style.display='block';
+  document.getElementById('diagRetakeBtn').style.display='none';
+  document.getElementById('diagResult').style.display='none';
+  document.getElementById('diagScanLabel').textContent='Elige cómo diagnosticar';
+  document.getElementById('diagPhotoActions').innerHTML=
+    `<button class="btn btn-primary" style="flex:1;gap:8px" onclick="diagTakePhoto()">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+      Tomar foto
+    </button>
+    <button class="btn btn-sage" style="flex:1;gap:8px" onclick="diagUploadPhoto()">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      Galería
+    </button>`;
+}
+
+/* ── ONBOARDING — foto/galería ───────────────────────────────── */
+function obTakePhoto(){
+  const canvas=document.getElementById('obDiagCanvas');
+  _drawDiseasedPlantPhoto(canvas);
+  canvas.style.display='block';
+  document.getElementById('obBgDefault').style.display='none';
+  document.getElementById('obGrid').style.display='none';
+  document.getElementById('obRetakeBtn').style.display='block';
+  document.getElementById('obScanLabel').textContent='Foto lista — toca para analizar';
+  // Reemplazar botones con "Analizar"
+  const actDiv=document.getElementById('obScanZone').nextElementSibling;
+  if(actDiv) actDiv.innerHTML=
+    `<button class="btn btn-primary btn-full" onclick="startObScan()" style="gap:8px">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      Analizar mi planta
+    </button>`;
+}
+function obUploadPhoto(){
+  document.getElementById('obScanLabel').textContent='Seleccionando de galería…';
+  setTimeout(()=>obTakePhoto(), 650);
+}
+function obRetakePhoto(){
+  const canvas=document.getElementById('obDiagCanvas');
+  canvas.style.display='none';
+  document.getElementById('obBgDefault').style.display='block';
+  document.getElementById('obGrid').style.display='block';
+  document.getElementById('obRetakeBtn').style.display='none';
+  document.getElementById('obScanLabel').textContent='Elige cómo analizar';
+  const actDiv=document.getElementById('obScanZone').nextElementSibling;
+  if(actDiv) actDiv.innerHTML=
+    `<button class="btn btn-primary" style="flex:1;gap:8px" onclick="obTakePhoto()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+      Tomar foto
+    </button>
+    <button class="btn btn-sage" style="flex:1;gap:8px" onclick="obUploadPhoto()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      Galería
+    </button>`;
+}
+
 function startDiag(){
   const ring=document.getElementById('diagScanRing');
   const bar=document.getElementById('diagScanBar');
@@ -5469,7 +5936,35 @@ function updateCartBadge(){
 /* ════════════════════════════════════════
    TIENDA — MULTI-SELECT + CARRITO
 ════════════════════════════════════════ */
+/* ═══════════════════════════════════════════
+   TIENDA — Lo más comprado (desde COMUNIDAD_DATA)
+═══════════════════════════════════════════ */
+function renderStoreTrending(){
+  const el=document.getElementById('storeTrendingProds');
+  if(!el) return;
+  el.innerHTML=COMUNIDAD_DATA.productos.map(p=>`
+    <div class="com-prod-card" onclick="addToCart('${p.id}');toast('🛒 ${p.nombre} agregado al carrito')">
+      <div style="width:46px;height:46px;background:var(--sage-50);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;position:relative">
+        ${p.emoji}
+        ${p.eco?'<span style="position:absolute;top:-4px;right:-4px;font-size:10px;background:#3F6B22;color:#fff;border-radius:6px;padding:1px 4px;font-weight:700">Eco</span>':''}
+      </div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:13px;font-weight:700;color:var(--txt);margin-bottom:1px">${p.nombre}</div>
+        <div style="font-size:11px;color:var(--txth);margin-bottom:3px;line-height:1.4">${p.detalle}</div>
+        <div style="display:flex;align-items:center;gap:6px">
+          <div class="com-prod-bar" style="flex:1"><div class="com-prod-bar-fill" style="width:${p.pct}%"></div></div>
+          <span style="font-size:10px;color:var(--txth);white-space:nowrap">${p.compradores} compraron</span>
+        </div>
+      </div>
+      <div style="text-align:right;flex-shrink:0;padding-left:8px">
+        <div style="font-size:15px;font-weight:800;color:var(--v500)">$${p.precio.toLocaleString('es-CO')}</div>
+        <button style="margin-top:5px;background:var(--v500);border:none;border-radius:var(--rpill);padding:6px 12px;color:#fff;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap">+ Carrito</button>
+      </div>
+    </div>`).join('');
+}
+
 function renderProds(cat){
+  renderStoreTrending();
   S.profCat=cat;
   const list=cat==='todos'?S.products:S.products.filter(p=>p.cat===cat);
   document.getElementById('prodGrid').innerHTML=list.map(p=>{
@@ -5923,6 +6418,72 @@ function addKitToCart(kid){
 /* ════════════════════════════════════════
    BIBLIOTECA — MODO TABS
 ════════════════════════════════════════ */
+/* ════════════════════════════════════════
+   TENDENCIAS EN GUÍAS — renderiza directo desde COMUNIDAD_DATA
+════════════════════════════════════════ */
+function renderLibTendencias(){
+  const city = S.userCity||'Bogotá';
+
+  // Hábitos top
+  const habitsEl=document.getElementById('libTopHabits');
+  if(habitsEl) habitsEl.innerHTML=COMUNIDAD_DATA.topHabits.map(h=>`
+    <div class="com-norm-card">
+      <div class="com-norm-ico" style="background:${h.bg}">${h.ico}</div>
+      <div style="flex:1;min-width:0">
+        <span class="com-pct" style="color:var(--ok)">${h.pct}</span>
+        <div style="font-size:13px;font-weight:700;color:var(--txt);margin-bottom:2px">${h.label}</div>
+        <div style="font-size:11px;color:var(--txth)">${h.detail}</div>
+      </div>
+    </div>`).join('');
+
+  // Tendencias locales
+  const tendEl=document.getElementById('libTendencias');
+  if(tendEl) tendEl.innerHTML=COMUNIDAD_DATA.tendencias.map(t=>`
+    <div class="com-trend-card">
+      <div class="com-trend-ico">${t.emoji}</div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:13px;font-weight:700;color:var(--txt)">${t.nombre}</div>
+        <div style="font-size:11px;color:var(--txth);margin-top:2px">${t.detalle}</div>
+      </div>
+      <span class="tag ${t.badgeCss}" style="flex-shrink:0">${t.badge}</span>
+    </div>`).join('');
+
+  // Alerta climática
+  const alertData=COMUNIDAD_DATA.alertas[city]||COMUNIDAD_DATA.alertas['Bogotá'];
+  const alertEl=document.getElementById('libAlerta');
+  if(alertEl) alertEl.innerHTML=`
+    <div class="com-alerta">
+      <div style="font-size:26px;flex-shrink:0;margin-top:1px">${alertData.ico}</div>
+      <div>
+        <div style="font-size:13px;font-weight:700;color:var(--warn);margin-bottom:3px">${alertData.title}</div>
+        <div style="font-size:12px;color:var(--warn);line-height:1.5">${alertData.msg}</div>
+      </div>
+    </div>`;
+
+  // Productos → movidos a la Tienda
+
+  // Top jardineras
+  const memEl=document.getElementById('libMiembros');
+  if(memEl) memEl.innerHTML=COMUNIDAD_DATA.miembros.map((m,i)=>`
+    <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:0.5px solid var(--cream)">
+      <div style="font-size:11px;font-weight:800;color:var(--txth);width:14px;text-align:center">${i+1}</div>
+      <div style="width:36px;height:36px;border-radius:50%;background:${m.color};display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex-shrink:0">${m.avatar}</div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:13px;font-weight:700;color:var(--txt)">${m.nombre} <span style="font-size:11px;font-weight:400;color:var(--txth)">· ${m.ciudad}</span></div>
+        <div style="font-size:11px;color:var(--txth);margin-top:1px">${m.badge} · ${m.plantas} plantas · 🔥 ${m.racha} días</div>
+        <div style="font-size:11px;color:var(--sage-600);margin-top:2px">${m.aporte}</div>
+      </div>
+    </div>`).join('');
+
+  // Rank bar animada
+  const rankEl=document.getElementById('libRankPct');
+  if(rankEl) rankEl.textContent='Top 24%';
+  setTimeout(()=>{
+    const bar=document.getElementById('libRankBar');
+    if(bar) bar.style.width='76%';
+  },120);
+}
+
 function setLibMode(mode){
   const iP=mode==='plantas';
   document.getElementById('libModePlantas').style.display=iP?'block':'none';
@@ -6434,33 +6995,7 @@ function apGoStep(n){
 
 function apNext(currentStep){apGoStep(currentStep+1);}
 
-// ── PHOTO STEP ──
-function apCameraClick(){apTakePhoto();}
-function apTakePhoto(){
-  // Simulate taking a photo — draw a plant-like gradient on canvas
-  const zone=document.getElementById('photoZone');
-  const canvas=document.getElementById('pzCanvas');
-  const inner=document.getElementById('pzInner');
-  const ctx=canvas.getContext('2d');
-  // Draw simulated camera capture
-  const grd=ctx.createRadialGradient(200,140,10,200,170,200);
-  grd.addColorStop(0,'#2a5c1a');grd.addColorStop(.5,'#1a3a0e');grd.addColorStop(1,'#0a1404');
-  ctx.fillStyle=grd;ctx.fillRect(0,0,400,340);
-  // Draw simple leaf shapes
-  ctx.fillStyle='rgba(74,140,53,.7)';
-  ctx.beginPath();ctx.ellipse(180,160,80,50,-0.5,0,Math.PI*2);ctx.fill();
-  ctx.fillStyle='rgba(90,158,64,.6)';
-  ctx.beginPath();ctx.ellipse(240,180,70,45,0.4,0,Math.PI*2);ctx.fill();
-  ctx.fillStyle='rgba(107,189,80,.5)';
-  ctx.beginPath();ctx.ellipse(200,130,50,35,-0.2,0,Math.PI*2);ctx.fill();
-  canvas.classList.add('show');
-  inner.style.display='none';
-  zone.classList.add('has-photo');
-  document.getElementById('pzRetake').style.display='block';
-  S.apPhotoTaken=true;
-  // Simulate AI scan
-  setTimeout(()=>startPhotoAI(),400);
-}
+
 function apUploadPhoto(){
   // Simulate upload — same visual result
   const zone=document.getElementById('photoZone');
@@ -7251,81 +7786,522 @@ const ARTICLES = [
 
 let _blogFilter='todas';
 
+/* ════════════════════════════════════════
+   BLOG — PANEL TENDENCIAS (estilo artículo)
+════════════════════════════════════════ */
+const HABIT_GRADIENTS=[
+  'linear-gradient(145deg,#0D4F2A,#2B8A4E)',
+  'linear-gradient(145deg,#0D3F6A,#1A6FA0)',
+  'linear-gradient(145deg,#5C2A00,#A0602A)',
+  'linear-gradient(145deg,#6B0050,#B02080)',
+  'linear-gradient(145deg,#4A1A7A,#7030B8)',
+  'linear-gradient(145deg,#1E4D2B,#4A8C3F)',
+];
+const HABIT_READ_TIMES=['3 min','4 min','3 min','5 min','4 min','3 min'];
+const HABIT_DATES=['Mayo 2026','Mayo 2026','Abril 2026','Abril 2026','Marzo 2026','Marzo 2026'];
+const HABIT_AUTHORS=['Equipo Violeta','Dra. Sara Méndez','Ing. Carlos Ríos','Equipo Violeta','Dra. Sara Méndez','Ing. Carlos Ríos'];
+
+function renderBlogTendencias(){
+  const city=S.userCity||'Bogotá';
+
+  /* ── HERO: primera tendencia local como artículo destacado ── */
+  const heroEl=document.getElementById('blogTendHero');
+  const topTend=COMUNIDAD_DATA.tendencias[0];
+  if(heroEl && topTend){
+    heroEl.innerHTML=`
+    <div style="margin:16px 20px 0;border-radius:20px;overflow:hidden;position:relative;cursor:pointer;box-shadow:0 6px 24px rgba(0,0,0,.13);background:linear-gradient(145deg,#1E4D2B,#4A8C3F)" onclick="toast('📈 ${topTend.nombre} — artículo completo próximamente')">
+      <div style="height:200px;position:relative;display:flex;align-items:flex-end">
+        <div style="position:absolute;top:10px;left:10px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:100px;padding:4px 12px;font-size:11px;font-weight:800;color:#fff;backdrop-filter:blur(4px);display:flex;align-items:center;gap:5px">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          Tendencia #1 · ${city}
+        </div>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);font-size:72px;opacity:.28;filter:blur(1px)">${topTend.emoji}</div>
+        <div style="width:100%;padding:48px 16px 16px;background:linear-gradient(transparent,rgba(0,0,0,.82));box-sizing:border-box">
+          <div style="font-size:16px;font-weight:800;color:#fff;line-height:1.25;margin-bottom:5px">${topTend.nombre}</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.78);line-height:1.4;margin-bottom:6px">${topTend.detalle}</div>
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div style="font-size:10px;color:rgba(255,255,255,.55)">Equipo Violeta · 4 min lectura</div>
+            <div style="display:flex;gap:4px">
+              <span style="background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:100px;padding:3px 8px;font-size:10px;font-weight:700;color:#fff">${topTend.badge}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  /* ── HÁBITOS como tarjetas de artículo ── */
+  const habitsEl=document.getElementById('blogTendHabits');
+  if(habitsEl){
+    // Tarjeta grande horizontal (featured) con foto simulada
+    const featured=COMUNIDAD_DATA.topHabits[0];
+    const rest=COMUNIDAD_DATA.topHabits.slice(1);
+    
+    let html='';
+    // Card grande tipo hero del hábito #1
+    html+=`
+    <div style="margin:0 20px 12px;border-radius:20px;overflow:hidden;position:relative;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.11)" onclick="openHabitDetail(0)">
+      <div style="height:185px;background:${HABIT_GRADIENTS[0]};position:relative;display:flex;align-items:flex-end">
+        <div style="position:absolute;top:10px;left:10px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);border-radius:100px;padding:4px 10px;font-size:11px;font-weight:800;color:#fff">📈 ${featured.pct} jardineras</div>
+        <div style="position:absolute;top:10px;right:10px">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </div>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);font-size:60px;opacity:.3">${featured.ico}</div>
+        <div style="width:100%;padding:40px 14px 14px;background:linear-gradient(transparent,rgba(0,0,0,.78));box-sizing:border-box">
+          <div style="font-size:15px;font-weight:800;color:#fff;line-height:1.25;margin-bottom:4px">${featured.label}</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.72);line-height:1.4">${featured.detail}</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.5);margin-top:6px">${HABIT_AUTHORS[0]} · ${HABIT_READ_TIMES[0]} · ${HABIT_DATES[0]}</div>
+        </div>
+      </div>
+    </div>`;
+
+    // Dos cards medianas side-by-side (scroll horizontal)
+    html+=`<div style="display:flex;gap:10px;padding:0 20px 4px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch">`;
+    [1,2].forEach((i)=>{
+      const h=COMUNIDAD_DATA.topHabits[i];
+      html+=`
+      <div style="min-width:56vw;max-width:220px;border-radius:16px;overflow:hidden;flex-shrink:0;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.10)" onclick="openHabitDetail(${i})">
+        <div style="height:130px;background:${HABIT_GRADIENTS[i]};position:relative;display:flex;align-items:flex-end">
+          <div style="position:absolute;top:8px;left:8px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.28);border-radius:100px;padding:3px 8px;font-size:10px;font-weight:800;color:#fff">${h.pct}</div>
+          <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);font-size:44px;opacity:.3">${h.ico}</div>
+          <div style="width:100%;padding:30px 10px 10px;background:linear-gradient(transparent,rgba(0,0,0,.78));box-sizing:border-box">
+            <div style="font-size:12px;font-weight:800;color:#fff;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">${h.label}</div>
+          </div>
+        </div>
+        <div style="background:var(--white);padding:10px 12px 12px;border:1px solid var(--cream);border-top:none;border-radius:0 0 16px 16px">
+          <div style="font-size:11px;color:var(--txth);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">${h.detail}</div>
+          <div style="font-size:10px;color:var(--txth);margin-top:6px;display:flex;align-items:center;gap:4px">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            ${HABIT_DATES[i]} · ${HABIT_READ_TIMES[i]}
+          </div>
+        </div>
+      </div>`;
+    });
+    html+=`</div>`;
+
+    // Lista estilo "recent rows" para el resto
+    rest.slice(2).forEach((h,idx)=>{
+      const i=idx+3;
+      html+=`
+      <div class="blog-recent-row" onclick="openHabitDetail(${i})" style="margin:0">
+        <div class="blog-recent-thumb" style="background:${HABIT_GRADIENTS[i%6]}">
+          <div style="font-size:28px;position:relative;z-index:1">${h.ico}</div>
+          <div class="blog-recent-cat-lbl">Hábito</div>
+        </div>
+        <div class="blog-recent-info">
+          <div style="font-size:10px;font-weight:700;color:var(--ok);margin-bottom:3px">${h.pct} jardineras</div>
+          <div class="blog-recent-title">${h.label}</div>
+          <div class="blog-recent-byline">${HABIT_AUTHORS[i%6]}</div>
+          <div class="blog-recent-date">${HABIT_DATES[i%6]} · ${HABIT_READ_TIMES[i%6]}</div>
+        </div>
+        <svg style="flex-shrink:0;color:var(--txth)" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>`;
+    });
+    habitsEl.innerHTML=html;
+  }
+
+  /* ── TENDENCIAS LOCALES como filas de artículo ── */
+  const localEl=document.getElementById('blogTendLocal');
+  if(localEl){
+    const localGrads=[
+      'linear-gradient(145deg,#1a3a0e,#3a7a1a)',
+      'linear-gradient(145deg,#1a2a5a,#2a5ab0)',
+      'linear-gradient(145deg,#5a3a00,#b07020)',
+      'linear-gradient(145deg,#5a0010,#b02040)',
+      'linear-gradient(145deg,#3a1a5a,#7030b0)',
+      'linear-gradient(145deg,#1a5a30,#30a060)',
+    ];
+    localEl.innerHTML=COMUNIDAD_DATA.tendencias.map((t,i)=>`
+      <div class="blog-recent-row" onclick="toast('🌿 ${t.nombre} — artículo completo próximamente')">
+        <div class="blog-recent-thumb" style="background:${localGrads[i%6]}">
+          <div style="font-size:28px;position:relative;z-index:1">${t.emoji}</div>
+          <div class="blog-recent-cat-lbl">Tendencia</div>
+        </div>
+        <div class="blog-recent-info">
+          <div style="font-size:10px;font-weight:700;color:var(--v500);margin-bottom:3px">${t.badge}</div>
+          <div class="blog-recent-title">${t.nombre}</div>
+          <div class="blog-recent-byline">Equipo Violeta · ${city}</div>
+          <div class="blog-recent-date">${t.detalle.slice(0,55)}${t.detalle.length>55?'…':''}</div>
+        </div>
+        <svg style="flex-shrink:0;color:var(--txth)" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>`).join('');
+  }
+
+  /* ── ALERTA CLIMÁTICA ── */
+  const alertEl=document.getElementById('blogTendAlerta');
+  if(alertEl){
+    const alertData=COMUNIDAD_DATA.alertas[city]||COMUNIDAD_DATA.alertas['Bogotá'];
+    alertEl.innerHTML=`<div class="com-alerta" style="margin-top:16px">
+      <div style="font-size:26px;flex-shrink:0;margin-top:1px">${alertData.ico}</div>
+      <div>
+        <div style="font-size:13px;font-weight:700;color:var(--warn);margin-bottom:3px">${alertData.title}</div>
+        <div style="font-size:12px;color:var(--warn);line-height:1.5">${alertData.msg}</div>
+      </div>
+    </div>`;
+  }
+}
+
+function openHabitDetail(idx){
+  const h=COMUNIDAD_DATA.topHabits[idx];
+  if(!h) return;
+  // Populate and open sArticle screen with habit data
+  const habGrads=['linear-gradient(145deg,#0D4F2A,#2B8A4E)','linear-gradient(145deg,#0D3F6A,#1A6FA0)','linear-gradient(145deg,#5C2A00,#A0602A)','linear-gradient(145deg,#6B0050,#B02080)','linear-gradient(145deg,#4A1A7A,#7030B8)','linear-gradient(145deg,#1E4D2B,#4A8C3F)'];
+  try{
+    document.getElementById('articleHeaderTitle').textContent=h.label;
+    const hero=document.getElementById('articleHero');
+    if(hero) hero.style.background=habGrads[idx%6];
+    document.getElementById('articleCatBadge').textContent='📈 Tendencia · '+h.pct;
+    document.getElementById('articleCatBadge').style.background='rgba(255,255,255,.2)';
+    document.getElementById('articleCatBadge').style.color='#fff';
+    document.getElementById('articleTitle').textContent=h.ico+' '+h.label;
+    document.getElementById('articleSubtitle').textContent=h.detail;
+    document.getElementById('articleMeta').textContent=(HABIT_AUTHORS[idx%6])+' · '+(HABIT_READ_TIMES[idx%6])+' de lectura · '+(HABIT_DATES[idx%6]);
+    document.getElementById('articleBody').innerHTML=`
+      <p style="font-size:15px;line-height:1.7;color:var(--txt2);margin-bottom:18px">${h.detail}</p>
+      <div style="background:var(--sage-50);border-left:3px solid var(--sage-500);border-radius:0 12px 12px 0;padding:14px 16px;margin-bottom:18px">
+        <div style="font-size:12px;font-weight:700;color:var(--sage-600);margin-bottom:6px">💡 Por qué funciona</div>
+        <p style="font-size:14px;line-height:1.65;color:var(--txt2)">El <strong>${h.pct}</strong> de las top jardineras de Violeta aplica este hábito de manera consistente. Los datos muestran que las plantas bajo este cuidado tienen hasta un 40% más de salud promedio medida por la app.</p>
+      </div>
+      <h3 style="font-size:17px;font-weight:800;color:var(--txt);margin-bottom:10px">Cómo aplicarlo paso a paso</h3>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:18px">
+        ${['Elige el momento del día que mejor se adapte a tu rutina.','Establece un recordatorio en Violeta para no olvidarlo.','Hazlo durante 21 días seguidos — después se vuelve automático.','Comparte tu progreso en la comunidad para motivarte.'].map((s,si)=>`
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <div style="width:24px;height:24px;background:var(--v500);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;flex-shrink:0;margin-top:1px">${si+1}</div>
+          <p style="font-size:14px;line-height:1.6;color:var(--txt2)">${s}</p>
+        </div>`).join('')}
+      </div>
+      <div style="background:var(--v50);border-radius:14px;padding:14px 16px;margin-bottom:18px;border:1px solid var(--v100)">
+        <div style="font-size:12px;font-weight:700;color:var(--v500);margin-bottom:4px">🏆 Dato de la comunidad</div>
+        <p style="font-size:14px;line-height:1.6;color:var(--txt2)">Las jardineras que activan este hábito en Violeta tienen en promedio <strong>un 28% más de racha activa</strong> que las que no lo hacen. El hábito sí marca la diferencia.</p>
+      </div>`;
+    const rail=document.getElementById('articleProductsRail');
+    if(rail) rail.innerHTML='';
+    document.getElementById('articleExpertTip').textContent='¿Quieres personalizar este hábito a tus plantas específicas? Un experto de Violeta puede darte un plan adaptado a tu colección en 20 minutos.';
+    document.getElementById('articleFeedbackForm').style.display='block';
+    document.getElementById('articleFeedbackConfirm').style.display='none';
+    goTo('sArticle');
+  }catch(e){ console.warn('openHabitDetail error',e); }
+}
+
+/* helper: avatar color */
+function _avatarColor(author){
+  const colors={'D':'#7030B8','I':'#1A6FA0','J':'#8B5E00','E':'#3F6B22','default':'#4A8C35'};
+  return colors[author[0]]||colors.default;
+}
+
+/* ── Escenas y plantas para fotos de blog ── */
+function renderBlogTendencias(){
+  const city=S.userCity||'Bogotá';
+
+  /* ── HERO: primera tendencia local como artículo destacado ── */
+  const heroEl=document.getElementById('blogTendHero');
+  const topTend=COMUNIDAD_DATA.tendencias[0];
+  if(heroEl && topTend){
+    heroEl.innerHTML=`
+    <div style="margin:16px 20px 0;border-radius:20px;overflow:hidden;position:relative;cursor:pointer;box-shadow:0 6px 24px rgba(0,0,0,.13);background:linear-gradient(145deg,#1E4D2B,#4A8C3F)" onclick="toast('📈 ${topTend.nombre} — artículo completo próximamente')">
+      <div style="height:200px;position:relative;display:flex;align-items:flex-end">
+        <div style="position:absolute;top:10px;left:10px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:100px;padding:4px 12px;font-size:11px;font-weight:800;color:#fff;backdrop-filter:blur(4px);display:flex;align-items:center;gap:5px">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          Tendencia #1 · ${city}
+        </div>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);font-size:72px;opacity:.28;filter:blur(1px)">${topTend.emoji}</div>
+        <div style="width:100%;padding:48px 16px 16px;background:linear-gradient(transparent,rgba(0,0,0,.82));box-sizing:border-box">
+          <div style="font-size:16px;font-weight:800;color:#fff;line-height:1.25;margin-bottom:5px">${topTend.nombre}</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.78);line-height:1.4;margin-bottom:6px">${topTend.detalle}</div>
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div style="font-size:10px;color:rgba(255,255,255,.55)">Equipo Violeta · 4 min lectura</div>
+            <div style="display:flex;gap:4px">
+              <span style="background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:100px;padding:3px 8px;font-size:10px;font-weight:700;color:#fff">${topTend.badge}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  /* ── HÁBITOS como tarjetas de artículo ── */
+  const habitsEl=document.getElementById('blogTendHabits');
+  if(habitsEl){
+    // Tarjeta grande horizontal (featured) con foto simulada
+    const featured=COMUNIDAD_DATA.topHabits[0];
+    const rest=COMUNIDAD_DATA.topHabits.slice(1);
+    
+    let html='';
+    // Card grande tipo hero del hábito #1
+    html+=`
+    <div style="margin:0 20px 12px;border-radius:20px;overflow:hidden;position:relative;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.11)" onclick="openHabitDetail(0)">
+      <div style="height:185px;background:${HABIT_GRADIENTS[0]};position:relative;display:flex;align-items:flex-end">
+        <div style="position:absolute;top:10px;left:10px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);border-radius:100px;padding:4px 10px;font-size:11px;font-weight:800;color:#fff">📈 ${featured.pct} jardineras</div>
+        <div style="position:absolute;top:10px;right:10px">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </div>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);font-size:60px;opacity:.3">${featured.ico}</div>
+        <div style="width:100%;padding:40px 14px 14px;background:linear-gradient(transparent,rgba(0,0,0,.78));box-sizing:border-box">
+          <div style="font-size:15px;font-weight:800;color:#fff;line-height:1.25;margin-bottom:4px">${featured.label}</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.72);line-height:1.4">${featured.detail}</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.5);margin-top:6px">${HABIT_AUTHORS[0]} · ${HABIT_READ_TIMES[0]} · ${HABIT_DATES[0]}</div>
+        </div>
+      </div>
+    </div>`;
+
+    // Dos cards medianas side-by-side (scroll horizontal)
+    html+=`<div style="display:flex;gap:10px;padding:0 20px 4px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch">`;
+    [1,2].forEach((i)=>{
+      const h=COMUNIDAD_DATA.topHabits[i];
+      html+=`
+      <div style="min-width:56vw;max-width:220px;border-radius:16px;overflow:hidden;flex-shrink:0;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.10)" onclick="openHabitDetail(${i})">
+        <div style="height:130px;background:${HABIT_GRADIENTS[i]};position:relative;display:flex;align-items:flex-end">
+          <div style="position:absolute;top:8px;left:8px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.28);border-radius:100px;padding:3px 8px;font-size:10px;font-weight:800;color:#fff">${h.pct}</div>
+          <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);font-size:44px;opacity:.3">${h.ico}</div>
+          <div style="width:100%;padding:30px 10px 10px;background:linear-gradient(transparent,rgba(0,0,0,.78));box-sizing:border-box">
+            <div style="font-size:12px;font-weight:800;color:#fff;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">${h.label}</div>
+          </div>
+        </div>
+        <div style="background:var(--white);padding:10px 12px 12px;border:1px solid var(--cream);border-top:none;border-radius:0 0 16px 16px">
+          <div style="font-size:11px;color:var(--txth);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">${h.detail}</div>
+          <div style="font-size:10px;color:var(--txth);margin-top:6px;display:flex;align-items:center;gap:4px">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            ${HABIT_DATES[i]} · ${HABIT_READ_TIMES[i]}
+          </div>
+        </div>
+      </div>`;
+    });
+    html+=`</div>`;
+
+    // Lista estilo "recent rows" para el resto
+    rest.slice(2).forEach((h,idx)=>{
+      const i=idx+3;
+      html+=`
+      <div class="blog-recent-row" onclick="openHabitDetail(${i})" style="margin:0">
+        <div class="blog-recent-thumb" style="background:${HABIT_GRADIENTS[i%6]}">
+          <div style="font-size:28px;position:relative;z-index:1">${h.ico}</div>
+          <div class="blog-recent-cat-lbl">Hábito</div>
+        </div>
+        <div class="blog-recent-info">
+          <div style="font-size:10px;font-weight:700;color:var(--ok);margin-bottom:3px">${h.pct} jardineras</div>
+          <div class="blog-recent-title">${h.label}</div>
+          <div class="blog-recent-byline">${HABIT_AUTHORS[i%6]}</div>
+          <div class="blog-recent-date">${HABIT_DATES[i%6]} · ${HABIT_READ_TIMES[i%6]}</div>
+        </div>
+        <svg style="flex-shrink:0;color:var(--txth)" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>`;
+    });
+    habitsEl.innerHTML=html;
+  }
+
+  /* ── TENDENCIAS LOCALES como filas de artículo ── */
+  const localEl=document.getElementById('blogTendLocal');
+  if(localEl){
+    const localGrads=[
+      'linear-gradient(145deg,#1a3a0e,#3a7a1a)',
+      'linear-gradient(145deg,#1a2a5a,#2a5ab0)',
+      'linear-gradient(145deg,#5a3a00,#b07020)',
+      'linear-gradient(145deg,#5a0010,#b02040)',
+      'linear-gradient(145deg,#3a1a5a,#7030b0)',
+      'linear-gradient(145deg,#1a5a30,#30a060)',
+    ];
+    localEl.innerHTML=COMUNIDAD_DATA.tendencias.map((t,i)=>`
+      <div class="blog-recent-row" onclick="toast('🌿 ${t.nombre} — artículo completo próximamente')">
+        <div class="blog-recent-thumb" style="background:${localGrads[i%6]}">
+          <div style="font-size:28px;position:relative;z-index:1">${t.emoji}</div>
+          <div class="blog-recent-cat-lbl">Tendencia</div>
+        </div>
+        <div class="blog-recent-info">
+          <div style="font-size:10px;font-weight:700;color:var(--v500);margin-bottom:3px">${t.badge}</div>
+          <div class="blog-recent-title">${t.nombre}</div>
+          <div class="blog-recent-byline">Equipo Violeta · ${city}</div>
+          <div class="blog-recent-date">${t.detalle.slice(0,55)}${t.detalle.length>55?'…':''}</div>
+        </div>
+        <svg style="flex-shrink:0;color:var(--txth)" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>`).join('');
+  }
+
+  /* ── ALERTA CLIMÁTICA ── */
+  const alertEl=document.getElementById('blogTendAlerta');
+  if(alertEl){
+    const alertData=COMUNIDAD_DATA.alertas[city]||COMUNIDAD_DATA.alertas['Bogotá'];
+    alertEl.innerHTML=`<div class="com-alerta" style="margin-top:16px">
+      <div style="font-size:26px;flex-shrink:0;margin-top:1px">${alertData.ico}</div>
+      <div>
+        <div style="font-size:13px;font-weight:700;color:var(--warn);margin-bottom:3px">${alertData.title}</div>
+        <div style="font-size:12px;color:var(--warn);line-height:1.5">${alertData.msg}</div>
+      </div>
+    </div>`;
+  }
+}
+
+function openHabitDetail(idx){
+  const h=COMUNIDAD_DATA.topHabits[idx];
+  if(!h) return;
+  // Populate and open sArticle screen with habit data
+  const habGrads=['linear-gradient(145deg,#0D4F2A,#2B8A4E)','linear-gradient(145deg,#0D3F6A,#1A6FA0)','linear-gradient(145deg,#5C2A00,#A0602A)','linear-gradient(145deg,#6B0050,#B02080)','linear-gradient(145deg,#4A1A7A,#7030B8)','linear-gradient(145deg,#1E4D2B,#4A8C3F)'];
+  try{
+    document.getElementById('articleHeaderTitle').textContent=h.label;
+    const hero=document.getElementById('articleHero');
+    if(hero) hero.style.background=habGrads[idx%6];
+    document.getElementById('articleCatBadge').textContent='📈 Tendencia · '+h.pct;
+    document.getElementById('articleCatBadge').style.background='rgba(255,255,255,.2)';
+    document.getElementById('articleCatBadge').style.color='#fff';
+    document.getElementById('articleTitle').textContent=h.ico+' '+h.label;
+    document.getElementById('articleSubtitle').textContent=h.detail;
+    document.getElementById('articleMeta').textContent=(HABIT_AUTHORS[idx%6])+' · '+(HABIT_READ_TIMES[idx%6])+' de lectura · '+(HABIT_DATES[idx%6]);
+    document.getElementById('articleBody').innerHTML=`
+      <p style="font-size:15px;line-height:1.7;color:var(--txt2);margin-bottom:18px">${h.detail}</p>
+      <div style="background:var(--sage-50);border-left:3px solid var(--sage-500);border-radius:0 12px 12px 0;padding:14px 16px;margin-bottom:18px">
+        <div style="font-size:12px;font-weight:700;color:var(--sage-600);margin-bottom:6px">💡 Por qué funciona</div>
+        <p style="font-size:14px;line-height:1.65;color:var(--txt2)">El <strong>${h.pct}</strong> de las top jardineras de Violeta aplica este hábito de manera consistente. Los datos muestran que las plantas bajo este cuidado tienen hasta un 40% más de salud promedio medida por la app.</p>
+      </div>
+      <h3 style="font-size:17px;font-weight:800;color:var(--txt);margin-bottom:10px">Cómo aplicarlo paso a paso</h3>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:18px">
+        ${['Elige el momento del día que mejor se adapte a tu rutina.','Establece un recordatorio en Violeta para no olvidarlo.','Hazlo durante 21 días seguidos — después se vuelve automático.','Comparte tu progreso en la comunidad para motivarte.'].map((s,si)=>`
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <div style="width:24px;height:24px;background:var(--v500);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;flex-shrink:0;margin-top:1px">${si+1}</div>
+          <p style="font-size:14px;line-height:1.6;color:var(--txt2)">${s}</p>
+        </div>`).join('')}
+      </div>
+      <div style="background:var(--v50);border-radius:14px;padding:14px 16px;margin-bottom:18px;border:1px solid var(--v100)">
+        <div style="font-size:12px;font-weight:700;color:var(--v500);margin-bottom:4px">🏆 Dato de la comunidad</div>
+        <p style="font-size:14px;line-height:1.6;color:var(--txt2)">Las jardineras que activan este hábito en Violeta tienen en promedio <strong>un 28% más de racha activa</strong> que las que no lo hacen. El hábito sí marca la diferencia.</p>
+      </div>`;
+    const rail=document.getElementById('articleProductsRail');
+    if(rail) rail.innerHTML='';
+    document.getElementById('articleExpertTip').textContent='¿Quieres personalizar este hábito a tus plantas específicas? Un experto de Violeta puede darte un plan adaptado a tu colección en 20 minutos.';
+    document.getElementById('articleFeedbackForm').style.display='block';
+    document.getElementById('articleFeedbackConfirm').style.display='none';
+    goTo('sArticle');
+  }catch(e){ console.warn('openHabitDetail error',e); }
+}
+
+/* helper: avatar color */
+function _avatarColor(author){
+  const colors={'D':'#7030B8','I':'#1A6FA0','J':'#8B5E00','E':'#3F6B22','default':'#4A8C35'};
+  return colors[author[0]]||colors.default;
+}
+
+/* ── Escenas y plantas para fotos de blog ── */
 function renderBlog(){
-  // Filter articles
+  const searchVal=(document.getElementById('blogSearchInput')||{}).value||'';
   let arts=ARTICLES;
   if(_blogFilter==='caliente') arts=ARTICLES.filter(a=>a.trending);
   else if(_blogFilter!=='todas') arts=ARTICLES.filter(a=>a.cat===_blogFilter);
+  if(searchVal.trim()) arts=arts.filter(a=>
+    a.title.toLowerCase().includes(searchVal.toLowerCase())||
+    a.subtitle.toLowerCase().includes(searchVal.toLowerCase())
+  );
 
-  const trending=arts.filter(a=>a.trending);
-  const recent=arts.filter(a=>!a.trending);
+  // Actualizar contadores en tabs
+  const cats=['cuidados','tutoriales','principiantes'];
+  cats.forEach(c=>{
+    const el=document.getElementById('bcnt-'+c);
+    if(el) el.textContent=ARTICLES.filter(a=>a.cat===c).length;
+  });
+  const elTodas=document.getElementById('bcnt-todas');
+  if(elTodas) elTodas.textContent=ARTICLES.length;
 
-  /* ── FEATURED SCROLL ── */
-  const featEl=document.getElementById('blogFeatured');
-  if(featEl){
-    if(trending.length){
-      featEl.innerHTML=`<div class="blog-feat-scroll">${trending.map(a=>buildFeatCard(a)).join('')}</div>`;
-    } else {
-      // If filter has no trending, show first 2 as featured
-      const picks=arts.slice(0,2);
-      const rest_=arts.slice(2);
-      featEl.innerHTML=picks.length?`<div class="blog-feat-scroll">${picks.map(a=>buildFeatCard(a)).join('')}</div>`:'';
-    }
+  // Contador de resultados
+  const countEl=document.getElementById('blogCountLbl');
+  if(countEl) countEl.textContent=`Mostrando ${arts.length} de ${ARTICLES.length} guías`;
+
+  // Hero card — siempre el artículo trending más reciente
+  const heroEl=document.getElementById('blogHero');
+  if(heroEl){
+    const hero=ARTICLES.find(a=>a.trending)||ARTICLES[0];
+    if(hero) heroEl.innerHTML=buildHeroCard(hero);
   }
 
-  /* ── RECENT LIST ── */
+  // Grid de cards
   const gridEl=document.getElementById('blogGrid');
   if(gridEl){
-    const listArts=_blogFilter==='caliente'?arts:recent;
-    if(listArts.length===0){
-      gridEl.innerHTML='<div style="padding:20px;text-align:center;color:var(--txth);font-size:13px">No hay artículos en esta categoría aún.</div>';
+    if(arts.length===0){
+      gridEl.innerHTML='<div style="grid-column:1/-1;padding:20px;text-align:center;color:var(--txth);font-size:13px">No hay guías en esta categoría.</div>';
     } else {
-      gridEl.innerHTML=listArts.map(a=>buildRecentRow(a)).join('');
+      gridEl.innerHTML=arts.map((a,i)=>buildBlogCard(a,i)).join('');
     }
   }
 }
 
-function buildFeatCard(a){
-  const badge=a.trending
-    ?`<div class="blog-feat-badge hot">🔥 Caliente</div>`
-    :`<div class="blog-feat-badge cat">${a.catLabel}</div>`;
+// Paleta de avatares para autores
+const BLOG_AV_COLORS=['#7030B8','#3F6B22','#185FA5','#A32D2D','#8A5000','#1A7A4A','#C02850'];
+function blogAvColor(name){
+  let h=0;for(let i=0;i<name.length;i++) h=(h*31+name.charCodeAt(i))%BLOG_AV_COLORS.length;
+  return BLOG_AV_COLORS[h];
+}
+
+function buildHeroCard(a){
+  const authorFirst=(a.author||'').split('·')[0].trim();
+  const authorInitial=authorFirst.charAt(0).toUpperCase();
+  const avColor=blogAvColor(authorFirst);
+  const tags=[a.catLabel,...(a.tags||[])].filter(Boolean).slice(0,3);
   return `
-  <div class="blog-feat-card" onclick="openArticle('${a.id}')">
-    <div class="blog-feat-img" style="background:${a.heroGrad}">
-      ${badge}
-      <!-- Decorative emoji as "photo subject" -->
-      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);font-size:64px;opacity:.35;filter:blur(1px)">${a.emoji}</div>
-      <div class="blog-feat-overlay">
-        <div class="blog-feat-title">${a.title}</div>
-        <div class="blog-feat-sub">${a.subtitle}</div>
-        <div class="blog-feat-meta">${a.author} · ${a.readTime} de lectura${a.video?' · 🎬 Video':''}</div>
+  <div class="blog-hero-card" onclick="openArticle('${a.id}')">
+    <div class="blog-hero-img" style="background:${a.heroGrad}">
+      <div class="blog-hero-photo"><div class="blog-hero-photo-inner">${a.emoji}</div></div>
+      <div class="blog-hero-overlay">
+        <div class="blog-hero-tags">
+          ${tags.map(t=>`<span class="blog-hero-tag">${t}</span>`).join('')}
+          ${a.trending?'<span class="blog-hero-tag" style="background:rgba(220,60,0,.85)">🔥 Popular</span>':''}
+        </div>
+        <div class="blog-hero-title">${a.title}</div>
+        <div class="blog-hero-meta">
+          <div class="blog-hero-av" style="background:${avColor}">${authorInitial}</div>
+          <span class="blog-hero-author">${authorFirst}</span>
+          <span class="blog-hero-date">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            ${a.date}
+          </span>
+        </div>
+      </div>
+      <div class="blog-hero-arrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
       </div>
     </div>
   </div>`;
 }
 
-function buildRecentRow(a){
-  const dateStr=a.date;
+function buildBlogCard(a,idx){
+  const authorFirst=(a.author||'').split('·')[0].trim();
+  const authorInitial=authorFirst.charAt(0).toUpperCase();
+  const avColor=blogAvColor(authorFirst);
+  const wide=idx===0||idx===3;
   return `
-  <div class="blog-recent-row" onclick="openArticle('${a.id}')">
-    <div class="blog-recent-thumb" style="background:${a.heroGrad}">
-      <div style="font-size:32px;position:relative;z-index:1">${a.emoji}</div>
-      <div class="blog-recent-cat-lbl">${a.catLabel}</div>
+  <div class="blog-card${wide?' blog-card-wide':''}" onclick="openArticle('${a.id}')">
+    <div class="blog-card-img" style="">
+      <div class="blog-card-img-grad" style="background:${a.heroGrad}"></div>
+      <div class="blog-card-img-inner">${a.emoji}</div>
+      ${a.trending?'<div style="position:absolute;top:8px;right:8px;background:rgba(220,60,0,.85);color:#fff;border-radius:var(--rpill);padding:2px 8px;font-size:9px;font-weight:700">🔥</div>':''}
     </div>
-    <div class="blog-recent-info">
-      <div class="blog-recent-title">${a.title}</div>
-      <div class="blog-recent-byline">${a.author}</div>
-      <div class="blog-recent-date">${dateStr}${a.video?' · 🎬':''}${a.trending?' · 🔥':''}</div>
+    <div class="blog-card-body">
+      <div class="blog-card-cat" style="color:${a.catColor||'var(--v500)'}">${a.catLabel}</div>
+      <div class="blog-card-title">${a.title}</div>
+      ${wide?`<div style="font-size:11.5px;color:var(--txth);line-height:1.45;margin-bottom:7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">${a.subtitle}</div>`:''}
+      <div class="blog-card-footer">
+        <div class="blog-card-av" style="background:${avColor}">${authorInitial}</div>
+        <span class="blog-card-author">${authorFirst}</span>
+        <span class="blog-card-time">${a.readTime}</span>
+      </div>
     </div>
-    <svg style="flex-shrink:0;color:var(--txth)" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
   </div>`;
 }
 
+function filterBlogSearch(val){
+  renderBlog();
+}
+
 function filterBlog(cat,el){
-  _blogFilter=cat;
+  _blogFilter=cat||'todas';
   document.querySelectorAll('#blogCats .blog-tab').forEach(c=>c.classList.remove('act'));
   if(el) el.classList.add('act');
-  renderBlog();
+  const isTend=cat==='tendencias';
+  const blogFeatured=document.getElementById('blogFeatured');
+  const blogSectionLbl=document.querySelector('#libModeGuias .blog-section-lbl');
+  const blogGrid=document.getElementById('blogGrid');
+  const tendPanel=document.getElementById('blogTendenciasPanel');
+  if(blogFeatured) blogFeatured.style.display=isTend?'none':'';
+  if(blogSectionLbl) blogSectionLbl.style.display=isTend?'none':'';
+  if(blogGrid) blogGrid.style.display=isTend?'none':'';
+  if(tendPanel) tendPanel.style.display=isTend?'block':'none';
+  if(isTend) renderBlogTendencias();
+  else renderBlog();
 }
 
 
@@ -8158,19 +9134,41 @@ let _comTab='normas';
 
 function switchComTab(tab){
   _comTab=tab;
-  document.getElementById('comTabNormas').classList.toggle('act',tab==='normas');
-  document.getElementById('comTabForo').classList.toggle('act',tab==='foro');
-  document.getElementById('comPanelNormas').style.display=tab==='normas'?'block':'none';
-  document.getElementById('comPanelForo').style.display=tab==='foro'?'block':'none';
-  if(tab==='foro') renderForoPosts();
+  renderForoPosts();
 }
 
 function filterForo(cat,el){
   _foroFilter=cat;
-  document.querySelectorAll('.foro-cat[id^="fcat-"]').forEach(b=>b.classList.remove('act'));
-  if(el) el.classList.add('act');
+  // Actualizar tabs Twitter
+  document.querySelectorAll('#twTabs .tw-tab').forEach(t=>{
+    t.classList.remove('act');
+    const line=t.querySelector('.tw-tab-line');
+    if(line) line.style.background='transparent';
+  });
+  if(el){
+    el.classList.add('act');
+    const line=el.querySelector('.tw-tab-line');
+    if(line) line.style.background='var(--v500)';
+  }
   renderForoPosts();
 }
+
+function renderWhoToFollow(){
+  const el=document.getElementById('twWhoToFollow');
+  if(!el||!COMUNIDAD_DATA.miembros) return;
+  const members=COMUNIDAD_DATA.miembros.slice(0,4);
+  el.innerHTML=`<div class="tw-follow-title">A quién seguir 🌿</div>
+    <div class="tw-follow-row">
+      ${members.map(m=>`
+        <div class="tw-follow-card">
+          <div class="tw-follow-card-av" style="background:${m.color}">${m.avatar}</div>
+          <div class="tw-follow-card-name">${m.nombre.split(' ')[0]} ${m.nombre.split(' ')[1]||''}</div>
+          <div class="tw-follow-card-handle">${twHandle(m.nombre)}</div>
+          <button class="tw-follow-btn" onclick="toast('✅ Siguiendo a ${m.nombre.split(' ')[0]}')">Seguir</button>
+        </div>`).join('')}
+    </div>`;
+}
+
 
 function renderForoPosts(){
   const list=document.getElementById('foroPostList');
@@ -8189,56 +9187,97 @@ function buildPintCard(p){
   return buildQCard(p);
 }
 
+
+/* ── Utilidades Twitter ── */
+const TW_AV_COLORS=['#7030B8','#3F6B22','#185FA5','#A32D2D','#8A5000','#1A7A4A','#C02850','#0D5E6C'];
+function twAvColor(name){let h=0;for(let i=0;i<name.length;i++)h=(h*31+name.charCodeAt(i))%TW_AV_COLORS.length;return TW_AV_COLORS[h];}
+function twHandle(name){return '@'+name.replace(/[^a-záéíóúñA-ZÁÉÍÓÚÑ0-9]/g,'').toLowerCase().slice(0,12);}
+function twTime(t){return t||'ahora';}
+const TW_EXPERTS=['Dra. Ana Vargas','Laura G.','Dra. Sara Méndez'];
+function twIsVerified(name){return TW_EXPERTS.some(e=>name.includes(e.split(' ')[0]));}
+const TW_HASHTAGS={
+  cuidados:['#RiegoCorrecto','#CuidadosDePlanta'],
+  plagas:['#Plagas','#SaludVegetal'],
+  progreso:['#MiJardin','#Progreso'],
+  logros:['#Logro','#Racha'],
+  preguntas:['#Ayuda','#Botanica'],
+  identificar:['#PlantID','#Botanica'],
+  recomendacion:['#Recomendación','#Violeta'],
+  todas:[],
+};
+function twHashtags(cat){return(TW_HASHTAGS[cat]||[]).join(' ');}
+function twViews(votos){const base=votos*18+Math.floor(Math.random()*200)+50;return base>1000?(base/1000).toFixed(1)+'K':base;}
+function twReposts(votos){return Math.max(0,Math.floor(votos*0.4)+Math.floor(Math.random()*5));}
+
 function buildQCard(p){
-  // ── Expertise badge por número de votos del autor ──
-  const totalVotos=FORO_POSTS.filter(x=>x.autor===p.autor).reduce((s,x)=>s+(x.votos||0),0);
-  const badge=totalVotos>80?'🌳 Experta':totalVotos>30?'🌿 Avanzada':'🌱 Jardinera';
-  const votes=p.votos+p.misVotos;
+  const avColor=twAvColor(p.autor);
+  const handle=twHandle(p.autor);
+  const verified=twIsVerified(p.autor);
+  const hashtags=twHashtags(p.cat);
+  const views=twViews(p.votos||10);
+  const reposts=twReposts(p.votos||10);
   const hasPhoto=p.tipo==='foto';
-  const thumb=hasPhoto?`<div class="q-thumb" style="background:${p.photoBg||'var(--sage-50)'}">${p.photoEmoji||'🌿'}</div>`:'';
-  return `<div class="q-card" onclick="openPost(${p.id})">
-    <div class="q-author-row">
-      <div class="q-av" style="background:${avatarColors[p.avatarIdx]}">${p.autor.charAt(0)}</div>
-      <div class="q-author-info">
-        <div class="q-author-name">${p.autor}</div>
-        <div class="q-author-meta">
-          <span class="q-badge">${badge}</span>
-          <span class="q-dot">·</span>
-          <span class="q-time">${p.tiempo}</span>
+  const authorShort=p.autor.split('·')[0].trim();
+  const nameDisplay=authorShort.length>14?authorShort.slice(0,14)+'…':authorShort;
+
+  const photoHTML=hasPhoto?`
+    <div class="tw-tweet-photo">
+      <div class="tw-tweet-photo-grad" style="background:${p.photoBg||'linear-gradient(145deg,#1C3A0A,#4A7A1E)'}"></div>
+      <div class="tw-tweet-photo-inner">${p.photoEmoji||p.emoji||'🌿'}</div>
+    </div>`:'';
+
+  const textWithHashtags=`${p.titulo}${p.cuerpo?'<br><span style="color:var(--txt2);font-size:13.5px">'+p.cuerpo.slice(0,120)+(p.cuerpo.length>120?'…':'')+'</span>':''}`;
+  const hashtagHTML=hashtags?`<div style="margin-top:6px;font-size:13px;font-weight:500;color:var(--v500)">${hashtags}</div>`:'';
+
+  const isLiked=p.misVotos>0;
+
+  return `<div class="tw-tweet" onclick="openPost(${p.id})">
+    <div class="tw-tweet-av-col">
+      <div class="tw-tweet-av" style="background:${avColor}">${authorShort.charAt(0).toUpperCase()}</div>
+      ${p.comentarios&&p.comentarios.length?'<div class="tw-tweet-line"></div>':''}
+    </div>
+    <div class="tw-tweet-body">
+      <div style="display:flex;align-items:flex-start">
+        <div style="flex:1;min-width:0">
+          <div class="tw-tweet-head">
+            <span class="tw-tweet-name">${nameDisplay}</span>
+            ${verified?`<span class="tw-tweet-verified"><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--v500)" stroke="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg></span>`:''}
+            <span class="tw-tweet-handle">${handle}</span>
+            <span class="tw-tweet-time">· ${twTime(p.tiempo)}</span>
+          </div>
         </div>
-      </div>
-      <button class="q-follow-btn" onclick="event.stopPropagation();toast('✅ Siguiendo a ${p.autor}')">Seguir</button>
-    </div>
-    <span class="q-topic" style="background:${p.catBg};color:${p.catColor}">${p.catLabel}</span>
-    <div class="q-body">
-      <div class="q-text">
-        <div class="q-title">${p.titulo}</div>
-        ${p.cuerpo?`<div class="q-preview">${p.cuerpo}</div>`:''}
-      </div>
-      ${thumb}
-    </div>
-    <div class="q-actions" onclick="event.stopPropagation()">
-      <div class="q-vote-group">
-        <button class="q-vote-btn up ${p.misVotos>0?'voted':''}" onclick="votePost(${p.id},1);renderForoPosts()">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-          ${votes}
-        </button>
-        <div class="q-vote-divider"></div>
-        <button class="q-vote-btn down ${p.misVotos<0?'voted':''}" onclick="votePost(${p.id},-1);renderForoPosts()">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        <button class="tw-tweet-more" onclick="event.stopPropagation();toast('Opciones próximamente')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--txth)"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg>
         </button>
       </div>
-      <button class="q-action-btn ${p.comentarios.length?'answered':''}" onclick="openPost(${p.id})">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        ${p.comentarios.length} ${p.comentarios.length===1?'respuesta':'respuestas'}
-      </button>
-      <button class="q-action-btn" style="margin-left:auto" onclick="toast('🔗 Enlace copiado')">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-        Compartir
-      </button>
+      <div class="tw-tweet-text">${textWithHashtags}${hashtagHTML}</div>
+      ${photoHTML}
+      <!-- Actions bar Twitter -->
+      <div class="tw-tweet-actions" onclick="event.stopPropagation()">
+        <button class="tw-act-btn tw-replied" onclick="openPost(${p.id})">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span class="tw-act-count">${p.comentarios.length||0}</span>
+        </button>
+        <button class="tw-act-btn tw-reposted" onclick="toast('🔁 Replicado en tu jardín')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+          <span class="tw-act-count">${reposts}</span>
+        </button>
+        <button class="tw-act-btn ${isLiked?'tw-liked':''}" onclick="votePost(${p.id},1);renderForoPosts()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="${isLiked?'var(--err)':'none'}" stroke="${isLiked?'var(--err)':'currentColor'}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span class="tw-act-count">${p.votos||0}</span>
+        </button>
+        <button class="tw-act-btn" onclick="toast('📊 '+${views}+' vistas')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          <span class="tw-act-count">${views}</span>
+        </button>
+        <button class="tw-act-btn" onclick="toast('🔗 Enlace copiado')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </button>
+      </div>
     </div>
   </div>`;
 }
+
 function buildPostCard(p){ return buildQCard(p); }
 
 function votePost(id,dir){
@@ -8469,6 +9508,16 @@ function submitNuevoPost(){
 
 function renderComunidad(){
   const city=S.userCity||'Bogotá';
+  // Actualizar header Twitter
+  const twAv=document.getElementById('twHeaderAv');
+  const twCo=document.getElementById('twComposeAv');
+  const initial=(S.userName||'L').charAt(0).toUpperCase();
+  if(twAv) twAv.textContent=initial;
+  if(twCo) twCo.textContent=initial;
+
+  // Who to follow
+  setTimeout(renderWhoToFollow, 50);
+
   const cityEl=document.getElementById('comunidadCity');
   const cityLblEl=document.getElementById('comunidadCityLabel');
   if(cityEl) cityEl.textContent=city;
@@ -8747,6 +9796,7 @@ function smartBack(screenId){
   }
 }
 function initApp(){
+  setTimeout(()=>renderForoPosts(),50);
   loadState(); // ← Restaurar datos del usuario
   const cl=document.getElementById('configCityLabel');
   const mb=document.getElementById('menuOrdersBadge');
