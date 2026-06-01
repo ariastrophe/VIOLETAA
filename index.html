@@ -2256,11 +2256,11 @@ self.addEventListener('fetch',e=>{
         <!-- [V16] Contextual banner (Fogg: prompt inteligente con contexto) -->
         <div id="ctxBanner"></div>
 
-        <!-- Tareas del día -->
+        <!-- Cuidados registrados (solo muestra lo ya hecho desde la planta) -->
         <div id="taskSection" class="tasks-section">
           <div class="sec-hdr" style="margin-top:4px">
-            <span class="sec-title">Cuidados de hoy</span>
-            <span class="sec-link" onclick="goTo('sMisCompras')">Ver historial</span>
+            <span class="sec-title">Cuidados registrados</span>
+            
           </div>
           <div class="task-strip" id="taskStrip"></div>
         </div>
@@ -2832,14 +2832,41 @@ self.addEventListener('fetch',e=>{
           <div id="profileCompromisosCards"></div>
         </div>
 
-        <div style="padding:0 20px;margin-bottom:24px;display:flex;flex-direction:column;gap:10px;align-items:stretch">
-          <button class="btn btn-sage btn-full" id="btnWaterProfile" onclick="markWateredProfile()" style="justify-content:center">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
-            Ya la regué ✓
-          </button>
+        <!-- Cuidados rápidos — cada uno auto-registra en el home -->
+        <div style="padding:0 20px 8px">
+          <div style="font-size:11px;font-weight:700;color:var(--txth);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px">Registrar cuidado de hoy</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <button class="btn btn-sage btn-full" id="btnWaterProfile" onclick="markWateredProfile()" style="justify-content:center;font-size:13px">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+              💧 Ya la regué
+            </button>
+            <button class="btn btn-full" id="careBtn-fertilize" onclick="markCareFromProfile('fertilize','Fertilicé','🌱')" style="justify-content:center;font-size:13px;background:var(--ok-bg);color:var(--ok);border:1.5px solid var(--ok-border)">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              🌱 Fertilicé
+            </button>
+            <button class="btn btn-full" id="careBtn-prune" onclick="markCareFromProfile('prune','Podé','✂️')" style="justify-content:center;font-size:13px;background:#FFF0F4;color:#C02850;border:1.5px solid #F5C0CE">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+              ✂️ Podé
+            </button>
+            <button class="btn btn-full" id="careBtn-spray" onclick="markCareFromProfile('spray','Nebulicé','🚿')" style="justify-content:center;font-size:13px;background:var(--sage-50);color:var(--sage-600);border:1.5px solid var(--sage-200)">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+              🚿 Nebulicé
+            </button>
+            <button class="btn btn-full" id="careBtn-light" onclick="markCareFromProfile('light','Revisé la luz','☀️')" style="justify-content:center;font-size:13px;background:#FFF9E0;color:#8A5000;border:1.5px solid #FAC775">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/></svg>
+              ☀️ Revisé la luz
+            </button>
+            <button class="btn btn-full" id="careBtn-repot" onclick="markCareFromProfile('repot','Trasplanté','🪴')" style="justify-content:center;font-size:13px;background:var(--v50);color:var(--v500);border:1.5px solid var(--v200)">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12"/></svg>
+              🪴 Trasplanté
+            </button>
+          </div>
+        </div>
+        <!-- Diagnóstico -->
+        <div style="padding:0 20px;margin-bottom:28px">
           <button class="btn btn-primary btn-full" onclick="goToTab('diag')" aria-label="Diagnóstico" role="button" style="justify-content:center">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            Diagnosticar ahora
+            Diagnosticar con IA
           </button>
         </div>
       </div>
@@ -4336,14 +4363,7 @@ self.addEventListener('fetch',e=>{
       </div>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--txth)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
     </div>
-    <div class="as-option" onclick="closeActionSheet();openRegistrarCuidado()" style="border-bottom:none">
-      <div class="as-opt-ico" style="background:#FFF0F4">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C02850" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-      </div>
-      <div style="flex:1">
-        <div class="as-opt-title">Registrar cuidado</div>
-        <div class="as-opt-sub">Riego, poda, fertilización… varios a la vez</div>
-      </div>
+    
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--txth)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
     </div>
     <button class="as-cancel" onclick="closeActionSheet()">Cancelar</button>
@@ -4642,9 +4662,8 @@ const S = {
     {id:4,name:'Pothos',sci:'Epipremnum aureum',status:'ok',water:'Cada 5 días',light:'Bajo',bg:'#F0F4E8',icon:'🌱'},
   ],
   tasks:[
-    {id:1,name:'Regar Monstera',plant:'Monstera',type:'water',done:false},
-    {id:2,name:'Revisar Rosa — oídio detectado',plant:'Rosa',type:'alert',done:false},
-    {id:3,name:'Fertilizar Pothos',plant:'Pothos',type:'fertilize',done:false},
+    // Las tareas se generan SOLO al registrar un cuidado en el wizard RC
+    // No hay tareas predefinidas — el usuario las crea desde "Registrar cuidado"
   ],
   badges:[
     {id:'first_plant',ico:'🌱',name:'Primera planta',earned:true},
@@ -4888,8 +4907,8 @@ function updateNav(){
   const cur=document.querySelector('#screens .screen.active');
   const id=cur?cur.id:'sHome';
   const bNav=document.getElementById('bNav');
-  if(ROOT_SCREENS.has(id)){bNav.classList.remove('hidden');}
-  else{bNav.classList.add('hidden');}
+  // La barra de navegación SIEMPRE es visible después de iniciar la app
+  if(bNav) bNav.classList.remove('hidden');
   document.querySelectorAll('.ni[id^="ni-"]').forEach(n=>{
     n.classList.remove('act');
   });
@@ -5144,34 +5163,64 @@ function renderSem(){
 }
 function renderTasks(){
   const strip=document.getElementById('taskStrip');
+  const section=document.getElementById('taskSection');
   if(!strip) return;
+
+  // Mostrar SOLO tareas ya completadas (registradas desde la planta o registrar cuidado)
+  const done=S.tasks.filter(t=>t.done);
+
+  // Estado vacío: motivar al usuario a registrar desde su planta
+  if(done.length===0){
+    if(section) section.style.display='';
+    strip.innerHTML=`
+      <div style="display:flex;align-items:center;gap:12px;padding:14px 20px;background:var(--sage-50);border-radius:var(--r);margin:8px 20px">
+        <div style="font-size:28px;flex-shrink:0">🌿</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--txt);margin-bottom:2px">Aún no hay cuidados registrados</div>
+          <div style="font-size:12px;color:var(--txth);line-height:1.5">Entra a una de tus plantas y toca <strong style="color:var(--sage-600)">Ya la regué</strong> o cualquier cuidado para que aparezca aquí automáticamente.</div>
+        </div>
+      </div>`;
+    return;
+  }
+
+  if(section) section.style.display='';
+
   const taskIcoMap={
     water:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>',
     alert:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
     fertilize:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>',
+    prune:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>',
+    light:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>',
+    spray:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>',
+    repot:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 10 10"/><path d="M2 12a10 10 0 0 0 10 10"/><path d="M12 6v6l4 2"/></svg>',
   };
-  const taskBgMap={water:'#E0F0FF',alert:'#FFEBEE',fertilize:'#E6F5EE'};
-  const taskColorMap={water:'#1A6FA0',alert:'var(--err)',fertilize:'var(--ok)'};
-  strip.innerHTML=S.tasks.filter(t=>!t.done).map(t=>`
-    <div class="task-item" id="task-${t.id}" onclick="completeTask(${t.id})">
-      <div class="task-ico" style="background:${taskBgMap[t.type]||'var(--cream)'};color:${taskColorMap[t.type]||'var(--txth)'}">
-        ${taskIcoMap[t.type]||''}
+  const taskBgMap={water:'#E0F0FF',alert:'#FFEBEE',fertilize:'#E6F5EE',prune:'#FFF0F4',light:'#FFF9E0',spray:'#E8F5EE',repot:'#F5F0FA'};
+  const taskColorMap={water:'#1A6FA0',alert:'var(--err)',fertilize:'var(--ok)',prune:'#C02850',light:'#8A5000',spray:'var(--sage-600)',repot:'var(--v500)'};
+
+  // Mostrar los últimos 5 cuidados completados (más reciente primero)
+  const recent=done.slice(-5).reverse();
+
+  strip.innerHTML=recent.map(t=>`
+    <div class="task-item done" style="cursor:default;opacity:1" id="task-${t.id}">
+      <div class="task-ico" style="background:${taskBgMap[t.type]||'var(--ok-bg)'};color:${taskColorMap[t.type]||'var(--ok)'}">
+        ${taskIcoMap[t.type]||'🌿'}
       </div>
       <div class="task-txt">
         <div class="task-name">${t.name}</div>
-        <div class="task-detail">${t.plant}</div>
+        <div class="task-detail" style="color:var(--ok);font-weight:600">✓ ${t.plant||'Tu planta'}</div>
       </div>
-      <div class="task-check" style="${t.done?'background:var(--ok);border-color:var(--ok)':''}">
-        ${t.done?'<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>':''}
+      <div class="task-check" style="background:var(--ok);border-color:var(--ok);flex-shrink:0">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
       </div>
     </div>
   `).join('');
 }
 function completeTask(id){
-  const t=S.tasks.find(x=>x.id===id);
+  // IDs pueden ser número o string (legacy vs RC-generated)
+  const t=S.tasks.find(x=>String(x.id)===String(id));
   if(!t||t.done) return;
   t.done=true;
-  saveState(); // persistir tarea completada
+  saveState();
 
   // [V16] Log care event in plant timeline
   const plant=S.plants.find(p=>p.name===t.plant);
@@ -5180,7 +5229,7 @@ function completeTask(id){
     plant.careLog.unshift({type:t.type,label:t.name,ts:Date.now()});
   }
 
-  const el=document.getElementById('task-'+id);
+  const el=document.getElementById('task-'+String(id));
   if(el){
     const chk=el.querySelector('.task-check');
     if(chk){
@@ -5371,17 +5420,26 @@ function openProfile(id){
   const p=S.plants.find(x=>x.id===id);
   if(!p) return;
   S.curProfile=p;
-  // Reset water button state
+  // Reset care buttons al abrir la planta
   const wb=document.getElementById('btnWaterProfile');
   if(wb){
     if(p.watered){
-      wb.style.background='var(--txt2)';wb.style.color='#fff';wb.style.opacity='.85';wb.disabled=true;
-      wb.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Regada hoy ✓';
+      wb.style.background='var(--txt2)';wb.style.color='#fff';wb.style.opacity='.55';wb.disabled=true;
+      wb.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 💧 Regada hoy ✓';
     } else {
       wb.style.background='';wb.style.color='';wb.style.opacity='1';wb.disabled=false;
-      wb.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg> Ya la regué ✓';
+      wb.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg> 💧 Ya la regué';
     }
   }
+  // Resetear los otros care buttons
+  ['fertilize','prune','spray','light','repot'].forEach(type=>{
+    const btn=document.getElementById('careBtn-'+type);
+    if(!btn) return;
+    // Verificar si ya se hizo hoy (en últimas 24h)
+    const todayLog=p.careLog&&p.careLog.find(l=>l.type===type&&Date.now()-l.ts<86400000);
+    btn.disabled=!!todayLog;
+    btn.style.opacity=todayLog?'.55':'1';
+  });
   document.getElementById('profileName').textContent=p.name;
   const phdr=document.getElementById('profileHeaderName');
   if(phdr) phdr.textContent=p.name;
@@ -5450,6 +5508,62 @@ function renderProfileTimeline(p){
   wrap.innerHTML=html;
 }
 
+
+/* ══ AUTO-REGISTRAR cuidado desde la planta ══════════════════
+   Crea/marca una tarea como done y la muestra en "Cuidados
+   registrados" en Home. No requiere wizard manual.
+══════════════════════════════════════════════════════════════ */
+function autoRegisterCare(plant, type, label){
+  if(!plant) return;
+  // Buscar tarea existente pendiente de esta planta y tipo
+  let task = S.tasks.find(t => t.plant===plant.name && t.type===type && !t.done);
+  if(task){
+    task.done = true;
+    task.completedAt = Date.now();
+    task.fromPlant = true;
+  } else {
+    // Crear nueva tarea ya completada
+    S.tasks.push({
+      id: Date.now() + Math.floor(Math.random()*1000),
+      name: label,
+      plant: plant.name,
+      type: type,
+      done: true,
+      completedAt: Date.now(),
+      fromPlant: true,  // marcada desde la pantalla de planta
+    });
+  }
+  saveState();
+  // Actualizar el semáforo y "Cuidados registrados" en home si está visible
+  setTimeout(()=>{
+    renderTasks();
+    renderSem();
+  }, 100);
+}
+
+/* Cuidados adicionales desde el perfil de planta */
+function markCareFromProfile(type, label, emoji){
+  if(!S.curProfile) return;
+  const plant = S.curProfile;
+  // Log en timeline de la planta
+  if(!plant.careLog) plant.careLog = [];
+  plant.careLog.unshift({type, label, ts: Date.now()});
+  // Auto-registrar en home
+  autoRegisterCare(plant, type, label + ' ' + plant.name);
+  // XP
+  earnXPVar(8, {});
+  toast(emoji + ' ' + plant.name + ' — ' + label + ' ✓');
+  // Actualizar UI del perfil
+  renderProfileTimeline(plant);
+  saveState();
+  // Desactivar el botón presionado
+  const btn = document.getElementById('careBtn-'+type);
+  if(btn){
+    btn.disabled = true;
+    btn.style.opacity = '.55';
+    btn.innerHTML = btn.innerHTML.replace(/^.*?<\/svg>/, btn.innerHTML.split('</svg>')[0]+'</svg>') + ' ✓';
+  }
+}
 function markWateredProfile(){
   if(S.curProfile){
     S.curProfile.watered=true;
@@ -5457,6 +5571,8 @@ function markWateredProfile(){
     // Log in plant care timeline
     if(!S.curProfile.careLog) S.curProfile.careLog=[];
     S.curProfile.careLog.unshift({type:'water',label:'Regada',ts:Date.now()});
+    // ── AUTO-REGISTRAR en "Cuidados registrados" del home ──
+    autoRegisterCare(S.curProfile, 'water', 'Regar '+S.curProfile.name);
     const btn=document.getElementById('btnWaterProfile');
     if(btn){
       btn.style.background='var(--txt2)';
@@ -6996,6 +7112,75 @@ function apGoStep(n){
 function apNext(currentStep){apGoStep(currentStep+1);}
 
 
+function apTakePhoto(){
+  const canvas=document.getElementById('pzCanvas');
+  if(!canvas) return;
+  // Dibujar foto realista de planta sana en el canvas
+  const ctx=canvas.getContext('2d');
+  const w=canvas.width, h=canvas.height;
+  // Fondo — simula habitación/interior
+  const bg=ctx.createLinearGradient(0,0,w,h);
+  bg.addColorStop(0,'#e8f0e0');bg.addColorStop(1,'#c8d8b8');
+  ctx.fillStyle=bg;ctx.fillRect(0,0,w,h);
+  // Ventana de fondo (luz natural)
+  ctx.fillStyle='rgba(220,240,255,0.55)';ctx.fillRect(w*0.6,0,w*0.4,h*0.55);
+  ctx.strokeStyle='rgba(180,200,220,0.4)';ctx.lineWidth=2;
+  ctx.strokeRect(w*0.6,0,w*0.4,h*0.55);
+  // Mesa/superficie
+  const surface=ctx.createLinearGradient(0,h*0.7,0,h);
+  surface.addColorStop(0,'#b0986a');surface.addColorStop(1,'#8a7250');
+  ctx.fillStyle=surface;ctx.fillRect(0,h*0.72,w,h*0.28);
+  // Maceta
+  const px=w*0.35, py=h*0.55;
+  const potGrad=ctx.createLinearGradient(px-35,0,px+35,0);
+  potGrad.addColorStop(0,'#c47a3a');potGrad.addColorStop(0.5,'#d4853d');potGrad.addColorStop(1,'#b06828');
+  ctx.fillStyle=potGrad;
+  ctx.beginPath();ctx.moveTo(px-38,py+90);ctx.lineTo(px+38,py+90);ctx.lineTo(px+28,py);ctx.lineTo(px-28,py);ctx.closePath();ctx.fill();
+  ctx.fillStyle='rgba(0,0,0,0.15)';ctx.fillRect(px-38,py,76,8);
+  // Tierra
+  ctx.fillStyle='#5a3e28';ctx.beginPath();ctx.ellipse(px,py+4,28,7,0,0,Math.PI*2);ctx.fill();
+  // Planta — hojas grandes tipo Monstera
+  const leafColors=[['#2d6a1f','#1a4a10'],['#357523','#204d12'],['#3a8028','#245218']];
+  const leaves=[
+    {x:px-22,y:py-55,rx:48,ry:36,angle:-0.38},
+    {x:px+20,y:py-45,rx:44,ry:32,angle:0.32},
+    {x:px-5, y:py-82,rx:42,ry:30,angle:-0.06},
+    {x:px-30,y:py-30,rx:34,ry:24,angle:-0.55},
+    {x:px+28,y:py-28,rx:32,ry:22,angle:0.5},
+  ];
+  leaves.forEach((lf,i)=>{
+    const [fill,shadow]=leafColors[i%3];
+    ctx.save();ctx.translate(lf.x,lf.y);ctx.rotate(lf.angle);
+    const lg=ctx.createLinearGradient(-lf.rx,0,lf.rx,0);
+    lg.addColorStop(0,shadow);lg.addColorStop(0.5,fill);lg.addColorStop(1,shadow);
+    ctx.fillStyle=lg;ctx.beginPath();ctx.ellipse(0,0,lf.rx,lf.ry,0,0,Math.PI*2);ctx.fill();
+    // Nervaduras
+    ctx.strokeStyle='rgba(255,255,255,0.25)';ctx.lineWidth=1.2;
+    ctx.beginPath();ctx.moveTo(-lf.rx*0.7,0);ctx.lineTo(lf.rx*0.7,0);ctx.stroke();
+    ctx.restore();
+  });
+  // Tallo
+  ctx.strokeStyle='#2a5c15';ctx.lineWidth=4;ctx.lineCap='round';
+  ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(px,py-85);ctx.stroke();
+  // Marco de cámara (efecto foto real)
+  ctx.strokeStyle='rgba(255,255,255,0.18)';ctx.lineWidth=3;ctx.strokeRect(2,2,w-4,h-4);
+  // Marca de flash sutil
+  ctx.fillStyle='rgba(255,255,255,0.04)';ctx.fillRect(0,0,w,h);
+
+  // Mostrar canvas y ocultar placeholder
+  canvas.classList.add('show');
+  document.getElementById('photoZone').classList.add('has-photo');
+  document.getElementById('pzInner').style.display='none';
+  document.getElementById('pzRetake').style.display='flex';
+  S.apPhotoTaken=true;
+  // Iniciar análisis de IA automáticamente
+  setTimeout(()=>startPhotoAI(), 400);
+}
+
+function apCameraClick(){
+  if(!S.apPhotoTaken) apTakePhoto();
+}
+
 function apUploadPhoto(){
   // Simulate upload — same visual result
   const zone=document.getElementById('photoZone');
@@ -7165,7 +7350,7 @@ function savePlant(){
   const bgs=['#E6F0DA','#F4F8EF','#FFF0F4','#F0F4E8','#FFF8E0','#F0E8F8'];
   const light=S.apLightLevel||(S.apAIResult?S.apAIResult.lightShort:'Indirecta');
   S.plants.push({id:newId,name,sci,status:'ok',water,light,bg:bgs[S.plants.length%bgs.length],icon:S.selIcon,isNew:true});
-  S.tasks.push({id:Date.now()+1,name:'Regar '+name,plant:name,type:'water',done:false});
+  // NO se crea tarea automática — el usuario la registra desde "Registrar cuidado"
   saveState(); // persistir nueva planta
   document.getElementById('uStatP').textContent=S.plants.length;
   earnXP(30);
@@ -8639,12 +8824,32 @@ function rcBuildSummaryHTML(){
 }
 
 function rcConfirm(){
-  // Register tasks for each plant+care combination
+  const careVerb={water:'Regar',fertilize:'Fertilizar',prune:'Podar',light:'Revisar luz de',spray:'Nebulizar',repot:'Trasplantar'};
+  const careType={water:'water',fertilize:'fertilize',prune:'prune',light:'light',spray:'spray',repot:'repot'};
+
+  // Crear tareas en S.tasks SOLO para los cuidados registrados ahora
   RC.plants.forEach(pid=>{
     const plant=S.plants.find(p=>p.id===pid);
     if(!plant) return;
     RC.cares.forEach(care=>{
-      if(RC.freqIdx<4){ // not "solo esta vez" → add to reminders
+      const taskName=(careVerb[care]||'Cuidar')+' '+plant.name;
+      const freq=RC.freqLabels[RC.freqIdx];
+      // Evitar duplicado exacto no completado
+      const exists=S.tasks.find(t=>t.name===taskName&&t.plant===plant.name&&t.type===care&&!t.done);
+      if(!exists){
+        S.tasks.push({
+          id: Date.now()+'_'+pid+'_'+care,
+          name: taskName,
+          plant: plant.name,
+          type: care,
+          freq: freq,
+          done: false,
+          registeredAt: Date.now()
+        });
+      }
+
+      // Recordatorio si tiene frecuencia definida
+      if(RC.freqIdx<4){
         S.reminders.push({
           id:'rc_'+Date.now()+'_'+pid+'_'+care,
           plant:plant.name,
@@ -8653,12 +8858,14 @@ function rcConfirm(){
           color:'var(--txt)',
           type:care,
           label:RC.careLabels[care]?.replace(/^.+? /,'')||care,
-          time:RC.freqLabels[RC.freqIdx],
+          time:freq,
           active:true
         });
       }
     });
   });
+
+  saveState();
   earnXP(15);
   // Solicitar permiso real de notificación
   const firstActive=RC.plants[0]?S.plants.find(p=>p.id===RC.plants[0]):null;
